@@ -72,7 +72,6 @@ const config = {
           customCss: [
             './src/css/custom.css',
             './src/css/phycat-abyss.css',
-            './src/css/phycat-forest.css',
             './src/css/phycat-sky.css'
           ],
         },
