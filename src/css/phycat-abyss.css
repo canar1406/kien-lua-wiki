@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
     font-family: CascadiaCode;
     src: url(./phycat/Cascadia-Code-Regular.ttf)
 }
@@ -2949,7 +2949,7 @@ body .md-table-resize-popover input:focus {
 
 
 
-﻿
+
 
 html[data-theme='dark'] {
   /* 标题后小图标，借鉴自思源笔记主题——Savor */
