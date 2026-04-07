@@ -5,6 +5,9 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import remarkGithubAdmonitions from 'remark-github-blockquote-alert';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -48,6 +51,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          remarkPlugins: [remarkMath, remarkGithubAdmonitions],
+          rehypePlugins: [rehypeKatex],
+          admonitions: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

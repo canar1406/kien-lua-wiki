@@ -4,38 +4,108 @@ title: Kiến Trúc Tổ Ngầm
 sidebar_position: 7
 ---
 
-# Kỹ Thuật Sinh Học Xây Dựng: Pháo Đài Gò Và Rễ Mạng Lưới Nhện Dưới Lòng Đất
+# **Phần 7: Kiến Trúc Không Gian Tổ Ngầm Và Mạng Lưới Siêu Đô Thị Đa Chi Nhánh Của *Solenopsis geminata***
 
-> 📌 Tiêu Điểm / Lời Giải
-> Nhận thức phổ thông đối với thói quen của kiến là chúng moi đất và chất rác bã làm nơi ở. Tuy nhiên, nếu bạn nghĩ cái gò đất nhô cao mọc lên sau vườn nhà bạn chỉ đơn thuần là đống phế phẩm móc ra che chở một bầy nhặng nhện, bạn đã sai lầm. Cấu trúc tổ của *S. invicta* là một cỗ máy vật lý nhiệt động lực học siêu việt (Thermodynamic engine) và một siêu đô thị ngầm bám rễ vươn sâu uống máu Trái Đất để tồn tại vượt qua mọi cú sốc khắc nghiệt nhất.
 
-## 1. Gò Nổi Mặt Đất (The Mound): Vượt Xa Khái Niệm Của Một Vỏ Bọc
+> [!NOTE]
+> **Mục tiêu của học phần:** Bài viết này sẽ đưa bạn khám phá thế giới bí ẩn dưới lòng đất của loài kiến lửa nhiệt đới *Solenopsis geminata*. Chúng ta sẽ mổ xẻ cấu trúc kỹ thuật của các siêu đô thị ngầm này, từ các định luật hình học phân bổ không gian, thuật toán điều chỉnh mật độ bầy đàn, cho đến sự hình thành mạng lưới hầm liên tổ (polydomy). Đặc biệt, bài viết sẽ phân tích cơ học vật liệu và hệ thống thông gió thụ động dựa trên gradient khí CO2, chứng minh kiến lửa là những kỹ sư địa kỹ thuật đại tài của tự nhiên.
 
-Biểu tượng chết chóc hằn sâu vào tâm trí nông dân Mỹ hay Úc khi nhận ra sự xuất hiện của quần thể rùng rợn này chính là những ngọn núi lửa thu nhỏ đắp bằng thứ cát sét tơi xốp, bỗng dưng lồi cộm nổi bong bóng sưng tấy mọc thành bãi mìn sau những trận mưa xuân. Người ta thường mô tả cấu trúc phần Gò nổi cao bằng hình hài một mái vòm hình nón (Dome), và có thể đạt tới đường kính khổng lồ **rộng 60 cm** cùng chiều cao đội vút lên nấc chót vót xấp xỉ **dài 45 cm**.
+Sự phức tạp về phân công lao động và di truyền học của *S. geminata* không tồn tại trong một không gian hư vô. Toàn bộ nền văn minh của chúng được bao bọc, bảo vệ và định hình bởi một hệ thống kiến trúc ngầm (subterranean architecture) vô cùng tinh vi. Tổ kiến không đơn thuần là một cái hố khoét sâu vào lòng đất để trú ẩn, mà là một **công trình kỹ thuật phức hợp**, tuân thủ nghiêm ngặt các quy luật hình học không gian, vi khí hậu học và nhiệt động lực học.
 
-Nhưng sự kỳ diệu không chỉ nằm ở khối hình học bề mặt. Gò Mặt đất chỉ chiếm vỏn vẹn **chưa tới 10% tổng thể tích phần cứng của một đế chế Tổ!** Nếu bạn dùng một xe ủi ủi bay cạo sạch phần gò ngọn kia phẳng lỳ, thì hàng triệu mạng kiến bên dưới không hề hấn xây xát gì. Sự thật, chiếc mũ Gò này không được xây cốt lõi để "ở" ngủ che chắn, tác dụng vật lý sống còn của nón Gò là để làm một **Lò Phản Ứng Điều Hòa Thân Nhiệt (Solar incubator)** cực bạo lực. 
-*   **Hấp thu nhiệt:** Lượng đất tơi xốp xếp rỗ xen kẽ nhau nhấp nhô giống tổ ong cho phép mái vòm hứng trọn góc chéo từ ánh nắng mặt trời yếu ớt, hội tụ làm nóng hầm ấp bên trong giữ mãi ở 32 °C. Kiến thợ luân hồi dời ấu trùng trứng liên tục đẩy đùn từ đáy cõi lạnh sâu lên buồng vòm áp mái để đun nhộng nở bung lụa nhanh hơn.
-*   **Bảo vệ thời tiết:** Khi mặt trời chuyển hướng trưa gắt nắng lửa đỉnh đầu, Gò bắt đầu trở thành lớp da giải nhiệt, kiến thợ vác trứng chạy ngược trốn ngập vào phễu dưới bùn. Còn khi miền Nam Carolina xảy ra đông giá băng tuyết đóng sụp trên lá, hình bầu cong của sương mai đổ tuột ra viền, giữ khoang Gò ấm sực và ráo đặc bên trong cách nhiệt lạnh lẽo tuyệt đối.
+## **1. Phương Pháp Luận: Giải Mã Không Gian 3D Bằng Kim Loại Nóng Chảy**
 
-*Lưu ý duy nhất định danh hình thái:* Bạn tuyệt đối sẽ không bao giờ tìm thấy một "lỗ cửa chính lộ thiên" há miệng nào nằm trên đỉnh đầu hoặc lưng chừng mái vòm của cái Gò *invicta*. Kiến Lửa không thi công mở cửa nóc như kiến đen. Việc mở lỗ ngay giữa đầu vừa dẫn tới sụp hầm rửa nước mưa, lại vừa cho phép kẻ thù xông vô đánh úp. Thay vào đó, bộ hệ giáp cổng hầm của chúng rải cách đó hàng đống dặm xa xôi.
+Trong nhiều thập kỷ, cấu trúc thực sự của tổ kiến lửa luôn là một bí ẩn, bởi việc đào xới bằng công cụ thông thường sẽ ngay lập tức làm sụp đổ và phá hủy hoàn toàn kiến trúc mỏng manh bên trong.
 
----
+Sự đột phá chỉ đến nhờ vào những nỗ lực nghiên cứu tiên phong của nhà sinh thái học Walter Tschinkel và các cộng sự. Để lập bản đồ chính xác cấu trúc không gian này, họ đã phát triển một kỹ thuật đúc khuôn 3D tại hiện trường (in-situ casting):
+1.  **Sử dụng Thạch cao nha khoa (Orthodontal plaster):** Một loại dung dịch siêu mịn được bơm từ từ vào miệng tổ. Nó len lỏi vào từng ngóc ngách siêu nhỏ nhất trước khi đông cứng, tạo ra một bản sao thạch cao chính xác của toàn bộ mạng lưới hang động.
+2.  **Đúc bằng Kim loại nóng chảy (Nhôm, Kẽm):** Đối với các tổ có cấu trúc sâu và đòi hỏi độ bền khuôn đúc cao để khai quật nguyên vẹn, các nhà khoa học đã nung chảy nhôm (ở nhiệt độ trên 660°C) và đổ trực tiếp vào tổ.
 
-## 2. Hệ Thống Dưới Lòng Đất: Xuyên Tâm Mạch Nước Ngầm
-
-Bên dưới dải Gò nhấp nhô câm lìm kia là một mê cung đô thị mạng liên kết rễ giun đa tầng rẽ nhánh không thể tàn khốc hơn. Tổ Kiến lửa mở ra như một thế giới thẳng đứng ghim xuyên qua nhiều tầng kiến tạo nền đất, đôi khi phá vỡ xuống đến tận ranh giới sâu nhất của **hệ mạch chứa nước ngầm đáy (The Water Table)** vượt sâu từ **2 mét đến 3 mét dưới đất tít tắp dốc**.
-
-Để một siêu đô thị nửa rưỡi triệu dân cùng kề vai hít thở nhả cacbonic trong môi trường yếm khí mà không bị chết ngạt, các kỹ sư Công binh Kiến Lửa trung niên đã dùng cặp ngàm 4 răng xây cất hệ thống vỉ hồi hầm ngầm cống thông khí (Ventilation vertical shafts) phân bố tuần hoàn áp suất chênh lệch không khí kinh ngạc. Nhiệt độ nóng bốc luồng khí nhả vọt lên cao qua các hầm tổ ong mặt Gò, thì những ống phễu hút sâu luân lưu lập tức mớm khí Oxy lạnh tươi sạch xoáy lùi vào rễ cắm đáy làm mới hệ thở.
-
-Ở tầng sâu nhất trong lòng đất, nằm tít ngang giáp giới với đáy đá mát rượi và ẩm ướt là cấm cung của Nữ vương Kiến Chúa (The Queen Chamber). Bà nội dọn trứng chễm chệ, an toàn khỏi mọi vụ nổ thuốc chôn hay lưỡi dao cày cuốc máy cày móng bới của loài người. Chỉ có ngập lục rã mỡ, hoặc hóa chất cực độc thấm lừ đừ trôi chậm nhỏ giọt bằng cơn nước ngầm mới lách nổi tới chỗ Nữ hoàng. Điều chết chóc ở đây là, trong lúc moi móc tung bành các hạt kết dính đất xây tổ ngầm này, Kiến lửa tự nhiên thực thi hành động cào xới đất, làm biến đổi kết cấu độ xốp, rỗng mạch, đẩy trào độ cân bằng kiềm hóa sinh thái nông nghiệp của chính mảnh ruộng tươi tốt mà con người cất công gây dựng băm nát thấu tận nhân cốt mẻ đất.
+Nhờ kỹ thuật này, nhân loại lần đầu tiên mới có thể "nhìn thấy" toàn bộ mức độ phức tạp đến kinh ngạc của các thành phố dưới lòng đất do *S. geminata* xây dựng.
 
 ---
 
-## 3. Hệ Thống Rễ Tua Ruôi Kiếm Mồi (Foraging Sub-tunnels network)
+## **2. Cấu Trúc Mô-Đun Và Định Luật Hình Học Phân Bổ (Top-Heavy Architecture)**
 
-Giấu đầu ngoạn mục ranh ma ẩn trên đồng hoang là chiêu bài tát trả kẻ săn mồi xuất sắc. Thay vì rồng rắn xếp hàng một kéo đi bơ vơ kiếm xác bò, nhện, hoa quả giữa trời phơi sáng trần trụi (dễ bị chim bói mỏ ăn sạch), hệ lính trinh sát Forager của tổ *invicta* thi công xây dựng **Một Mạng lưới Ống Máng Hầm Nông Dưới Rễ Cỏ (Network of foraging trenches)**. 
+Phân tích các khuôn đúc 3D cho thấy, kiến trúc vĩ mô của *S. geminata* được thiết lập dựa trên nguyên lý **mô-đun hóa (modular construction)**. Cấu trúc cơ bản luôn bao gồm hai thành phần hình học:
+*   **Trục thẳng đứng (Vertical shafts):** Đóng vai trò như các trục thang máy, đâm thẳng và xuyên qua các tầng địa chất để kết nối các tầng không gian.
+*   **Buồng nằm ngang (Horizontal chambers):** Các không gian sinh hoạt phẳng được phân nhánh vuông góc từ trục chính.
 
-Bọn chúng móc cào một loại hào chiến rỗng sâu vài xăng-ti-mét ghim sát ngay dưới mặt cỏ hoặc thảm mùn lá úa tàn xốp. Mắt xích các hào này bò như xúc tu tỏa rộng 10-15 mét bức xạ vòng quanh Gò trung tâm. Trên nắp cái mương chiến hào đắp ngang này thỉnh thoảng chúng mở một cái lỗ chích hé tẹo đủ rộng để thò đầu ra trồi lên đất kéo húp miếng thịt (Exit holes/pop-holes). 
-Khi săn được nạn nhân bọ hung béo múp, đàn kiến chẳng bao giờ chạy trần kéo lê mồi dãi dầu sương gió mặt đường. Chúng vác hãm thịt lùa lút thẳng cắm tọt vào các lỗ trồi đó và đi mướt mát an phận di chuyển tuồn thịt ầm ầm dọc theo hào dẫn chôn ngầm trực chỉ hướng tâm kéo nộp báo cáo cho Nữ Hoàng trung tâm ngự lâm dưới đất! Hệ mạng cáp ngầm này giữ ẩm ướt, che mát chống thiêu nắng khô xác lúc phơi mình ban trưa và che tuyệt đối mắt các đàn kẻ thù chim chóc đói khát trên trời. 
+> [!IMPORTANT]
+> **Định Luật Phân Bổ "Nặng Ở Đỉnh" (Top-heavy Distribution):**
+> Tổ kiến lửa không có hình dáng đối xứng. Chúng luôn được thiết kế theo tỷ lệ "nặng ở đỉnh". Nghĩa là, tổng thể tích, kích thước và mật độ của các buồng tập trung cực kỳ dày đặc ở các tầng đất nông (gần mặt đất). Càng đi sâu xuống dưới, số lượng và kích thước các buồng sẽ **giảm dần theo cấp số nhân (exponential decrease)**. 
 
-Hệ thống kiến trúc Gò Không Nóc, Đáy Sâu Tận Nước, và Hào Vành Đai Ngoại Vi đúc kết làm ra bức tường phòng vệ vững chắc chống cự tự nhiên. Đó cũng là nguyên nhân chí mạng giải thích thắc mắc: Tại sao ngay khi bạn vô hình đạp đế giày giẫm vào ranh cỏ xốp cách xa phần đỉnh Gò cả thước chân, bất chợt hàng vạn con Kiến Đỏ bục bẳng lao nhao như suối trào máu xông xông hục hặc ồ ạt tràn phọt ra không biết từ đâu và cắn xé bạn? – Chúng không tàng hình! Chúng chỉ nằm phục sẵn im ỉm ngay dưới các mương ngầm ngay sát dưới mép mé gót chỉ chờ một tiếng rung va chạm chấn động thềm xói lở đất để túa bung lên như một núi lửa bùng nổ diệt vùi.
+Hình thái của các buồng cũng biến đổi theo chiều sâu để phục vụ các chức năng sinh lý hoàn toàn khác biệt:
+
+### **2.1. Tầng Bề Mặt: "Sàn Nhiệt Động" (Thermodynamic Floor)**
+Các buồng ở độ sâu nông (từ mặt đất xuống khoảng 15-30 cm) thường có cấu trúc kéo dài, đan xen và nối mạng chằng chịt tạo thành các đường hầm thông nhau (anastomosing tunnels). Diện tích sàn tại đây rất lớn nhưng trần lại thấp.
+*   **Chức năng sinh thái:** Lớp cấu trúc này hoạt động như một tấm pin năng lượng mặt trời khổng lồ, hấp thụ tối đa bức xạ nhiệt từ mặt trời chiếu xuống mặt đất. 
+*   **Chiến lược ấp trứng:** Vào ban ngày, kiến thợ sẽ liên tục luân chuyển hàng vạn ấu trùng và nhộng từ dưới sâu lên các buồng nông này để "tắm nhiệt". Nhiệt độ cao làm tăng tốc độ trao đổi chất, giúp rút ngắn đáng kể chu kỳ phát triển của ấu trùng, mang lại lợi thế bùng nổ dân số cực nhanh.
+
+### **2.2. Tầng Sâu Thẳm: "Hầm Trú Ẩn Hình Thùy" (Lobed Bunker)**
+Khi trục thẳng đứng kéo dài xuống độ sâu có thể lên tới 1.5 đến 2 mét, kiến trúc thay đổi hoàn toàn. Các buồng ở đây trở nên nén gọn, đặc hơn và phát triển thành hình dạng **nhiều thùy (lobed chambers)**.
+*   **Tối ưu hóa không gian:** Cấu trúc hình thùy (giống như hình dáng của lá phổi con người) là giải pháp toán học tuyệt vời để **tối đa hóa diện tích bề mặt sàn trên một đơn vị thể tích** không gian rỗng giới hạn. 
+*   **Cơ sở sinh tồn:** Ở độ sâu này, đất duy trì một mức nhiệt độ và độ ẩm hằng định tuyệt đối (không bị ảnh hưởng bởi mùa đông giá rét hay mùa hè nứt nẻ phía trên). Đây là pháo đài an toàn nhất, đóng vai trò là nơi cư ngụ vĩnh viễn của kiến chúa và là kho tàng dự trữ sinh khối (protein, hạt giống) của cả vương quốc.
+
+---
+
+## **3. Thuật Toán Điều Chỉnh Không Gian Và Động Lực Học Mật Độ**
+
+Một trong những câu hỏi lớn nhất là: Làm sao hàng vạn con kiến không có bản thiết kế tổng thể lại biết khi nào cần đào thêm buồng và khi nào cần dừng lại?
+
+> [!TIP]
+> **Thuật Toán Ma Sát Cơ Học (Collision Rate Algorithm):**
+> Các phép đo thống kê trên khuôn đúc kim loại đã chỉ ra một **mối tương quan tuyến tính cực mạnh** giữa thể tích không gian rỗng của tổ và quy mô dân số thực tế bên trong (với hệ số tương quan $R^2 \approx 0.87$). 
+
+Điều này minh chứng cho sự tồn tại của một "thuật toán điều chỉnh không gian" được tích hợp thẳng vào hệ thống nhận thức cơ học của bầy đàn:
+1.  Khi dân số bùng nổ hoặc khi ấu trùng lớn lên, mật độ cá thể trên một đơn vị diện tích sàn tăng cao.
+2.  Sự chật chội này dẫn đến việc tỷ lệ va chạm cơ học (collision rate) giữa các con kiến với nhau tăng lên.
+3.  Khi tỷ lệ va chạm vượt qua một **ngưỡng giới hạn sinh lý**, nó sẽ tự động kích hoạt "bản năng đào bới" (excavation behavior) của lực lượng kiến thợ.
+4.  Chúng hì hục cắn đất và mang ra ngoài (tạo thành các gò đất đặc trưng trên mặt cỏ) để mở rộng thể tích buồng. Khi không gian đủ rộng, tỷ lệ va chạm giảm xuống dưới ngưỡng, hành vi đào bới lập tức dừng lại. Đây là một cơ chế phản hồi âm (negative feedback loop) hoàn hảo.
+
+---
+
+## **4. Mạng Lưới Liên Tổ (Inter-nest Tunnels) Và Khái Niệm Đa Chi Nhánh (Polydomy)**
+
+Đỉnh cao của kiến trúc *S. geminata* không nằm ở một tổ đơn lẻ, mà nằm ở việc chúng biết kết nối các cấu trúc vật lý lại với nhau để hình thành một mạng lưới siêu đô thị ngầm, được gọi là **hiện tượng Đa chi nhánh (Polydomy)**.
+
+Các nghiên cứu khai quật chi tiết trên hàng chục cặp tổ lân cận (có khoảng cách dưới 1 mét) đã làm lộ diện một mạng lưới đường hầm liên tổ vô cùng đặc sắc.
+
+### **4.1. Thông Số Kỹ Thuật Của Cao Tốc Lòng Đất**
+*   **Độ sâu:** Rất nông, chúng thường chạy song song mặt đất ở độ sâu chỉ từ **1 cm đến 3 cm** (đôi khi sâu nhất khoảng 12 cm), kết nối trực tiếp các buồng ngoại vi của hai tổ với nhau.
+*   **Hình dáng và thiết diện:** Hầm có thiết diện hình Elip (bầu dục ngang) với đường kính ngang thường nhỏ hơn **1.5 cm**. Thiết kế hình elip này tối ưu hóa không gian thái học (ergonomics) cho phép hai luồng giao thông của kiến thợ (ngậm thức ăn hoặc cõng ấu trùng) có thể lách qua nhau mà không bị tắc nghẽn.
+*   **Mức độ kết nối:** Số lượng đường hầm kết nối giữa một cặp tổ dao động từ 1 đến 11 tuyến đường song song. Đáng kinh ngạc là có tới **86.1%** các tuyến hầm được khai quật ghi nhận hoạt động giao thông tấp nập của kiến thợ và kiến cánh (alates).
+
+### **4.2. Chức Năng Sinh Thái Sống Còn**
+Tại sao lại tốn công xây dựng hệ thống đường hầm này thay vì chạy trên mặt đất cho nhanh?
+Mạng lưới liên tổ cung cấp một **hành lang vận chuyển bọc thép** mang lại lợi thế sinh tồn tuyệt đối:
+*   Tránh phơi nhiễm dưới bức xạ tia cực tím (UV) gắt gao của mặt trời nhiệt đới.
+*   Ngăn chặn sự bốc hơi và mất nước của cơ thể.
+*   Tránh được sự săn lùng của các thiên địch bề mặt (chim, thằn lằn).
+*   **Đặc biệt:** Giúp lực lượng vận chuyển né tránh hoàn toàn sự tấn công từ trên không của loài **ruồi ký sinh Phorid flies** (loài ruồi chuyên nhào lộn đẻ trứng vào ngực kiến thợ trên mặt đất).
+
+### **4.3. Sự Chi Phối Của Mã Gen Lên Hạ Tầng Giao Thông**
+Phân tích dữ liệu không gian chỉ ra rằng, cấu trúc mạng lưới hạ tầng này phụ thuộc cực kỳ mạnh mẽ vào trạng thái di truyền xã hội (Gen Gp-9):
+*   Ở các khu vực của **tổ Đơn hậu (Monogyne)** mang tính lãnh thổ cao, xác suất xây dựng hầm kết nối chỉ là **17.6%**.
+*   Ngược lại, ở các bãi kiến **Đa hậu (Polygyne)**, do sự thiếu vắng tính hung hăng bảo vệ lãnh thổ, xác suất chúng xây dựng hầm liên tổ để hợp nhất cơ sở hạ tầng lên tới **52.4%** (cao gấp 3 lần). Sự dung hợp này biến chúng thành một thực thể siêu quần thể (supercolony) không thể bị chia cắt.
+
+---
+
+## **5. Địa Kỹ Thuật Đất (Geotechnics), Cơ Học Và Hệ Thống Thông Gió CO2**
+
+Hành vi kiến trúc của *S. geminata* không chỉ khoét rỗng không gian, mà nó còn làm thay đổi vĩnh viễn các đặc tính địa kỹ thuật và hóa lý của đất đai xung quanh.
+
+### **5.1. Kỹ Thuật Gia Cố Vách Hầm**
+Tổ kiến lửa không bị sập dù trải qua các trận mưa lớn. Lý do là trong quá trình xây dựng, kiến thợ đã vận dụng các nguyên lý của ngành Khoa học Vật liệu. 
+Chúng chọn lọc các hạt khoáng vật có kích thước phù hợp, nhào trộn với **nước bọt, chất bài tiết hữu cơ và tàn dư thực vật**. Hỗn hợp này được đắp và nén lên các vách hầm, hoạt động như một loại "xi măng sinh học" (biocement), tạo ra một lớp lót có độ bền cơ học cao, tăng sức chịu ứng suất cắt (shear stress) và chống sụt lún cực tốt.
+
+> [!CAUTION]
+> **Ứng dụng Phỏng Sinh Học (Bionics):**
+> Kỹ thuật luyện đất của loài kiến đã thu hút sự chú ý của ngành kỹ thuật xây dựng và vật liệu hiện đại. Các nghiên cứu gần đây về **Bột đất sét nung từ tổ kiến (Calcined Ant Nest Clay Powder - CANCP)** cho thấy: nếu nghiền nát vật liệu từ các tổ kiến bỏ hoang và nung lên, chúng ta thu được một loại phụ gia sinh thái siêu việt. Khi pha trộn CANCP vào bê tông, nó có khả năng làm tăng cường độ nén và cải thiện cấu trúc thông gió vi mô của vật liệu xây dựng thân thiện với môi trường.
+
+### **5.2. Khí Động Học Lòng Đất: CO2 Như Một Lệnh Kiến Trúc**
+Một thành phố dưới lòng đất sâu vài mét, chứa hàng trăm ngàn cá thể sẽ tiêu thụ một lượng Oxy khổng lồ và thải ra khí Carbon dioxide (CO2). Làm thế nào tổ kiến không bị ngạt thở?
+
+Bí mật nằm ở chỗ, bầy kiến sử dụng chính **Phân áp khí CO2** như một tín hiệu vô cơ để chỉ đạo việc thi công:
+*   CO2 nặng hơn không khí, do đó nó có xu hướng chìm xuống và tích tụ lại tại các "điểm mù" (blind spots) hoặc các buồng sâu trong tổ.
+*   Nồng độ CO2 vượt ngưỡng sinh lý không làm kiến bỏ chạy, mà ngược lại, nó **kích thích mãnh liệt hành vi đào bới** của kiến thợ tại chính khu vực đó.
+*   Sự cắn phá liên tục tại các điểm tích tụ khí này buộc kiến phải mở rộng không gian, vươn các trục thông hơi phụ lên cao hoặc kết nối các buồng hẹp lại với nhau. Quá trình này tự động tạo ra một **mạng lưới thông gió thụ động (passive ventilation network)** hoàn hảo. Không khí sạch từ trên mặt đất được hút xuống nhờ chênh lệch áp suất, trong khi CO2 thừa được đẩy ra ngoài, đảm bảo siêu đô thị ngầm luôn được "hô hấp" một cách tuần hoàn.

@@ -1,0 +1,44 @@
+
+> wiki@0.0.0 build
+> docusaurus build
+
+
+ ------------------------------------------------------------------------------                                                                                                         Update available 3.9.2 → 3.10.0                                                                                                                 To upgrade Docusaurus packages with the latest version, run the                                       following command:                                        `npm i @docusaurus/core@latest @docusaurus/preset-classic@latest                @docusaurus/module-type-aliases@latest @docusaurus/types@latest`                                                                                         ------------------------------------------------------------------------------ 
+
+[INFO] [vi] Creating an optimized production build...
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Client
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Server
+[90m[[90mwebpackbar[90m][39m [32m✔[39m Server: Compiled with some errors in 1.41s
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\mdx-loader\lib\index.js??ruleSet[1].rules[8].use[0]!C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\docs\13-soc-phan-ve-va-so-cuu.md': No serializer registered for VFileMessage
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> Error -> VFileMessage
+[90m[[90mwebpackbar[90m][39m [32m✔[39m Client: Compiled with some errors in 4.88s
+[ERROR] Client bundle compiled with errors therefore further build is impossible.
+Error: MDX compilation failed for file "C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\docs\13-soc-phan-ve-va-so-cuu.md"
+Cause: Expected a closing tag for `<br>` (64:253-64:257) before the end of `tableData`
+Details:
+{
+  "column": 22,
+  "file": "",
+  "message": "Expected a closing tag for `<br>` (64:253-64:257) before the end of `tableData`",
+  "line": 64,
+  "name": "64:22-64:337",
+  "place": {
+    "start": {
+      "_bufferIndex": 19,
+      "_index": 11,
+      "line": 64,
+      "column": 22,
+      "offset": 6743
+    },
+    "end": {
+      "_bufferIndex": 334,
+      "_index": 11,
+      "line": 64,
+      "column": 337,
+      "offset": 7058
+    }
+  },
+  "reason": "Expected a closing tag for `<br>` (64:253-64:257) before the end of `tableData`",
+  "ruleId": "end-tag-mismatch",
+  "source": "mdast-util-mdx-jsx"
+}

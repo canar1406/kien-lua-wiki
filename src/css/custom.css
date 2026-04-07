@@ -25,6 +25,7 @@
   --ifm-heading-font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
   --ifm-font-family-monospace: 'Roboto Mono', Consolas, Monaco, 'Courier New', monospace;
 }
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #ef4444;
@@ -52,31 +53,38 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 /* Apply fade-in to main content */
 main {
   animation: fadeIn 0.5s ease-in-out;
 }
+
 /* Smooth transitions for all links */
 a {
   transition: all 0.3s ease-in-out;
 }
+
 /* Navbar transitions */
 .navbar {
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(10px);
 }
+
 .navbar__item {
   transition: all 0.3s ease-in-out;
 }
+
 .navbar__link {
   transition: all 0.3s ease-in-out;
   position: relative;
 }
+
 .navbar__link::after {
   content: '';
   position: absolute;
@@ -88,28 +96,34 @@ a {
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
+
 .navbar__link:hover::after,
 .navbar__link--active::after {
   width: 100%;
 }
+
 /* Content transitions */
 .container {
   transition: all 0.3s ease-in-out;
 }
+
 /* Card and section transitions */
 .card {
   transition: all 0.3s ease-in-out;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 /* Button transitions */
 .button {
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
 }
+
 .button::before {
   content: '';
   position: absolute;
@@ -120,33 +134,41 @@ a {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
+
 .button:hover::before {
   left: 100%;
 }
+
 /* Sidebar transitions */
 .menu {
   transition: all 0.3s ease-in-out;
 }
+
 .menu__link {
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   margin: 2px 0;
 }
+
 .menu__link:hover {
   background: rgba(var(--ifm-color-primary-rgb), 0.1);
   transform: translateX(5px);
 }
+
 /* Footer transitions */
 .footer {
   transition: all 0.3s ease-in-out;
 }
+
 .footer__link-item {
   transition: all 0.3s ease-in-out;
 }
+
 .footer__link-item:hover {
   transform: translateX(5px);
   color: var(--ifm-color-primary);
 }
+
 /* Page loading animation */
 .loading-bar {
   position: fixed;
@@ -158,22 +180,27 @@ a {
   z-index: 9999;
   animation: loadingBar 1s ease-in-out;
 }
+
 @keyframes loadingBar {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
+
 /* Smooth scrolling for internal links */
 html {
   scroll-behavior: smooth;
 }
+
 /* Prevent flash of unstyled content */
 .theme-doc-sidebar-container {
   transition: transform 0.3s ease-in-out;
 }
+
 /* Mobile responsive transitions */
 @media (max-width: 996px) {
   .navbar-sidebar {
@@ -265,8 +292,10 @@ html {
     padding: 8px 16px;
   }
 }
+
 /* Additional mobile fixes */
 @media (max-width: 768px) {
+
   /* Better mobile navbar */
   .navbar {
     padding: 0 16px;
@@ -354,7 +383,8 @@ html {
   /* Fix for viewport height on mobile */
   .navbar-sidebar {
     height: 100vh;
-    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
   }
 
   .navbar-sidebar__items {
@@ -365,54 +395,66 @@ html {
     transition: all 0.3s ease-in-out;
   }
 }
+
 /* Content slide-in animations */
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes slideInFromRight {
   from {
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 /* Apply slide-in to different sections */
 .hero {
   animation: slideInFromLeft 0.6s ease-out;
 }
+
 .features {
   animation: slideInFromRight 0.6s ease-out 0.2s both;
 }
+
 /* Staggered animation for feature items */
 .feature:nth-child(1) {
   animation: fadeIn 0.6s ease-out 0.3s both;
 }
+
 .feature:nth-child(2) {
   animation: fadeIn 0.6s ease-out 0.4s both;
 }
+
 .feature:nth-child(3) {
   animation: fadeIn 0.6s ease-out 0.5s both;
 }
+
 /* Loại bỏ hiệu ứng staggered phức tạp - giữ menu đơn giản */
 .navbar-sidebar .menu__list-item {
   transition: all 0.3s ease-in-out;
 }
+
 /* Hiệu ứng pulse cho hamburger khi focus */
 .navbar__toggle:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.3);
   border-radius: 8px;
 }
+
 /* Hiệu ứng ripple khi click hamburger */
 .navbar__toggle::after {
   content: '';
@@ -427,42 +469,53 @@ html {
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   pointer-events: none;
 }
+
 .navbar__toggle:active::after {
   width: 40px;
   height: 40px;
 }
+
 /* Hiệu ứng backdrop đơn giản */
 .navbar-sidebar__backdrop {
   transition: opacity 0.3s ease-in-out;
 }
+
 .navbar-sidebar--show .navbar-sidebar__backdrop {
   opacity: 1;
 }
+
 /* Cải thiện hiệu ứng slide cho menu - an toàn */
 .navbar-sidebar {
   transition: transform 0.3s ease-in-out;
 }
+
 .navbar-sidebar--show .navbar-sidebar {
   transform: translateX(0);
 }
+
 /* Hiệu ứng cho brand logo trong sidebar - đơn giản */
 .navbar-sidebar__brand {
   transition: all 0.3s ease-in-out;
 }
+
 /* Hiệu ứng đơn giản cho hamburger và close button */
 .navbar__toggle {
   transition: all 0.3s ease-in-out;
 }
+
 .navbar-sidebar__close {
   transition: all 0.3s ease-in-out;
 }
+
 /* Improve perceived performance */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -520,93 +573,126 @@ html {
 
 /* --- Mapping Phycat Abyss to Docusaurus Docs --- */
 [data-theme='dark'] {
-    --ifm-background-color: var(--bg-color);
-    --ifm-font-color-base: var(--text-color);
-    --ifm-color-primary: var(--primary-color);
-    --ifm-heading-color: var(--h1-color, var(--text-color));
-    --ifm-code-background: var(--code-block-bg);
+  --ifm-background-color: var(--bg-color);
+  --ifm-font-color-base: var(--text-color);
+  --ifm-color-primary: var(--primary-color);
+  --ifm-code-background: var(--code-block-bg);
 }
 
 .markdown {
-    max-width: var(--max-width) !important;
-    margin: 0 auto;
+  max-width: var(--max-width) !important;
+  margin: 0 auto;
 }
 
 .markdown h1 {
-    color: var(--h1-color);
-    border-bottom: 2px solid var(--h1-underline-color);
-    padding-bottom: 8px;
+  color: var(--h1-color);
+  border-bottom: 2px solid var(--h1-underline-color);
+  padding-bottom: 8px;
 }
+
 .markdown h1::after {
-    content: var(--h1-icon-shape);
-    display: inline-block;
-    width: 24px; height: 24px;
-    margin-left: 8px;
-    vertical-align: middle;
+  content: var(--h1-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 html[data-theme='dark'] .markdown h2 {
-    background: var(--h2-bg-image) !important;
-    background-color: rgba(255, 255, 255, .02) !important;
-    padding: 5px 12px !important;
-    border-radius: 8px !important;
+  background: var(--h2-bg-image) !important;
+  background-color: rgba(255, 255, 255, .02) !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
 }
 
 html[data-theme='light'] .markdown h2 {
-    background: var(--head-title-h2-background) !important;
-    background-size: 200% auto !important;
-    padding: 5px 12px !important;
-    border-radius: 8px !important;
+  background: var(--head-title-h2-background) !important;
+  background-size: 200% auto !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
 }
+
 .markdown h2::after {
-    content: var(--h2-icon-shape);
-    display: inline-block;
-    width: 24px; height: 24px;
-    margin-left: 8px;
-    vertical-align: middle;
+  content: var(--h2-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
-.markdown h3::after { content: var(--h3-icon-shape); display: inline-block; width: 24px; height: 24px; margin-left: 8px; vertical-align: middle; }
-.markdown h4::after { content: var(--h4-icon-shape); display: inline-block; width: 24px; height: 24px; margin-left: 8px; vertical-align: middle; }
-.markdown h5::after { content: var(--h5-icon-shape); display: inline-block; width: 24px; height: 24px; margin-left: 8px; vertical-align: middle; }
-.markdown h6::after { content: var(--h6-icon-shape); display: inline-block; width: 24px; height: 24px; margin-left: 8px; vertical-align: middle; }
+.markdown h3::after {
+  content: var(--h3-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
 
-.markdown p, .markdown li {
-    color: var(--text-color);
+.markdown h4::after {
+  content: var(--h4-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.markdown h5::after {
+  content: var(--h5-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.markdown h6::after {
+  content: var(--h6-icon-shape);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.markdown p,
+.markdown li {
+  color: var(--text-color);
 }
 
 
 /* T?O �U?NG K? D?C CHO LIST ITEMS TRONG MULTI-LINE TREE LIST */
 html[data-theme='dark'] .markdown li,
 html[data-theme='light'] .markdown li {
-    position: relative;
+  position: relative;
 }
 
 html[data-theme='dark'] .markdown li::before,
 html[data-theme='light'] .markdown li::before {
-    content: '' !important;
-    display: block !important;
-    position: absolute !important;
-    left: -1.05em !important;
-    top: 0 !important;
-    bottom: -0.5em !important;
-    width: 1.5px !important;
-    border: none !important;
-    height: auto !important;
-    padding: 0 !important;
-    /* Gradient switch: hides the line if height is shorter than ~4.2em */
-    background: linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 2.3em,
-        transparent calc( 2.3em - (100% - 4.2em) * 9999 ), 
-        var(--ifm-color-primary) 0,
-        var(--ifm-color-primary) calc(100% - 1em),
-        transparent 0,
-        transparent 100%
-    ) !important;
-    opacity: 0.6;
-    pointer-events: none;
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  left: -1.05em !important;
+  top: 0 !important;
+  bottom: -0.5em !important;
+  width: 1.5px !important;
+  border: none !important;
+  height: auto !important;
+  padding: 0 !important;
+  /* Gradient switch: hides the line if height is shorter than ~4.2em */
+  background: linear-gradient(to bottom,
+      transparent 0,
+      transparent 2.3em,
+      transparent calc(2.3em - (100% - 4.2em) * 9999),
+      var(--ifm-color-primary) 0,
+      var(--ifm-color-primary) calc(100% - 1em),
+      transparent 0,
+      transparent 100%) !important;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 /* FIX �?C TR?: Khi List Item c� ch?a ngo?c vu�ng/ma tr?n (mtable) l�m d?y line-height l�n cao
@@ -614,22 +700,20 @@ html[data-theme='light'] .markdown li::before {
    -> K�o d�i v�ng t�ng h�nh (transparent) xu?ng 3.8em d? b?o v? d?u ch?m kh?i b? d�m xuy�n */
 html[data-theme='dark'] .markdown li:has(.katex .mtable)::before,
 html[data-theme='light'] .markdown li:has(.katex .mtable)::before {
-    background: linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 3.8em,
-        transparent calc( 3.8em - (100% - 5.5em) * 9999 ), 
-        var(--ifm-color-primary) 0,
-        var(--ifm-color-primary) calc(100% - 1em),
-        transparent 0,
-        transparent 100%
-    ) !important;
+  background: linear-gradient(to bottom,
+      transparent 0,
+      transparent 3.8em,
+      transparent calc(3.8em - (100% - 5.5em) * 9999),
+      var(--ifm-color-primary) 0,
+      var(--ifm-color-primary) calc(100% - 1em),
+      transparent 0,
+      transparent 100%) !important;
 }
 
 /* T?t g?ch d?c ho�n to�n v?i c�c list t? d�nh d?u no-line */
 html[data-theme='dark'] .markdown li.no-line::before,
 html[data-theme='light'] .markdown li.no-line::before {
-    display: none !important;
+  display: none !important;
 }
 
 
@@ -642,21 +726,21 @@ html[data-theme='light'] .markdown li.no-line::before {
 /* T?t c�c pseudo-class r�c c?a Typora (xoay, d?i m�u bg) khi hover v�o th? <a> hash-link */
 html[data-theme='dark'] .markdown a.hash-link::before,
 html[data-theme='light'] .markdown a.hash-link::before {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    transform: none !important;
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  transform: none !important;
 }
 
 html[data-theme='dark'] .markdown a.hash-link,
 html[data-theme='light'] .markdown a.hash-link {
-    display: inline-block !important;
-    margin-left: 8px !important;
-    opacity: 0;
-    transition: opacity 0.3s ease !important;
-    color: var(--ifm-color-primary) !important;
-    text-decoration: none !important;
-    background: transparent !important;
+  display: inline-block !important;
+  margin-left: 8px !important;
+  opacity: 0;
+  transition: opacity 0.3s ease !important;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 
 html[data-theme='dark'] .markdown h1:hover a.hash-link,
@@ -671,66 +755,71 @@ html[data-theme='light'] .markdown h3:hover a.hash-link,
 html[data-theme='light'] .markdown h4:hover a.hash-link,
 html[data-theme='light'] .markdown h5:hover a.hash-link,
 html[data-theme='light'] .markdown h6:hover a.hash-link {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 /* 2. S?A L?I B?NG (M?t khung, v? vi?n, th� c?ng do Docusaurus ghi d�) */
 html[data-theme='dark'] .markdown table,
 html[data-theme='light'] .markdown table {
-    display: table !important;
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    width: 100% !important;
-    margin: 20px 0 !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+  display: table !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  margin: 20px 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
 }
 
 html[data-theme='light'] .markdown table {
-    border: 1px solid var(--element-color-shallow, #e0e0e0) !important;
+  border: 1px solid var(--element-color-shallow, #e0e0e0) !important;
 }
+
 html[data-theme='dark'] .markdown table {
-    border: 1px solid color-mix(in srgb, var(--primary-color), transparent 80%) !important;
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 80%) !important;
 }
 
 html[data-theme='dark'] .markdown table th,
 html[data-theme='light'] .markdown table th,
 html[data-theme='dark'] .markdown table td,
 html[data-theme='light'] .markdown table td {
-    padding: 10px 15px !important;
+  padding: 10px 15px !important;
 }
 
 html[data-theme='light'] .markdown table th {
-    background-color: var(--element-color-soo-shallow, #f7f9fa) !important;
-    color: var(--element-color-deep, #333) !important;
-    border-bottom: 1px solid var(--element-color-shallow, #e0e0e0) !important;
+  background-color: var(--element-color-soo-shallow, #f7f9fa) !important;
+  color: var(--element-color-deep, #333) !important;
+  border-bottom: 1px solid var(--element-color-shallow, #e0e0e0) !important;
 }
+
 html[data-theme='dark'] .markdown table th {
-    background-color: color-mix(in srgb, var(--primary-color), transparent 90%) !important;
-    color: var(--primary-color) !important;
-    border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 80%) !important;
+  background-color: color-mix(in srgb, var(--primary-color), transparent 90%) !important;
+  color: var(--primary-color) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 80%) !important;
 }
 
 /* Vi?n ph�n c�ch c�c d�ng/c?t b�n trong */
 html[data-theme='light'] .markdown table td {
-    border-right: 1px solid #f0f0f0 !important;
-    border-bottom: 1px solid #f0f0f0 !important;
+  border-right: 1px solid #f0f0f0 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
 }
+
 html[data-theme='dark'] .markdown table td {
-    border-right: 1px solid color-mix(in srgb, #fff, transparent 95%) !important;
-    border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 85%) !important;
+  border-right: 1px solid color-mix(in srgb, #fff, transparent 95%) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 85%) !important;
 }
+
 /* B? vi?n c�c c?nh ngo�i c�ng d? l�m tr�n khung d?p hon */
 html[data-theme='dark'] .markdown table td:last-child,
 html[data-theme='light'] .markdown table td:last-child,
 html[data-theme='dark'] .markdown table th:last-child,
 html[data-theme='light'] .markdown table th:last-child {
-    border-right: none !important;
+  border-right: none !important;
 }
+
 html[data-theme='dark'] .markdown table tr:last-child td,
 html[data-theme='light'] .markdown table tr:last-child td {
-    border-bottom: none !important;
+  border-bottom: none !important;
 }
 
 
@@ -739,10 +828,10 @@ html[data-theme='light'] .markdown table tr:last-child td {
 /* Disable Typora aggressive inline code hover */
 html[data-theme='light'] .markdown code:not(.md-fencescode):hover,
 html[data-theme='dark'] .markdown code:not(.md-fencescode):hover {
-    background-color: var(--ifm-code-background) !important;
-    transform: none !important;
-    color: inherit !important;
-    box-shadow: none !important;
+  background-color: var(--ifm-code-background) !important;
+  transform: none !important;
+  color: inherit !important;
+  box-shadow: none !important;
 }
 
 
@@ -754,81 +843,192 @@ html[data-theme='dark'] .markdown code:not(.md-fencescode):hover {
 
 /* 1) Xóa hiệu ứng mặc định của tất cả các class bọc code block trong Docusaurus */
 html .theme-code-block,
-html .theme-code-block > div,
+html .theme-code-block>div,
 html .theme-code-block [class*='codeBlockContent_'],
 html .theme-code-block [class*='codeBlockContainer_'],
 html .theme-code-block .prism-code {
-    --prism-background-color: transparent !important;
-    background-color: transparent !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
+  --prism-background-color: transparent !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Ép thẻ bao bọc cấp 1 mất padding mặc định */
 html .theme-code-block [class*='codeBlockContent_'] {
-    margin: 0 !important; padding: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* 2) Tái tạo vỏ Typora trên Container theme-code-block */
 html[data-theme='dark'] .theme-code-block {
-    position: relative !important; margin: 20px 0 !important; border-radius: 8px !important; 
-    background-color: #282a36 !important;
-    border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
+  position: relative !important;
+  margin: 20px 0 !important;
+  border-radius: 8px !important;
+  background-color: #282a36 !important;
+  border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
 }
+
 html[data-theme='dark'] .theme-code-block::before {
-    content: '' !important; display: block !important; height: 32px !important; width: 100% !important; border-radius: 8px 8px 0 0 !important;
-    background-color: color-mix(in srgb, var(--secondary-color), transparent 95%) !important;
-    border-bottom: 1px solid color-mix(in srgb, var(--secondary-color), transparent 90%) !important;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
-    background-repeat: no-repeat !important; background-size: 40px !important; background-position: 12px 11px !important;
+  content: '' !important;
+  display: block !important;
+  height: 32px !important;
+  width: 100% !important;
+  border-radius: 8px 8px 0 0 !important;
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 95%) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary-color), transparent 90%) !important;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+  background-repeat: no-repeat !important;
+  background-size: 40px !important;
+  background-position: 12px 11px !important;
 }
+
 html[data-theme='dark'] .theme-code-block .prism-code {
-    padding: 10px 12px 12px 20px !important; color: #f8f8f2 !important;
-    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace !important;
-    border-radius: 8px !important; line-height: 1.6rem !important; font-size: .95rem !important; margin: 0 !important;
+  padding: 10px 12px 12px 20px !important;
+  color: #f8f8f2 !important;
+  font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace !important;
+  border-radius: 8px !important;
+  line-height: 1.6rem !important;
+  font-size: .95rem !important;
+  margin: 0 !important;
 }
 
 html[data-theme='light'] .theme-code-block {
-    position: relative !important; margin: 20px 0 !important; border-radius: 5px !important; border: none !important;
-    background-color: #f8f8f8 !important;
+  position: relative !important;
+  margin: 20px 0 !important;
+  border-radius: 5px !important;
+  border: none !important;
+  background-color: #f8f8f8 !important;
 }
+
 html[data-theme='light'] .theme-code-block::before {
-    content: '' !important; display: block !important; height: 32px !important; width: 100% !important; border-radius: 5px 5px 0 0 !important; background-color: #f8f8f8 !important;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
-    background-repeat: no-repeat !important; background-size: 40px !important; background-position: 6px 11px !important; margin-bottom: 0 !important;
+  content: '' !important;
+  display: block !important;
+  height: 32px !important;
+  width: 100% !important;
+  border-radius: 5px 5px 0 0 !important;
+  background-color: #f8f8f8 !important;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+  background-repeat: no-repeat !important;
+  background-size: 40px !important;
+  background-position: 6px 11px !important;
+  margin-bottom: 0 !important;
 }
+
 html[data-theme='light'] .theme-code-block .prism-code {
-    border-radius: 0 0 5px 5px !important; padding: 5px 12px 12px 20px !important;
-    color: #4f5467 !important; font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace !important;
-    line-height: 1.8rem !important; margin: 0 !important; font-size: .95rem !important;
+  border-radius: 0 0 5px 5px !important;
+  padding: 5px 12px 12px 20px !important;
+  color: #4f5467 !important;
+  font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace !important;
+  line-height: 1.8rem !important;
+  margin: 0 !important;
+  font-size: .95rem !important;
 }
 
 /* Nút copy */
-html .theme-code-block button { z-index: 10 !important; padding: 4px !important; margin-top:-5px !important; background: transparent !important; border: none !important; }
+html .theme-code-block button {
+  z-index: 10 !important;
+  padding: 4px !important;
+  margin-top: -5px !important;
+  background: transparent !important;
+  border: none !important;
+}
 
 /* === TYPORA CODE BLOCK MAPPING FOR DOCUSAURUS (FIXED) ====== */
 html .theme-code-block,
-html .theme-code-block > div,
+html .theme-code-block>div,
 html .theme-code-block [class*='codeBlockContent_'],
 html .theme-code-block [class*='codeBlockContainer_'],
 html .theme-code-block .prism-code {
-    --prism-background-color: transparent !important;
-    background-color: transparent !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
+  --prism-background-color: transparent !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
-html .theme-code-block [class*='codeBlockContent_'] { margin: 0 !important; padding: 0 !important; }
-html[data-theme='dark'] .theme-code-block { position: relative !important; margin: 20px 0 !important; border-radius: 8px !important; background-color: #282a36 !important; border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important; }
-html[data-theme='dark'] .theme-code-block::before { content: '' !important; display: block !important; height: 32px !important; width: 100% !important; border-radius: 8px 8px 0 0 !important; background-color: color-mix(in srgb, var(--secondary-color), transparent 95%) !important; border-bottom: 1px solid color-mix(in srgb, var(--secondary-color), transparent 90%) !important; background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==); background-repeat: no-repeat !important; background-size: 40px !important; background-position: 12px 11px !important; }
-html[data-theme='dark'] .theme-code-block .prism-code { padding: 10px 12px 12px 20px !important; color: #f8f8f2 !important; font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important; border-radius: 8px !important; line-height: 1.6rem !important; font-size: .95rem !important; margin: 0 !important; }
-html[data-theme='light'] .theme-code-block { position: relative !important; margin: 20px 0 !important; border-radius: 5px !important; border: none !important; background-color: #f8f8f8 !important; }
-html[data-theme='light'] .theme-code-block::before { content: '' !important; display: block !important; height: 32px !important; width: 100% !important; border-radius: 5px 5px 0 0 !important; background-color: #f8f8f8 !important; background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==); background-repeat: no-repeat !important; background-size: 40px !important; background-position: 6px 11px !important; margin-bottom: 0 !important; }
-html[data-theme='light'] .theme-code-block .prism-code { border-radius: 0 0 5px 5px !important; padding: 5px 12px 12px 20px !important; color: #4f5467 !important; font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important; line-height: 1.8rem !important; margin: 0 !important; font-size: .95rem !important; }
-html .theme-code-block button { z-index: 10 !important; padding: 4px !important; margin-top:-5px !important; background: transparent !important; border: none !important; box-shadow: none !important; }
+
+html .theme-code-block [class*='codeBlockContent_'] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html[data-theme='dark'] .theme-code-block {
+  position: relative !important;
+  margin: 20px 0 !important;
+  border-radius: 8px !important;
+  background-color: #282a36 !important;
+  border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
+}
+
+html[data-theme='dark'] .theme-code-block::before {
+  content: '' !important;
+  display: block !important;
+  height: 32px !important;
+  width: 100% !important;
+  border-radius: 8px 8px 0 0 !important;
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 95%) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary-color), transparent 90%) !important;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+  background-repeat: no-repeat !important;
+  background-size: 40px !important;
+  background-position: 12px 11px !important;
+}
+
+html[data-theme='dark'] .theme-code-block .prism-code {
+  padding: 10px 12px 12px 20px !important;
+  color: #f8f8f2 !important;
+  font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important;
+  border-radius: 8px !important;
+  line-height: 1.6rem !important;
+  font-size: .95rem !important;
+  margin: 0 !important;
+}
+
+html[data-theme='light'] .theme-code-block {
+  position: relative !important;
+  margin: 20px 0 !important;
+  border-radius: 5px !important;
+  border: none !important;
+  background-color: #f8f8f8 !important;
+}
+
+html[data-theme='light'] .theme-code-block::before {
+  content: '' !important;
+  display: block !important;
+  height: 32px !important;
+  width: 100% !important;
+  border-radius: 5px 5px 0 0 !important;
+  background-color: #f8f8f8 !important;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+  background-repeat: no-repeat !important;
+  background-size: 40px !important;
+  background-position: 6px 11px !important;
+  margin-bottom: 0 !important;
+}
+
+html[data-theme='light'] .theme-code-block .prism-code {
+  border-radius: 0 0 5px 5px !important;
+  padding: 5px 12px 12px 20px !important;
+  color: #4f5467 !important;
+  font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important;
+  line-height: 1.8rem !important;
+  margin: 0 !important;
+  font-size: .95rem !important;
+}
+
+html .theme-code-block button {
+  z-index: 10 !important;
+  padding: 4px !important;
+  margin-top: -5px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* Fix highlighted code line in Docusaurus */
-html .theme-code-block-highlighted-line { background-color: rgba(255,255,255,0.1) !important; }
+html .theme-code-block-highlighted-line {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
 
 /* =============================================================== */
 /* === SỬA LỖI INLINE CODE CỦA TYPORA ÁM LÊN CODE BLOCK ====== */
@@ -836,13 +1036,13 @@ html .theme-code-block-highlighted-line { background-color: rgba(255,255,255,0.1
 html[data-theme='dark'] .markdown pre code,
 html[data-theme='light'] .markdown pre code,
 html .theme-code-block pre code {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    color: inherit !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: inherit !important;
 }
 
 /* =============================================================== */
@@ -854,22 +1054,24 @@ html[data-theme='dark'] .theme-code-block code:hover,
 html[data-theme='light'] .theme-code-block code:hover,
 html .theme-code-block:hover,
 html .theme-code-block pre:hover {
-    background-color: transparent !important;
-    transform: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    color: inherit !important;
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: inherit !important;
 }
 
 /* Đảm bảo Docusaurus không thêm hiệu ứng hover cho container */
 html[data-theme='dark'] .theme-code-block:hover {
-    background-color: #282a36 !important;
-    border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
+  background-color: #282a36 !important;
+  border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
 }
+
 html[data-theme='light'] .theme-code-block:hover {
-    background-color: #f8f8f8 !important;
-    border: none !important;
+  background-color: #f8f8f8 !important;
+  border: none !important;
 }
+
 /* =============================================================== */
 /* KILL TYPORA HOVER FOR DOCUSAURUS CODE BLOCKS (MAX SPECIFICITY)  */
 /* =============================================================== */
@@ -877,17 +1079,18 @@ html[data-theme='dark'] .markdown pre code:not(.md-fencescode):hover,
 html[data-theme='light'] .markdown pre code:not(.md-fencescode):hover,
 html[data-theme='dark'] .markdown .theme-code-block code:not(.md-fencescode):hover,
 html[data-theme='light'] .markdown .theme-code-block code:not(.md-fencescode):hover {
-    background-color: transparent !important;
-    transform: none !important;
-    color: #f8f8f2 !important; /* light mode will be auto overridden by next rule or we can split */
-    box-shadow: none !important;
-    border: none !important;
-    text-decoration: none !important;
+  background-color: transparent !important;
+  transform: none !important;
+  color: #f8f8f2 !important;
+  /* light mode will be auto overridden by next rule or we can split */
+  box-shadow: none !important;
+  border: none !important;
+  text-decoration: none !important;
 }
 
 html[data-theme='light'] .markdown .theme-code-block code:not(.md-fencescode):hover,
 html[data-theme='light'] .markdown pre code:not(.md-fencescode):hover {
-    color: #4f5467 !important;
+  color: #4f5467 !important;
 }
 
 /* =============================================================== */
@@ -902,36 +1105,38 @@ html[data-theme='light'] .markdown h3:after,
 html[data-theme='light'] .markdown h4:after,
 html[data-theme='light'] .markdown h5:after,
 html[data-theme='light'] .markdown h6:after {
-    content: '' !important;
-    display: inline-block !important;
-    height: 1.2em !important;
-    width: 1.5em !important;
-    vertical-align: middle !important;
-    margin-left: 5px !important;
-    background-color: var(--primary-color) !important;
-    -webkit-mask-repeat: no-repeat !important;
-    mask-repeat: no-repeat !important;
-    -webkit-mask-position: center !important;
-    mask-position: center !important;
-    -webkit-mask-size: contain !important;
-    mask-size: contain !important;
-    transform: translateY(-1px);
+  content: '' !important;
+  display: inline-block !important;
+  height: 1.2em !important;
+  width: 1.5em !important;
+  vertical-align: middle !important;
+  margin-left: 5px !important;
+  background-color: var(--primary-color) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  transform: translateY(-1px);
 }
 
 html[data-theme='dark'] .markdown h4:after,
 html[data-theme='light'] .markdown h4:after {
-    -webkit-mask-image: var(--h4-icon-shape) !important;
-    mask-image: var(--h4-icon-shape) !important;
+  -webkit-mask-image: var(--h4-icon-shape) !important;
+  mask-image: var(--h4-icon-shape) !important;
 }
+
 html[data-theme='dark'] .markdown h5:after,
 html[data-theme='light'] .markdown h5:after {
-    -webkit-mask-image: var(--h5-icon-shape) !important;
-    mask-image: var(--h5-icon-shape) !important;
+  -webkit-mask-image: var(--h5-icon-shape) !important;
+  mask-image: var(--h5-icon-shape) !important;
 }
+
 html[data-theme='dark'] .markdown h6:after,
 html[data-theme='light'] .markdown h6:after {
-    -webkit-mask-image: var(--h6-icon-shape) !important;
-    mask-image: var(--h6-icon-shape) !important;
+  -webkit-mask-image: var(--h6-icon-shape) !important;
+  mask-image: var(--h6-icon-shape) !important;
 }
 
 /* =============================================================== */
@@ -950,8 +1155,8 @@ html body h3::before,
 html body h4::before,
 html body h5::before,
 html body h6::before {
-    display: none !important;
-    content: none !important;
+  display: none !important;
+  content: none !important;
 }
 
 /* Kích hoạt lại cho đúng phạm vi bài viết Markdown (có tính đặc tả cao hơn nên sẽ thắng) */
@@ -961,8 +1166,8 @@ html[data-theme] .markdown h3:after,
 html[data-theme] .markdown h4:after,
 html[data-theme] .markdown h5:after,
 html[data-theme] .markdown h6:after {
-    display: inline-block !important;
-    content: '' !important;
+  display: inline-block !important;
+  content: '' !important;
 }
 
 html[data-theme] .markdown h1::before,
@@ -971,24 +1176,26 @@ html[data-theme] .markdown h3::before,
 html[data-theme] .markdown h4::before,
 html[data-theme] .markdown h5::before,
 html[data-theme] .markdown h6::before {
-    display: inline-block !important;
-    /* content: ""; sẽ được gán lại bởi Typora CSS phía dưới */
+  display: inline-block !important;
+  /* content: ""; sẽ được gán lại bởi Typora CSS phía dưới */
 }
+
 html[data-theme] .markdown h1::before,
 html[data-theme] .markdown h2::before,
 html[data-theme] .markdown h3::before,
 html[data-theme] .markdown h4::before,
 html[data-theme] .markdown h5::before,
 html[data-theme] .markdown h6::before {
-    content: '' !important;
+  content: '' !important;
 }
+
 html[data-theme] .markdown h1::before,
 html[data-theme] .markdown h2::before,
 html[data-theme] .markdown h3::before,
 html[data-theme] .markdown h4::before,
 html[data-theme] .markdown h5::before,
 html[data-theme] .markdown h6::before {
-    content: '' !important;
+  content: '' !important;
 }
 
 
@@ -1056,10 +1263,213 @@ html[data-theme] .markdown h6::before {
   display: none !important;
 }
 
-.navbar__link:hover, .navbar__link--active {
+.navbar__link:hover,
+.navbar__link--active {
   background-color: rgba(225, 29, 72, 0.08) !important;
 }
-[data-theme='dark'] .navbar__link:hover, [data-theme='dark'] .navbar__link--active {
+
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* --- FOOTER ENHANCEMENTS --- */
+.footer {
+  background: linear-gradient(to bottom, #fff, #fff1f2) !important;
+  border-top: 1px solid rgba(225, 29, 72, 0.1) !important;
+  padding: 4rem 0 !important;
+  color: #404040 !important;
+}
+
+[data-theme='dark'] .footer {
+  background: linear-gradient(to bottom, #0a0a0a, #000) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #a3a3a3 !important;
+}
+
+/* Footer Titles */
+.footer__title {
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+  color: #171717 !important;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;
+}
+
+.footer__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 24px;
+  height: 3px;
+  background-color: #dc2626;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .footer__title {
+  color: #fff !important;
+}
+
+[data-theme='dark'] .footer__title::after {
+  background-color: #ef4444;
+}
+
+/* Footer Links */
+.footer__link-item {
+  color: #525252 !important;
+  font-weight: 500 !important;
+  padding: 6px 0 !important;
+  display: inline-block;
+  transition: all 0.3s ease !important;
+}
+
+.footer__link-item:hover {
+  color: #dc2626 !important;
+  transform: translateX(6px) !important;
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: #a3a3a3 !important;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: #ef4444 !important;
+}
+
+/* Footer Copyright */
+.footer__copyright {
+  margin-top: 3rem !important;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid rgba(225, 29, 72, 0.1) !important;
+  font-size: 0.95rem !important;
+  color: #737373 !important;
+  font-weight: 500 !important;
+}
+
+html body h6:after,
+html body h1::before,
+html body h2::before,
+html body h3::before,
+html body h4::before,
+html body h5::before,
+html body h6::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Kích hoạt lại cho đúng phạm vi bài viết Markdown (có tính đặc tả cao hơn nên sẽ thắng) */
+html[data-theme] .markdown h1:after,
+html[data-theme] .markdown h2:after,
+html[data-theme] .markdown h3:after,
+html[data-theme] .markdown h4:after,
+html[data-theme] .markdown h5:after,
+html[data-theme] .markdown h6:after {
+  display: inline-block !important;
+  content: '' !important;
+}
+
+html[data-theme] .markdown h1::before,
+html[data-theme] .markdown h2::before,
+html[data-theme] .markdown h3::before,
+html[data-theme] .markdown h4::before,
+html[data-theme] .markdown h5::before,
+html[data-theme] .markdown h6::before {
+  display: inline-block !important;
+  /* content: ""; sẽ được gán lại bởi Typora CSS phía dưới */
+}
+
+html[data-theme] .markdown h1::before,
+html[data-theme] .markdown h2::before,
+html[data-theme] .markdown h3::before,
+html[data-theme] .markdown h4::before,
+html[data-theme] .markdown h5::before,
+html[data-theme] .markdown h6::before {
+  content: '' !important;
+}
+
+html[data-theme] .markdown h1::before,
+html[data-theme] .markdown h2::before,
+html[data-theme] .markdown h3::before,
+html[data-theme] .markdown h4::before,
+html[data-theme] .markdown h5::before,
+html[data-theme] .markdown h6::before {
+  content: '' !important;
+}
+
+
+/* =========================================================================
+   GORGEOUS NAVBAR & FOOTER STYLES
+   ========================================================================= */
+
+/* --- NAVBAR ENHANCEMENTS --- */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(225, 29, 72, 0.1) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(10, 10, 10, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Navbar Title */
+.navbar__title {
+  font-weight: 900 !important;
+  background: linear-gradient(to right, #dc2626, #f43f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+[data-theme='dark'] .navbar__title {
+  background: linear-gradient(to right, #ef4444, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navbar Links Hover */
+.navbar__item {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.navbar__link:hover {
+  color: #dc2626 !important;
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: #ef4444 !important;
+}
+
+/* Active Navbar Link */
+.navbar__link--active {
+  color: #dc2626 !important;
+}
+
+[data-theme='dark'] .navbar__link--active {
+  color: #ef4444 !important;
+}
+
+/* Beautiful Pill Hover Effect for Links */
+.navbar__link::after {
+  display: none !important;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  background-color: rgba(225, 29, 72, 0.08) !important;
+}
+
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active {
   background-color: rgba(239, 68, 68, 0.1) !important;
 }
 
@@ -1141,4 +1551,18 @@ html[data-theme] .markdown h6::before {
 [data-theme='dark'] .footer__copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
   color: #525252 !important;
+}
+
+/* =============================================================== */
+/* BẢO VỆ GIAO DIỆN HEADINGS TỪ TYPORA KHỎI DOCUSAURUS             */
+/* =============================================================== */
+html[data-theme='light'] .markdown h2,
+html[data-theme='light'] .markdown h2 * {
+  color: var(--head-title-h2-color, #fff) !important;
+  -webkit-text-fill-color: var(--head-title-h2-color, #fff) !important;
+  background-clip: border-box !important;
+}
+
+html[data-theme='light'] .markdown h2 {
+  background: var(--head-title-h2-background) !important;
 }
