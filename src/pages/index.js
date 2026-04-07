@@ -22,18 +22,18 @@ function HeroSection() {
         <div className="md:w-1/2 text-center md:text-left flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100/80 dark:bg-white/5 text-rose-700 dark:text-rose-400 font-bold text-sm mb-8 w-max mx-auto md:mx-0 shadow-sm border border-rose-200 dark:border-white/10 backdrop-blur-md hover:bg-rose-200 dark:hover:bg-white/10 transition-colors cursor-default">
             <span className="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping"></span>
-            Loài móng hiểm Solenopsis invicta
+            Loài bản địa Solenopsis geminata
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black tracking-tight text-neutral-900 dark:text-white mb-6 leading-[1.05]">
             Đế Chế Ngầm <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-500 dark:from-red-500 dark:to-rose-400">
-              Bất Khả Chiến Bại
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-rose-500 dark:from-orange-500 dark:to-rose-400">
+              Nhiệt Đới
             </span>
           </h1>
           
           <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-400 mb-10 max-w-xl leading-relaxed font-medium">
-            Khám phá kiến trúc sinh học, tổ chức xã hội đỉnh cao và khả năng càn quét tàn khốc của một trong những loài sinh vật xâm lấn đáng sợ nhất hành tinh.
+            Khám phá kiến trúc sinh học, tổ chức xã hội đỉnh cao và sức sống mãnh liệt của loài kiến bản địa quen thuộc nhưng đầy bí ẩn tại Việt Nam.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
@@ -61,11 +61,11 @@ function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-rose-950/90 via-rose-950/20 dark:from-black/90 dark:via-black/30 to-transparent flex flex-col justify-end p-8 md:p-10 pointer-events-none transition-opacity duration-300 opacity-90 group-hover:opacity-100">
                 <div className="translate-y-8 opacity-50 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
                   <span className="inline-block px-3 py-1 bg-red-600/90 text-white font-black text-[10px] uppercase tracking-[0.2em] mb-4 rounded-full backdrop-blur-md shadow-lg border border-red-400 group-hover:animate-pulse">
-                    Vũ khí sinh học
+                    Cơ Chế Phòng Vệ
                   </span>
                   <h3 className="text-white font-black text-3xl md:text-4xl mb-3 drop-shadow-md">Nọc Độc Alkaloid</h3>
                   <p className="text-rose-100 dark:text-neutral-300 text-sm md:text-lg font-medium mb-0 line-clamp-2 drop-shadow-md">
-                    Vết chích tàn bạo gây hoại tử thứ phát và cảm giác bỏng rát kinh hoàng.
+                    Vết đốt gây sưng tấy, ngứa ngáy và mang lại cảm giác bỏng rát tức thời đặc trưng.
                   </p>
                 </div>
               </div>
@@ -79,10 +79,10 @@ function HeroSection() {
 
 function AnatomySection() {
   const features = [
-    { title: "Cặp Ngàm Thép", desc: "Lực cắn gấp 300 lần cơ thể. Vũ khí sinh tồn tuyệt đối giúp bám chặt và cắn xé không buông.", icon: "✂️" },
-    { title: "Mạng Phân Tán", desc: "Định tuyến hóa học kết nối hàng trăm ngàn cá thể, thiết lập siêu tổ chức trong nháy mắt.", icon: "🧬" },
+    { title: "Đầu Lớn - Ngàm Thép", desc: "Lực cắn vượt trội từ kiến lính đầu to (major worker), vũ khí tuyệt đối để nghiền nát hạt cứng và cắn xé kẻ thù.", icon: "✂️" },
+    { title: "Mạng Phân Tán", desc: "Định tuyến hóa học kết nối hàng trăm ngàn cá thể, thiết lập siêu tổ chức linh hoạt trong môi trường nhiệt đới.", icon: "🧬" },
     { title: "Túi Lọc Sinh Học", desc: "Xử lý trực tiếp con mồi, lọc tách thành dịch protein nguyên chất để san sẻ cho cả đế chế.", icon: "🧪" },
-    { title: "Vỏ Kitin Sừng", desc: "Cấu trúc vỏ đa lớp cường lực. Chống chịu sức nén và miễn nhiễm với vô số điều kiện khắc nghiệt.", icon: "🛡️" }
+    { title: "Vỏ Kitin Sừng", desc: "Cấu trúc vỏ đa lớp cường lực. Giúp chống chịu tốt với khí hậu nhiệt đới khắc nghiệt của Việt Nam.", icon: "🛡️" }
   ];
 
   return (
@@ -119,10 +119,10 @@ function AnatomySection() {
 
 function FeaturedWikiSection() {
   const articles = [
-    { title: "Nguồn Gốc & Lịch Sử", desc: "Hành trình trỗi dậy từ các lưu vực ngập nước Nam Mỹ.", link: "/docs/nguon-goc-va-lich-su" },
-    { title: "Vị Trí Phân Loại", desc: "Đại diện ưu việt và tàn khốc bậc nhất của họ Formicidae.", link: "/docs/he-thong-phan-loai" },
-    { title: "Vòng Đời Hủy Diệt", desc: "Sự hi sinh của kiến thợ phục vụ chu kỳ vô tận của Nữ Hoàng.", link: "/docs/vong-doi-va-tuoi-tho" },
-    { title: "Kỷ Luật Thép", desc: "Hệ thống chuyên chế nô lệ đa cấp bậc không thể phá vỡ.", link: "/docs/giai-cap-xa-hoi" }
+    { title: "Nguồn Gốc & Phân Bố", desc: "Hành trình bám rễ và sinh tồn ở mọi ngóc ngách của đồng bằng và rừng rậm nhiệt đới.", link: "/docs/nguon-goc-va-lich-su" },
+    { title: "Vị Trí Phân Loại", desc: "Đại diện ưu việt của dòng họ Solenopsis tại môi trường sinh thái bản địa.", link: "/docs/he-thong-phan-loai" },
+    { title: "Vòng Đời Bền Bỉ", desc: "Sự hi sinh của kiến thợ phục vụ chu kỳ vô tận của Nữ Hoàng.", link: "/docs/vong-doi-va-tuoi-tho" },
+    { title: "Kỷ Luật Thép", desc: "Hệ thống chuyên chế đa cấp bậc kiên cố, không thể phá vỡ.", link: "/docs/giai-cap-xa-hoi" }
   ];
 
   return (
@@ -200,9 +200,9 @@ function StatsSection() {
               <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
               Biểu Đồ Sinh Sản Bất Thường
             </div>
-            <h2 className="text-4xl md:text-[3.5rem] font-black text-neutral-900 dark:text-white mb-6 leading-tight hover:text-rose-600 dark:hover:text-rose-500 transition-colors duration-300">Gia Tốc <br className="hidden lg:block"/> Mật Độ Cấp Số Mũ</h2>
+            <h2 className="text-4xl md:text-[3.5rem] font-black text-neutral-900 dark:text-white mb-6 leading-tight hover:text-rose-600 dark:hover:text-rose-500 transition-colors duration-300">Gia Tốc <br className="hidden lg:block"/> Mật Độ Chống Chịu</h2>
             <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed font-medium">
-              Vượt mặt mọi giới hạn tự nhiên. Các gò tổ <strong className="text-rose-600 dark:text-rose-400 font-bold">Polygyne</strong> có năng lực bùng nổ dân số kinh hoàng, tạo ra hàng vạn đơn vị kiến thợ để càn quét lãnh thổ ngay trong năm đầu tiên.
+              Thích ứng hoàn hảo với khí hậu nhiệt đới phân mùa khắc nghiệt. Các tổ kiến lửa luôn có năng lực sinh sản và bùng nổ dân số duy trì liên tục và dai dẳng.
             </p>
             <div className="flex gap-6 items-center p-6 bg-rose-50/80 dark:bg-neutral-900 rounded-[2rem] border border-rose-100 dark:border-neutral-800 shadow-sm hover:shadow-[0_15px_40px_rgba(225,29,72,0.15)] hover:-translate-y-2 hover:border-rose-300 transition-all duration-300 cursor-default group">
               <div className="w-[80px] h-[80px] rounded-[1.5rem] bg-white dark:bg-neutral-800 text-rose-600 flex items-center justify-center text-4xl shrink-0 border border-rose-100 dark:border-neutral-800 shadow-sm group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white group-hover:shadow-[0_10px_20px_rgba(225,29,72,0.3)] transition-all duration-300">
