@@ -86,7 +86,7 @@ function AnatomySection() {
   ];
 
   return (
-    <section id="kham-pha" className="py-24 bg-white dark:bg-[#111] relative border-t border-rose-100 dark:border-neutral-900">
+    <section id="kham-pha" className="py-24 bg-white dark:bg-neutral-950 relative border-t border-rose-100 dark:border-neutral-900">
       <div className="container px-6 max-w-7xl mx-auto z-10 relative">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <div className="inline-block px-4 py-1.5 rounded-full bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 font-extrabold text-xs tracking-widest uppercase mb-6 border border-rose-200 dark:border-transparent transition-all hover:bg-rose-100 hover:scale-105 cursor-default">
@@ -126,7 +126,7 @@ function FeaturedWikiSection() {
   ];
 
   return (
-    <section className="py-24 bg-rose-50/70 dark:bg-[#070707] border-y border-rose-100 dark:border-neutral-900 transition-colors duration-500">
+    <section className="py-24 bg-rose-50 dark:bg-black border-y border-rose-100 dark:border-neutral-900 transition-colors duration-500">
       <div className="container px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
@@ -192,7 +192,7 @@ function StatsSection() {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-[#111]">
+    <section className="py-24 bg-white dark:bg-neutral-950">
       <div className="container max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2">
