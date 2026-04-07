@@ -13,7 +13,7 @@ ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, 
 
 function HeroSection() {
   return (
-    <header className="relative w-full overflow-hidden flex items-center justify-center min-h-[90vh] bg-gradient-to-b from-rose-100/90 via-rose-50/80 to-rose-100/40 dark:bg-[#0a0a0a] dark:from-[#0a0a0a] dark:via-transparent dark:to-[#0a0a0a]">
+    <header className="relative w-full overflow-hidden flex items-center justify-center min-h-[90vh] bg-gradient-to-b from-rose-100/90 via-rose-50/80 to-rose-100/40 dark:bg-black dark:from-black dark:via-transparent dark:to-black">
       {/* Cụm sáng tản dịu dàng nhưng nổi bật */}
       <div className="absolute top-10 right-[5%] w-[600px] h-[600px] bg-rose-500/30 dark:bg-rose-600/20 blur-[120px] rounded-full pointer-events-none animate-pulse duration-[3000ms]"></div>
       <div className="absolute bottom-0 left-[-5%] w-[500px] h-[500px] bg-red-500/25 dark:bg-red-800/25 blur-[100px] rounded-full pointer-events-none animate-pulse duration-[4000ms]"></div>
@@ -43,7 +43,7 @@ function HeroSection() {
               Sách Bách Khoa Toàn Thư
             </Link>
             <a
-              className="px-8 py-4 rounded-xl bg-white dark:bg-[#1a1a1a] text-rose-700 dark:text-rose-300 font-bold text-lg hover:bg-rose-50 hover:border-rose-300 dark:hover:bg-neutral-800 transition-all duration-300 border border-rose-200 dark:border-neutral-800 shadow-[0_8px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_30px_rgba(225,29,72,0.15)] cursor-pointer flex items-center justify-center hover:no-underline hover:scale-105 hover:-translate-y-2 group"
+              className="px-8 py-4 rounded-xl bg-white dark:bg-neutral-900 text-rose-700 dark:text-rose-300 font-bold text-lg hover:bg-rose-50 hover:border-rose-300 dark:hover:bg-neutral-800 transition-all duration-300 border border-rose-200 dark:border-neutral-800 shadow-[0_8px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_30px_rgba(225,29,72,0.15)] cursor-pointer flex items-center justify-center hover:no-underline hover:scale-105 hover:-translate-y-2 group"
               href="#kham-pha">
               Giải Phẫu & Thông Số
             </a>
@@ -100,7 +100,7 @@ function AnatomySection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((item, idx) => (
-            <div key={idx} className="group p-8 rounded-[2rem] bg-rose-50/50 dark:bg-[#1a1a1a] border border-rose-100 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-4 hover:scale-[1.03] shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_50px_rgba(225,29,72,0.2)] hover:bg-white dark:hover:bg-neutral-800 hover:border-rose-400 dark:hover:border-rose-600">
+            <div key={idx} className="group p-8 rounded-[2rem] bg-rose-50/50 dark:bg-neutral-900 border border-rose-100 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-4 hover:scale-[1.03] shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_50px_rgba(225,29,72,0.2)] hover:bg-white dark:hover:bg-neutral-800 hover:border-rose-400 dark:hover:border-rose-600">
               <div className="w-16 h-16 rounded-2xl bg-white dark:bg-black/50 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl mb-8 border border-rose-200/60 dark:border-neutral-700 shadow-sm group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 group-hover:bg-rose-600 group-hover:text-white group-hover:border-red-500 group-hover:shadow-[0_10px_20px_rgba(225,29,72,0.4)]">
                 {item.icon}
               </div>
@@ -140,7 +140,7 @@ function FeaturedWikiSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {articles.map((art, idx) => (
-            <Link key={idx} to={art.link} className="relative group p-8 md:p-10 rounded-[2.5rem] transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] hover:no-underline bg-white dark:bg-[#151515] border border-rose-100 dark:border-neutral-800 shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_60px_rgba(225,29,72,0.25)] hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/10">
+            <Link key={idx} to={art.link} className="relative group p-8 md:p-10 rounded-[2.5rem] transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] hover:no-underline bg-white dark:bg-neutral-900 border border-rose-100 dark:border-neutral-800 shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_60px_rgba(225,29,72,0.25)] hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/10">
               <div className="flex justify-between items-center mb-12">
                 <div className="flex items-center gap-4 group-hover:translate-x-2 transition-transform duration-300">
                   <div className="w-[4px] h-10 bg-rose-200 dark:bg-neutral-800 group-hover:bg-rose-600 group-hover:h-12 group-hover:shadow-[0_0_10px_rgba(225,29,72,0.5)] rounded-full transition-all duration-300"></div>
@@ -204,8 +204,8 @@ function StatsSection() {
             <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-12 leading-relaxed font-medium">
               Vượt mặt mọi giới hạn tự nhiên. Các gò tổ <strong className="text-rose-600 dark:text-rose-400 font-bold">Polygyne</strong> có năng lực bùng nổ dân số kinh hoàng, tạo ra hàng vạn đơn vị kiến thợ để càn quét lãnh thổ ngay trong năm đầu tiên.
             </p>
-            <div className="flex gap-6 items-center p-6 bg-rose-50/80 dark:bg-[#1a1a1a] rounded-[2rem] border border-rose-100 dark:border-neutral-800 shadow-sm hover:shadow-[0_15px_40px_rgba(225,29,72,0.15)] hover:-translate-y-2 hover:border-rose-300 transition-all duration-300 cursor-default group">
-              <div className="w-[80px] h-[80px] rounded-[1.5rem] bg-white dark:bg-[#222] text-rose-600 flex items-center justify-center text-4xl shrink-0 border border-rose-100 dark:border-neutral-800 shadow-sm group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white group-hover:shadow-[0_10px_20px_rgba(225,29,72,0.3)] transition-all duration-300">
+            <div className="flex gap-6 items-center p-6 bg-rose-50/80 dark:bg-neutral-900 rounded-[2rem] border border-rose-100 dark:border-neutral-800 shadow-sm hover:shadow-[0_15px_40px_rgba(225,29,72,0.15)] hover:-translate-y-2 hover:border-rose-300 transition-all duration-300 cursor-default group">
+              <div className="w-[80px] h-[80px] rounded-[1.5rem] bg-white dark:bg-neutral-800 text-rose-600 flex items-center justify-center text-4xl shrink-0 border border-rose-100 dark:border-neutral-800 shadow-sm group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white group-hover:shadow-[0_10px_20px_rgba(225,29,72,0.3)] transition-all duration-300">
                 📈
               </div>
               <div className="group-hover:translate-x-2 transition-transform duration-300">
@@ -216,7 +216,7 @@ function StatsSection() {
           </div>
           
           <div className="lg:w-1/2 w-full">
-            <div className="w-full h-[500px] bg-white dark:bg-[#151515] rounded-[3rem] p-8 shadow-[0_15px_40px_rgba(225,29,72,0.06)] dark:shadow-none border border-rose-100 dark:border-neutral-800 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_30px_60px_-15px_rgba(225,29,72,0.3)] hover:border-rose-300 transition-all duration-500 cursor-crosshair">
+            <div className="w-full h-[500px] bg-white dark:bg-neutral-900 rounded-[3rem] p-8 shadow-[0_15px_40px_rgba(225,29,72,0.06)] dark:shadow-none border border-rose-100 dark:border-neutral-800 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_30px_60px_-15px_rgba(225,29,72,0.3)] hover:border-rose-300 transition-all duration-500 cursor-crosshair">
                <Line data={chartData} options={chartOptions} />
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function Home() {
     <Layout
       title="Bách Khoa Toàn Thư"
       description="Trang bách khoa toàn thư vi phẫu về hệ sinh thái loài Kiến lửa.">
-      <main className="w-full font-sans overflow-x-hidden antialiased bg-white dark:bg-[#0a0a0a] text-neutral-900">
+      <main className="w-full font-sans overflow-x-hidden antialiased bg-white dark:bg-black text-neutral-900">
         <HeroSection />
         <AnatomySection />
         <FeaturedWikiSection />
