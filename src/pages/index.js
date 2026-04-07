@@ -122,7 +122,7 @@ function FeaturedWikiSection() {
     { title: "Nguồn Gốc & Lịch Sử", desc: "Hành trình trỗi dậy từ các lưu vực ngập nước Nam Mỹ.", link: "/docs/nguon-goc-va-lich-su" },
     { title: "Vị Trí Phân Loại", desc: "Đại diện ưu việt và tàn khốc bậc nhất của họ Formicidae.", link: "/docs/he-thong-phan-loai" },
     { title: "Vòng Đời Hủy Diệt", desc: "Sự hi sinh của kiến thợ phục vụ chu kỳ vô tận của Nữ Hoàng.", link: "/docs/vong-doi-va-tuoi-tho" },
-    { title: "Kỷ Luật Thép", desc: "Hệ thống chuyên chế nô lệ đa cấp bậc không thể phá vỡ.", link: "/docs/to-chuc-xa-hoi" }
+    { title: "Kỷ Luật Thép", desc: "Hệ thống chuyên chế nô lệ đa cấp bậc không thể phá vỡ.", link: "/docs/giai-cap-xa-hoi" }
   ];
 
   return (
