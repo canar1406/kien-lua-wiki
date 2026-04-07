@@ -10,7 +10,7 @@
 
 html[data-theme='dark'] {
     font-size: 16px;
-    font-family: "LXGW WenKai"
+    font-family: var(--ifm-font-family-base)
 }
 
 html[data-theme='dark'] .markdown {
@@ -51,7 +51,7 @@ html[data-theme='dark'] .markdown::before {
 html[data-theme='dark'] .markdown p {
     color: var(--text-color-secondary);
     margin: 0 10px;
-    font-family: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: var(--ifm-font-family-base);
     font-size: 1rem;
     word-spacing: 2px
 }
@@ -3007,17 +3007,17 @@ html[data-theme='dark'] {
   --text-color-secondary: #7e8c9f; /* 蓝灰文字 (Steel Blue) */
 
   /* --- 核心品牌色 --- */
-  --primary-color: #00f3ff;       /* 电光青 (Electric Cyan) - 核心高亮 */
-  --secondary-color: #2979ff;     /* 深海蓝 (Ocean Blue) - 辅助 */
-  --accent-color: #d500f9;        /* 全息紫 (Holo Purple) - 强调点缀 */
+  --primary-color: #ef4444;       /* 电光青 (Electric Cyan) - 核心高亮 */
+  --secondary-color: #dc2626;     /* 深海蓝 (Ocean Blue) - 辅助 */
+  --accent-color: #f87171;        /* 全息紫 (Holo Purple) - 强调点缀 */
   --border-color: #1f2233;        /* 暗蓝边框 */
 
   /* --- 光晕特效变量 --- */
-  --glow-color: rgba(0, 243, 255, 0.5);
+  --glow-color: rgba(239, 68, 68, 0.5);
   --glow-shadow-text: 0 0 8px var(--glow-color);
   --glow-shadow-box: 0 0 8px var(--glow-color);
-  --hover-background-color: #00f3ff; /* 电光青 */
-  --select-text-bg-color: rgba(0, 243, 255, 0.3);
+  --hover-background-color: #ef4444; /* 电光青 */
+  --select-text-bg-color: rgba(239, 68, 68, 0.3);
 
   /* --- H1 标题 --- */
   --h1-color: var(--text-color);
@@ -3025,11 +3025,11 @@ html[data-theme='dark'] {
 
   /* --- H2 标题 (Fusion Glass) --- */
   /* 背景：青色到透明径向渐变 */
-  --h2-bg-image: radial-gradient(ellipse at center bottom, rgba(0, 243, 255, 0.15), transparent 70%);
+  --h2-bg-image: radial-gradient(ellipse at center bottom, rgba(239, 68, 68, 0.15), transparent 70%);
 
   /* 其他变量 */
   --code-block-bg: rgba(15, 17, 26, 0.6); /* 深蓝背景 */
-  --glass-border-color: rgba(0, 243, 255, 0.1);
+  --glass-border-color: rgba(239, 68, 68, 0.1);
 
   /* --- 代码高亮 (Material Ocean / Night Owl 风格) --- */
   --code-keyword: #c792ea;        /* 关键字 -> 紫色 */
@@ -3119,3 +3119,10 @@ html[data-theme='dark'] .markdown a[href="thcs.html"]:hover {
     transform: translateY(-3px) !important; 
 }
 
+/* Custom Roboto Typography Enhancements */
+html[data-theme='dark'] .markdown h1 { font-weight: 900 !important; }
+html[data-theme='dark'] .markdown h2 { font-weight: 700 !important; }
+html[data-theme='dark'] .markdown h3 { font-weight: 700 !important; }
+html[data-theme='dark'] .markdown h4, html[data-theme='dark'] .markdown h5, html[data-theme='dark'] .markdown h6 { font-weight: 500 !important; }
+html[data-theme='dark'] .markdown blockquote, html[data-theme='dark'] .markdown blockquote p { font-style: italic; font-weight: 300; }
+html[data-theme='dark'] .markdown strong { font-weight: 700 !important; }

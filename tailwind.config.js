@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '[data-theme="dark"]'],
   corePlugins: {
     preflight: false,
   },
@@ -18,7 +19,7 @@ module.exports = {
         'ant-surface': '#ffffff',
       },
       fontFamily: {
-        sans: ['Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Roboto', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       }
     },
   },

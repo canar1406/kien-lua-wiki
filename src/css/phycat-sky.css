@@ -10,7 +10,7 @@
 
 html[data-theme='light'] {
     font-size: 16px;
-    font-family: "LXGW WenKai"
+    font-family: var(--ifm-font-family-base)
 }
 
 html[data-theme='light'] .markdown {
@@ -51,7 +51,7 @@ html[data-theme='light'] .markdown::before {
 html[data-theme='light'] .markdown p {
     color: #333;
     margin: 10px 10px;
-    font-family: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: var(--ifm-font-family-base);
     font-size: 1rem;
     word-spacing: 2px
 }
@@ -2250,31 +2250,31 @@ html[data-theme='light'] {
   /* 文章区域的最大宽度，可以是多少px也可以是百分比 */
   --max-width: 950px; 
 
---head-title-color: #3498db;
+--head-title-color: #dc2626;
   
   /* H2 渐变 */
   --head-title-h2-color: #fff;
-  --head-title-h2-background: linear-gradient(to right, #85c1e9, #3498db, #85c1e9);
+  --head-title-h2-background: linear-gradient(to right, #ef4444, #991b1b, #ef4444);
   
   /* 元素颜色 */
-  --element-color: #3498db;             /* 核心蓝 */
-  --element-color-deep: #2980b9;        /* 深蓝 */
-  --element-color-shallow: #aed6f1;     /* 浅蓝 */
-  --element-color-so-shallow: #eaf2f8;  /* 很浅蓝 */
-  --element-color-soo-shallow: #f4faff; /* 极浅蓝 */
+  --element-color: #dc2626;             /* 核心蓝 */
+  --element-color-deep: #b91c1c;        /* 深蓝 */
+  --element-color-shallow: #fca5a5;     /* 浅蓝 */
+  --element-color-so-shallow: #fee2e2;  /* 很浅蓝 */
+  --element-color-soo-shallow: #fef2f2; /* 极浅蓝 */
 
   /* 毛玻璃底色 透明度一定要很低 */
-  --glass-bg-color:#cee6fa2b;
+  --glass-bg-color:#fef2f22b;
 
   /* 行内代码：深海蓝 */
-  --element-color-linecode: #1a5276;
-  --element-color-linecode-background: #ebf5fb;
+  --element-color-linecode: #7f1d1d;
+  --element-color-linecode-background: #fef2f2;
 
   /* UI 颜色 */
-  --appui-color: #3498db;
-  --appui-color-icon: #3498db;
+  --appui-color: #dc2626;
+  --appui-color-icon: #dc2626;
   --appui-color-text: #2c3e50;
-  --primary-color: #3498db;
+  --primary-color: #dc2626;
 
   --rawblock-edit-panel-bd: var(--element-color-soo-shallow);
 }
@@ -2341,3 +2341,11 @@ html[data-theme='light'] .markdown a[href="thcs.html"]:hover {
     box-shadow: 0 6px 16px rgba(0, 129, 69, 0.4) !important;
     transform: translateY(-3px) !important; 
 }
+
+/* Custom Roboto Typography Enhancements */
+html[data-theme='light'] .markdown h1 { font-weight: 900 !important; }
+html[data-theme='light'] .markdown h2 { font-weight: 700 !important; }
+html[data-theme='light'] .markdown h3 { font-weight: 700 !important; }
+html[data-theme='light'] .markdown h4, html[data-theme='light'] .markdown h5, html[data-theme='light'] .markdown h6 { font-weight: 500 !important; }
+html[data-theme='light'] .markdown blockquote, html[data-theme='light'] .markdown blockquote p { font-style: italic; font-weight: 300; }
+html[data-theme='light'] .markdown strong { font-weight: 700 !important; }
