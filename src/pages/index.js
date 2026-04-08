@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
+import AntViewer from '../components/AntViewer';
 import {
   Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler,
 } from 'chart.js';
@@ -226,6 +227,27 @@ function StatsSection() {
   );
 }
 
+function AntViewerSection() {
+  return (
+    <section id="mo-hinh-3d" className="py-16 md:py-24 bg-neutral-950 border-y border-neutral-900 overflow-hidden">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+        <div className="mb-8 md:mb-12 text-center max-w-3xl mx-auto">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-rose-500/10 text-rose-400 font-extrabold text-xs tracking-widest uppercase mb-4 md:mb-6 border border-rose-900/50">
+            Phòng Giải Phẫu Đương Đại
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">Mô Hình 3D Tương Tác</h2>
+          <p className="text-base md:text-lg text-neutral-400 font-medium">
+            Xoay, phóng to, khám phá từng bộ phận của kiến lửa để hiểu rõ hơn về sinh học của chúng.
+          </p>
+        </div>
+        <div className="w-full">
+          <AntViewer />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <Layout
@@ -234,6 +256,7 @@ export default function Home() {
       <main className="w-full font-sans overflow-x-hidden antialiased bg-white dark:bg-black text-neutral-900">
         <HeroSection />
         <AnatomySection />
+        <AntViewerSection />
         <FeaturedWikiSection />
         <StatsSection />
       </main>

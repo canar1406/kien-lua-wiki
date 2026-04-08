@@ -59,4 +59,4 @@ Khi click vào một hành vi, mô hình 3D sẽ chuyển động, đồng thờ
 
 ### Bước 5: Nhúng vào Trang Chủ hoặc Trang Chi Tiết
 
-- Đưa Component `AntViewer` này vào file `src/pages/index.js` (Làm màn hình Hero cực ngầu) hoặc chèn trực tiếp vào các trang Markdown (Docusaurus hỗ trợ MDX, cho phép nhúng Component React vào thẳng file `.md`).
+- Đưa Component `AntViewer` này vào file `src/pages/index.js` (Làm màn hình Hero cực ngầu) chèn vào trang chủ

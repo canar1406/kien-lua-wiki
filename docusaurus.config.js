@@ -15,7 +15,7 @@ import remarkGithubAdmonitions from 'remark-github-blockquote-alert';
 const config = {
   title: 'Kiến Lửa Wiki',
   tagline: 'Kẻ thống trị nhỏ bé nhưng nguy hiểm',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -110,6 +110,10 @@ const config = {
       },
       navbar: {
         title: 'Kiến Lửa Wiki',
+        logo: {
+          alt: 'Kiến Lửa Logo',
+          src: 'img/logo.png',
+        },
         items: [
           {
             type: 'docSidebar',
