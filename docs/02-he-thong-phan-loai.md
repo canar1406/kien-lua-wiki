@@ -4,7 +4,7 @@ title: Hệ Thống Phân Loại & Động Lực Học
 sidebar_position: 2
 ---
 
-# **Phần 2: Hệ Thống Phân Loại Học, Danh Pháp Và Động Học Di Truyền Của *Solenopsis geminata***
+# Phần 2: Hệ Thống Phân Loại Học, Danh Pháp Và Động Học Di Truyền Của *Solenopsis geminata*
 
 > [!NOTE]
 > **Định hướng nội dung:** Bài viết này đi sâu vào giải phẫu bức tranh phân loại học vô cùng phức tạp của loài kiến lửa nhiệt đới *Solenopsis geminata*. Không chỉ dừng lại ở việc định danh đơn thuần, chúng ta sẽ khám phá cách sự biến thiên hình thái cực đoan đã đánh lừa giới khoa học suốt hơn một thế kỷ, cũng như giải mã các cơ sở di truyền biểu sinh giúp loài này đạt được sự thích nghi hoàn hảo với môi trường mà không cần thay đổi cấu trúc DNA cốt lõi.

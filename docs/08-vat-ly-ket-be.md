@@ -4,7 +4,7 @@ title: Cơ Chế Vật Lý Kết Bè
 sidebar_position: 8
 ---
 
-# **Phần 8: Vật Lý Kết Bè, Lưu Biến Học Vật Liệu Và Cơ Chế Bẫy Khí Plastron Của Kiến Lửa *Solenopsis geminata***
+# Phần 8: Vật Lý Kết Bè, Lưu Biến Học Vật Liệu Và Cơ Chế Bẫy Khí Plastron Của Kiến Lửa *Solenopsis geminata*
 
 
 > [!NOTE]

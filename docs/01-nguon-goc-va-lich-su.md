@@ -4,7 +4,7 @@ title: Nguồn Gốc và Lịch Sử Toàn Cầu
 sidebar_position: 1
 ---
 
-# **Phần 1: Nguồn Gốc Địa Lý Sinh Học, Lịch Sử Tiến Hóa Và Động Học Phân Bố Của Loài Kiến Lửa Nhiệt Đới (*Solenopsis geminata*)**
+# Phần 1: Nguồn Gốc Địa Lý Sinh Học, Lịch Sử Tiến Hóa Và Động Học Phân Bố Của Loài Kiến Lửa Nhiệt Đới (*Solenopsis geminata*)
 
 
 > [!NOTE]

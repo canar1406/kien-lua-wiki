@@ -4,7 +4,7 @@ title: Nọc Độc và Triệu Chứng
 sidebar_position: 12
 ---
 
-# **Phần 12: Hóa Sinh Nọc Độc Tích Hợp - Cấu Trúc Phân Tử Và Cơ Chế Tác Động Kép Của Kiến Lửa *Solenopsis geminata***
+# Phần 12: Hóa Sinh Nọc Độc Tích Hợp - Cấu Trúc Phân Tử Và Cơ Chế Tác Động Kép Của Kiến Lửa *Solenopsis geminata*
 
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này sẽ đưa bạn đi sâu vào thế giới vi mô của các phản ứng hóa sinh, nơi bản chất thực sự của sự sống và cái chết được quyết định ở cấp độ phân tử. Chúng ta sẽ giải phẫu "cỗ máy tiêm chích sinh học" của loài kiến lửa nhiệt đới *Solenopsis geminata*, phân tách hệ nhũ tương nọc độc siêu đậm đặc, và giải mã bộ tứ protein dị ứng (Sol g) cùng sự đáng sợ của hiện tượng chéo miễn dịch học.

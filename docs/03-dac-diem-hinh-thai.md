@@ -4,7 +4,7 @@ title: Hình Thái Đẳng Cấp & Sinh Lý Hóa Sinh
 sidebar_position: 3
 ---
 
-# **Phần 3: Hình Thái Học, Giải Phẫu Chức Năng Và Sinh Thái Hóa Học Của Loài *Solenopsis geminata***
+# Phần 3: Hình Thái Học, Giải Phẫu Chức Năng Và Sinh Thái Hóa Học Của Loài *Solenopsis geminata*
 
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này đưa chúng ta đi sâu vào cấu trúc vi phẫu, cơ sinh học và kho tàng vũ khí hóa sinh của loài kiến lửa nhiệt đới *Solenopsis geminata*. Từ cơ chế phân chia lao động dựa trên hình thái hộp sọ, đến cấu trúc hệ thống ngòi đốt và việc giải mã hệ nhũ tương nọc độc, chúng ta sẽ hiểu được vì sao sinh vật nhỏ bé này lại sở hữu một sức mạnh sinh thái áp đảo đến vậy.

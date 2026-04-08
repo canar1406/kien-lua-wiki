@@ -4,7 +4,7 @@ title: Cạnh Tranh Sinh Thái & Tác Động Tại Việt Nam
 sidebar_position: 9
 ---
 
-# **Phần 9: Đặc Tính Cạnh Tranh Sinh Thái Học Và Sự Xáo Trộn Quần Xã Bản Địa của Solenopsis geminata**
+# Phần 9: Đặc Tính Cạnh Tranh Sinh Thái Học Và Sự Xáo Trộn Quần Xã Bản Địa của Solenopsis geminata
 
 
 > [!NOTE]

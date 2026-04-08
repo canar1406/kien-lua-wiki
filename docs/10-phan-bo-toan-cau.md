@@ -5,7 +5,7 @@ sidebar_position: 10
 ---
 
 
-# **Phần 10: Lịch Sử Phân Bố Toàn Cầu Và Động Lực Học Sinh Thái Dưới Tác Động Của Biến Đổi Khí Hậu**
+# Phần 10: Lịch Sử Phân Bố Toàn Cầu Và Động Lực Học Sinh Thái Dưới Tác Động Của Biến Đổi Khí Hậu
 
 
 > [!NOTE]

@@ -4,7 +4,7 @@ title: Sốc Phản Vệ và Sơ Cứu
 sidebar_position: 13
 ---
 
-# **Phần 13: Cơ Chế Bệnh Sinh Sốc Phản Vệ Và Quy Trình Can Thiệp Y Khoa Khẩn Cấp Đối Với Tai Nạn Do Nọc Kiến Lửa (*Solenopsis geminata*)**
+# Phần 13: Cơ Chế Bệnh Sinh Sốc Phản Vệ Và Quy Trình Can Thiệp Y Khoa Khẩn Cấp Đối Với Tai Nạn Do Nọc Kiến Lửa (*Solenopsis geminata*)
 
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này là một cẩm nang y khoa chuyên sâu, giải phẫu từng giây phút của một ca cấp cứu sinh tử. Chúng ta sẽ đi sâu vào động lực học tế bào trong hội chứng sốc phản vệ, phân tích cách "cơn bão hóa chất" đánh gục hệ tuần hoàn và hô hấp của con người. Trọng tâm của học phần là việc chuẩn hóa quy trình phân độ lâm sàng và phác đồ can thiệp cấp cứu khẩn cấp dựa trên nền tảng pháp lý y khoa của Thông tư 51/2017/TT-BYT do Bộ Y tế Việt Nam ban hành.

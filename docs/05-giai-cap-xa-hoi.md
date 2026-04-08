@@ -4,7 +4,7 @@ title: Giai Cấp Xã Hội Siêu Sinh Vật
 sidebar_position: 5
 ---
 
-# **Phần 5: Động Lực Học Quần Thể - Giai Cấp Xã Hội, Phân Công Lao Động Sinh Thái Và Mạng Lưới Giao Tiếp Hóa Học Của *Solenopsis geminata***
+# Phần 5: Động Lực Học Quần Thể - Giai Cấp Xã Hội, Phân Công Lao Động Sinh Thái Và Mạng Lưới Giao Tiếp Hóa Học Của *Solenopsis geminata*
 
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này đi sâu vào giải phẫu kết cấu xã hội của siêu sinh vật *Solenopsis geminata*. Chúng ta sẽ phân tích cách loài kiến này sử dụng sự đa hình kiểu hình (polymorphism) để tối ưu hóa nguồn lực, giải mã cơ sinh học của chiến lược săn mồi "Kẻ cắt xé - Người vận chuyển", và khám phá các thuật toán điều khiển không gian cũng như mạng lưới hóa sinh phức tạp giúp một xã hội hàng trăm ngàn cá thể hoạt động như một cỗ máy thống nhất.

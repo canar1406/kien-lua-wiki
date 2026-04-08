@@ -4,7 +4,7 @@ title: Mô Hình Tổ Chức
 sidebar_position: 6
 ---
 
-# **Phần 6: Mô Hình Tổ Chức Sinh Sản - Giải Mã Phân Tử Gen Gp-9 Và Cơ Chế Chuyển Đổi Tổ Đơn Hậu - Đa Hậu Của *Solenopsis geminata***
+# Phần 6: Mô Hình Tổ Chức Sinh Sản - Giải Mã Phân Tử Gen Gp-9 Và Cơ Chế Chuyển Đổi Tổ Đơn Hậu - Đa Hậu Của *Solenopsis geminata*
 
 
 > [!NOTE]

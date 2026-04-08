@@ -5,7 +5,7 @@ sidebar_position: 14
 ---
 
 
-# **Phần 14: Sinh Lý Học, Động Học Phân Tử Và Chiến Lược Kiểm Soát Hóa Học (Chemical Control) Đối Với Loài Kiến Lửa *Solenopsis geminata***
+# Phần 14: Sinh Lý Học, Động Học Phân Tử Và Chiến Lược Kiểm Soát Hóa Học (Chemical Control) Đối Với Loài Kiến Lửa *Solenopsis geminata*
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này sẽ đưa bạn vào thế giới của độc chất học sinh thái (Ecotoxicology) và sinh lý học côn trùng. Chúng ta sẽ từ bỏ tư duy phun xịt hóa chất rải thảm truyền thống để khám phá các cơ chế "Ngựa gỗ Troy" – lợi dụng chính tập tính xã hội của kiến lửa để tiêu diệt chúng từ bên trong. Đồng thời, bài viết sẽ giải mã ở cấp độ gen (đặc biệt là siêu họ enzyme CYP450) lý do tại sao kiến chúa lại có khả năng kháng thuốc đáng sợ đến vậy.
 

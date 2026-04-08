@@ -4,7 +4,7 @@ title: Tác Động Kinh Tế & Môi Trường
 sidebar_position: 11
 ---
 
-# **Phần 11: Phân Tích Kinh Tế Vĩ Mô - Tổn Thất Nông Nghiệp, Đổ Vỡ Cơ Sở Hạ Tầng Và Hàng Rào Kiểm Dịch Đối Với *Solenopsis geminata***
+# Phần 11: Phân Tích Kinh Tế Vĩ Mô - Tổn Thất Nông Nghiệp, Đổ Vỡ Cơ Sở Hạ Tầng Và Hàng Rào Kiểm Dịch Đối Với *Solenopsis geminata*
 
 > [!NOTE]
 > **Mục tiêu của học phần:** Bài viết này sẽ chuyển đổi các tác động sinh thái và y khoa của loài kiến lửa nhiệt đới *Solenopsis geminata* thành những con số thiệt hại kinh tế định lượng. Chúng ta sẽ giải phẫu mô hình toán học đánh giá chi phí xâm lấn, đi sâu vào các thiệt hại đa ngành từ nông nghiệp, chăn nuôi, cho đến sự tàn phá cơ sở hạ tầng viễn thông và lưới điện, cuối cùng là phân tích các biện pháp phòng vệ pháp lý đang được áp dụng tại Việt Nam.

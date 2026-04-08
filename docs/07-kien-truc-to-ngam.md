@@ -4,7 +4,7 @@ title: Kiến Trúc Tổ Ngầm
 sidebar_position: 7
 ---
 
-# **Phần 7: Kiến Trúc Không Gian Tổ Ngầm Và Mạng Lưới Siêu Đô Thị Đa Chi Nhánh Của *Solenopsis geminata***
+# Phần 7: Kiến Trúc Không Gian Tổ Ngầm Và Mạng Lưới Siêu Đô Thị Đa Chi Nhánh Của *Solenopsis geminata*
 
 
 > [!NOTE]

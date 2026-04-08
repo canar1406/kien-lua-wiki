@@ -4,7 +4,7 @@ title: Khoa Học Bức Xạ Vòng Đời & Siêu Gen
 sidebar_position: 4
 ---
 
-# **Phần 4: Động Học Vòng Đời, Chiến Lược Sinh Sản Và Nghịch Lý Tuổi Thọ Của *Solenopsis geminata***
+# Phần 4: Động Học Vòng Đời, Chiến Lược Sinh Sản Và Nghịch Lý Tuổi Thọ Của *Solenopsis geminata*
 
 
 > [!NOTE]
