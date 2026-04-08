@@ -38,6 +38,23 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Global Text Selection - Bulletproof Strategy */
+html[data-theme='light'] *::selection,
+html[data-theme='light'] ::selection,
+html[data-theme='light'] *::-moz-selection,
+html[data-theme='light'] ::-moz-selection {
+  background-color: rgba(225, 29, 72, 0.2) !important;
+  color: inherit !important;
+}
+
+html[data-theme='dark'] *::selection,
+html[data-theme='dark'] ::selection,
+html[data-theme='dark'] *::-moz-selection,
+html[data-theme='dark'] ::-moz-selection {
+  background-color: rgba(225, 29, 72, 0.4) !important;
+  color: inherit !important;
+}
+
 /* Page transition effects */
 html,
 body {

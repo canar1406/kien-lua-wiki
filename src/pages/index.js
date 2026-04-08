@@ -229,14 +229,14 @@ function StatsSection() {
 
 function AntViewerSection() {
   return (
-    <section id="mo-hinh-3d" className="py-16 md:py-24 bg-neutral-950 border-y border-neutral-900 overflow-hidden">
+    <section id="mo-hinh-3d" className="py-16 md:py-24 bg-rose-50/50 dark:bg-neutral-950 border-y border-rose-100 dark:border-neutral-900 overflow-hidden transition-colors duration-500">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <div className="mb-8 md:mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-rose-500/10 text-rose-400 font-extrabold text-xs tracking-widest uppercase mb-4 md:mb-6 border border-rose-900/50">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 font-extrabold text-xs tracking-widest uppercase mb-4 md:mb-6 border border-rose-200 dark:border-rose-900/50 transition-colors drop-shadow-sm dark:drop-shadow-none shadow-sm dark:shadow-none">
             Phòng Giải Phẫu Đương Đại
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">Mô Hình 3D Tương Tác</h2>
-          <p className="text-base md:text-lg text-neutral-400 font-medium">
+          <h2 className="text-3xl md:text-5xl font-black text-neutral-900 dark:text-white mb-4 md:mb-6 transition-colors duration-500">Mô Hình 3D Tương Tác</h2>
+          <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-medium transition-colors duration-500">
             Xoay, phóng to, khám phá từng bộ phận của kiến lửa để hiểu rõ hơn về sinh học của chúng.
           </p>
         </div>

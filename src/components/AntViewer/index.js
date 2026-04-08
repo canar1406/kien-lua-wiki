@@ -164,13 +164,13 @@ export default function AntViewer() {
     <div className="w-full flex flex-col lg:flex-row gap-4">
 
       {/* ── Model Viewer ── */}
-      <div className="relative flex-1 rounded-2xl overflow-hidden bg-black/30"
+      <div className="relative flex-1 rounded-2xl overflow-hidden bg-rose-50/50 dark:bg-black/30 border border-rose-100 dark:border-transparent transition-colors duration-500"
         style={{ minHeight: 'min(55vw, 520px)' }}>
 
         {/* Toolbar */}
         <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1
-          bg-black/70 backdrop-blur-md rounded-full px-2 py-1 border border-white/10 shadow-xl whitespace-nowrap">
-          <span className="text-white/40 text-[10px] font-medium px-1 hidden sm:block">Kéo để xoay · Cuộn để zoom</span>
+          bg-white/90 dark:bg-black/70 backdrop-blur-md rounded-full px-2 py-1 border border-rose-200 dark:border-white/10 shadow-xl whitespace-nowrap transition-colors duration-300">
+          <span className="text-neutral-500 dark:text-white/40 text-[10px] font-medium px-1 hidden sm:block">Kéo để xoay · Cuộn để zoom</span>
           <button
             onClick={() => {
               if (modelRef.current) {
@@ -181,7 +181,7 @@ export default function AntViewer() {
               setOrbit({ theta: 45, phi: 75 });
             }}
             className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold
-              text-white/60 hover:text-white hover:bg-white/10 transition-all"
+              text-neutral-700 dark:text-white/60 hover:text-rose-600 dark:hover:text-white hover:bg-rose-100 dark:hover:bg-white/10 transition-all"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -207,32 +207,32 @@ export default function AntViewer() {
             {/* Row 1 */}
             <div />
             <button onClick={() => applyOrbit({ phi: orbit.phi - 15 })}
-              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10
-                text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all">
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm border border-rose-200 dark:border-white/10
+                text-neutral-600 dark:text-white/70 hover:text-rose-600 dark:hover:text-white hover:bg-rose-50 dark:hover:bg-black/80 flex items-center justify-center transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m18 15-6-6-6 6"/></svg>
             </button>
             <div />
             {/* Row 2 */}
             <button onClick={() => applyOrbit({ theta: orbit.theta - 20 })}
-              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10
-                text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all">
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm border border-rose-200 dark:border-white/10
+                text-neutral-600 dark:text-white/70 hover:text-rose-600 dark:hover:text-white hover:bg-rose-50 dark:hover:bg-black/80 flex items-center justify-center transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button onClick={() => { if(modelRef.current) modelRef.current.cameraOrbit='45deg 75deg auto'; orbitRef.current={theta:45,phi:75}; setOrbit({theta:45,phi:75}); }}
-              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10
-                text-white/30 hover:text-white hover:bg-rose-600/60 flex items-center justify-center transition-all">
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm border border-rose-200 dark:border-white/10
+                text-neutral-400 dark:text-white/30 hover:text-rose-600 dark:hover:text-white hover:bg-rose-100 dark:hover:bg-rose-600/60 flex items-center justify-center transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/></svg>
             </button>
             <button onClick={() => applyOrbit({ theta: orbit.theta + 20 })}
-              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10
-                text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all">
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm border border-rose-200 dark:border-white/10
+                text-neutral-600 dark:text-white/70 hover:text-rose-600 dark:hover:text-white hover:bg-rose-50 dark:hover:bg-black/80 flex items-center justify-center transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
             </button>
             {/* Row 3 */}
             <div />
             <button onClick={() => applyOrbit({ phi: orbit.phi + 15 })}
-              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10
-                text-white/70 hover:text-white hover:bg-black/80 flex items-center justify-center transition-all">
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-white/80 dark:bg-black/60 backdrop-blur-sm border border-rose-200 dark:border-white/10
+                text-neutral-600 dark:text-white/70 hover:text-rose-600 dark:hover:text-white hover:bg-rose-50 dark:hover:bg-black/80 flex items-center justify-center transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div />
