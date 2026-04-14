@@ -80,7 +80,7 @@ function HeroSection() {
 
 function AnatomySection() {
   const features = [
-    { title: "Đầu Lớn - Ngàm Thép", desc: "Lực cắn vượt trội từ kiến lính đầu to (major worker), vũ khí tuyệt đối để nghiền nát hạt cứng và cắn xé kẻ thù.", icon: "✂️", link: "/docs/giai-cap-xa-hoi" },
+    { title: "Đầu Lớn - Ngàm Thép", desc: "Lực cắn vượt trội từ kiến lính đầu to (major worker), vũ khí tuyệt đối để nghiền nát hạt cứng và cắn xé kẻ thù.", icon: "✂️", link: "/docs/dac-diem-hinh-thai" },
     { title: "Mạng Phân Tán", desc: "Định tuyến hóa học kết nối hàng trăm ngàn cá thể, thiết lập siêu tổ chức linh hoạt trong môi trường nhiệt đới.", icon: "🧬", link: "/docs/mo-hinh-to-chuc" },
     { title: "Túi Lọc Sinh Học", desc: "Xử lý trực tiếp con mồi, lọc tách thành dịch protein nguyên chất để san sẻ cho cả đế chế.", icon: "🧪", link: "/docs/dac-diem-hinh-thai" },
     { title: "Vỏ Kitin Sừng", desc: "Cấu trúc vỏ đa lớp cường lực. Giúp chống chịu tốt với khí hậu nhiệt đới khắc nghiệt của Việt Nam.", icon: "🛡️", link: "/docs/dac-diem-hinh-thai" }
