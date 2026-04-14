@@ -80,10 +80,10 @@ function HeroSection() {
 
 function AnatomySection() {
   const features = [
-    { title: "Đầu Lớn - Ngàm Thép", desc: "Lực cắn vượt trội từ kiến lính đầu to (major worker), vũ khí tuyệt đối để nghiền nát hạt cứng và cắn xé kẻ thù.", icon: "✂️" },
-    { title: "Mạng Phân Tán", desc: "Định tuyến hóa học kết nối hàng trăm ngàn cá thể, thiết lập siêu tổ chức linh hoạt trong môi trường nhiệt đới.", icon: "🧬" },
-    { title: "Túi Lọc Sinh Học", desc: "Xử lý trực tiếp con mồi, lọc tách thành dịch protein nguyên chất để san sẻ cho cả đế chế.", icon: "🧪" },
-    { title: "Vỏ Kitin Sừng", desc: "Cấu trúc vỏ đa lớp cường lực. Giúp chống chịu tốt với khí hậu nhiệt đới khắc nghiệt của Việt Nam.", icon: "🛡️" }
+    { title: "Đầu Lớn - Ngàm Thép", desc: "Lực cắn vượt trội từ kiến lính đầu to (major worker), vũ khí tuyệt đối để nghiền nát hạt cứng và cắn xé kẻ thù.", icon: "✂️", link: "/docs/giai-cap-xa-hoi" },
+    { title: "Mạng Phân Tán", desc: "Định tuyến hóa học kết nối hàng trăm ngàn cá thể, thiết lập siêu tổ chức linh hoạt trong môi trường nhiệt đới.", icon: "🧬", link: "/docs/mo-hinh-to-chuc" },
+    { title: "Túi Lọc Sinh Học", desc: "Xử lý trực tiếp con mồi, lọc tách thành dịch protein nguyên chất để san sẻ cho cả đế chế.", icon: "🧪", link: "/docs/dac-diem-hinh-thai" },
+    { title: "Vỏ Kitin Sừng", desc: "Cấu trúc vỏ đa lớp cường lực. Giúp chống chịu tốt với khí hậu nhiệt đới khắc nghiệt của Việt Nam.", icon: "🛡️", link: "/docs/dac-diem-hinh-thai" }
   ];
 
   return (
@@ -101,16 +101,16 @@ function AnatomySection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((item, idx) => (
-            <div key={idx} className="group p-8 rounded-[2rem] bg-rose-50/50 dark:bg-neutral-900 border border-rose-100 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-4 hover:scale-[1.03] shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_50px_rgba(225,29,72,0.2)] hover:bg-white dark:hover:bg-neutral-800 hover:border-rose-400 dark:hover:border-rose-600">
+            <Link key={idx} to={item.link} className="block group p-8 rounded-[2rem] hover:no-underline bg-rose-50/50 dark:bg-neutral-900 border border-rose-100 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-4 hover:scale-[1.03] shadow-[0_5px_20px_rgba(225,29,72,0.03)] hover:shadow-[0_25px_50px_rgba(225,29,72,0.2)] hover:bg-white dark:hover:bg-neutral-800 hover:border-rose-400 dark:hover:border-rose-600">
               <div className="w-16 h-16 rounded-2xl bg-white dark:bg-black/50 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl mb-8 border border-rose-200/60 dark:border-neutral-700 shadow-sm group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 group-hover:bg-rose-600 group-hover:text-white group-hover:border-red-500 group-hover:shadow-[0_10px_20px_rgba(225,29,72,0.4)]">
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">{item.title}</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-[15px] font-medium leading-relaxed mb-6 group-hover:text-neutral-900 dark:group-hover:text-neutral-300 transition-colors">{item.desc}</p>
               <div className="font-black text-xs tracking-wider text-rose-300 dark:text-neutral-600 transition-all duration-300 group-hover:text-rose-600 dark:group-hover:text-rose-400 group-hover:translate-x-2">
-                PHẦN 0{idx + 1} &rarr;
+                XEM CHI TIẾT &rarr;
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
