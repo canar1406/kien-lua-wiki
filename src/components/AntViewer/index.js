@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Head from '@docusaurus/Head';
 
 const HOTSPOT_GROUPS = [
   {
@@ -101,9 +102,7 @@ export default function AntViewer() {
     }
   };
 
-  useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) import('@google/model-viewer');
-  }, []);
+
 
   useEffect(() => {
     if (!modelRef.current) return;
@@ -161,7 +160,11 @@ export default function AntViewer() {
   const activeInfo = activeGroup ? HOTSPOT_GROUPS.find(g => g.id === activeGroup) : null;
 
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-4">
+    <>
+      <Head>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+      </Head>
+      <div className="w-full flex flex-col lg:flex-row gap-4">
 
       {/* ── Model Viewer ── */}
       <div className="relative flex-1 rounded-2xl overflow-hidden bg-rose-50/50 dark:bg-black/30 border border-rose-100 dark:border-transparent transition-colors duration-500"
@@ -242,7 +245,7 @@ export default function AntViewer() {
         {ExecutionEnvironment.canUseDOM && (
           <model-viewer
             ref={modelRef}
-            src={useBaseUrl('/model/fire-ant.glb')}
+            src={useBaseUrl('/models/fire_ant/fire-ant.gltf')}
             alt="Solenopsis Geminata Worker Ant"
             camera-controls
             touch-action="pan-y"
@@ -356,7 +359,8 @@ export default function AntViewer() {
             ))}
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

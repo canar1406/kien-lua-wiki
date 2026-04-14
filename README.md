@@ -62,6 +62,7 @@
 | **Framework** | [Docusaurus 3.9.2](https://docusaurus.io/) |
 | **Frontend** | React 19, MDX |
 | **Styling** | Tailwind CSS 4, custom CSS themes (Phycat Abyss / Sky) |
+| **3D Rendering** | [Three.js](https://threejs.org/), [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber), [@react-three/drei](https://github.com/pmndrs/drei) |
 | **3D Viewer** | [@google/model-viewer](https://modelviewer.dev/) |
 | **Math** | KaTeX (remark-math + rehype-katex) |
 | **Charts** | Chart.js + react-chartjs-2 |
@@ -145,14 +146,22 @@ wiki/
 
 ---
 
-## 🐜 Mô hình 3D tương tác
+## 🐜 Hệ Thống 3D Đa Trải Nghiệm
 
-Component `AntViewer` cung cấp trải nghiệm khám phá giải phẫu kiến lửa:
+Dự án cung cấp 2 chế độ hiển thị 3D tương tác tiên tiến:
 
+### 1. Mô hình 3D tương tác (Ant Viewer)
+Component `AntViewer` ở trang chủ cung cấp trải nghiệm khám phá giải phẫu kiến lửa đơn lẻ:
 - **Hotspot đa điểm** — 6 nhóm bộ phận với tổng 13 điểm tương tác (Đầu, Mắt, Râu, Ngực, Chân, Bụng)
 - **Hoạt ảnh** — 4 chế độ: Đứng yên (freeze), Đứng nghỉ (idle), Đi bộ (walk), Cảnh giác (alert)
 - **Điều khiển camera** — D-pad xoay 4 hướng + nút Reset
 - **Panel thông tin** — Mô tả chi tiết từng bộ phận với liên kết đọc thêm
+
+### 2. Mô phỏng Đàn Kiến AI (Ant Simulation)
+Môi trường giả lập WebGL với các cá thể kiến được điều khiển bởi AI (State Machine):
+- **Điều khiển sinh học** — Thả khối đường (chỉ định mục tiêu), kích hoạt báo động, ép giao tiếp hoặc giải khát.
+- **Trí tuệ Nhân tạo (AI)** — Kiến có thể tự động đi tuần tra (wandering), gọi bầy (trophallaxis) khi phát hiện mồi, giao tiếp hóa học, uống nước tại hồ, và tìm đường né vật cản (collision/tangent sliding).
+- **Hoạt ảnh Procedural** — Cử động đầu, râu, và hàm được nội suy tự động (procedural animation) dựa trên trạng thái sinh học (bioState).
 
 ---
 

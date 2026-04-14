@@ -236,9 +236,15 @@ function AntViewerSection() {
             Phòng Giải Phẫu Đương Đại
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-neutral-900 dark:text-white mb-4 md:mb-6 transition-colors duration-500">Mô Hình 3D Tương Tác</h2>
-          <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-medium transition-colors duration-500">
+          <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-medium transition-colors duration-500 mb-8">
             Xoay, phóng to, khám phá từng bộ phận của kiến lửa để hiểu rõ hơn về sinh học của chúng.
           </p>
+          <Link
+            to="/ant-simulation"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 shadow-[0_10px_20px_rgba(244,63,94,0.3)] hover:shadow-[0_20px_40px_rgba(244,63,94,0.4)] hover:no-underline group">
+            <span className="text-2xl group-hover:animate-bounce">🐜</span>
+            Chuyển Sang Mô Phỏng Đàn Kiến 3D
+          </Link>
         </div>
         <div className="w-full">
           <AntViewer />

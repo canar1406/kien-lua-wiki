@@ -103,6 +103,11 @@ const config = {
             position: 'left',
             label: 'Bách Khoa Toàn Thư',
           },
+          {
+            to: '/ant-simulation',
+            label: 'Mô Phỏng 3D',
+            position: 'left',
+          },
         ],
       },
       footer: {
