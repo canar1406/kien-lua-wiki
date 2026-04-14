@@ -823,12 +823,12 @@ export default function AntSimulation() {
             </button>
             <button
               onClick={() => setForceComm(true)}
-              className="py-2 px-1 text-[11px] sm:text-xs font-bold rounded-lg border-none cursor-pointer transition-colors bg-blue-700 hover:bg-blue-600 text-white shadow-md">
+              className={`py-2 px-1 text-[11px] sm:text-xs font-bold rounded-lg border-none cursor-pointer transition-colors shadow-md ${simState === 'seek_peer' || simState === 'communicating' ? 'bg-blue-600 text-white' : 'bg-neutral-800 hover:bg-neutral-600 text-white'}`}>
               🔄 Ép Giao Tiếp
             </button>
             <button
               onClick={() => setForceDrink(true)}
-              className="py-2 px-1 text-[11px] sm:text-xs font-bold rounded-lg border-none cursor-pointer transition-colors bg-cyan-600 hover:bg-cyan-500 text-white shadow-md">
+              className={`py-2 px-1 text-[11px] sm:text-xs font-bold rounded-lg border-none cursor-pointer transition-colors shadow-md ${simState === 'drink_water' || simState === 'drinking' ? 'bg-cyan-600 text-white' : 'bg-neutral-800 hover:bg-neutral-600 text-white'}`}>
               💧 Uống Nước
             </button>
           </div>
