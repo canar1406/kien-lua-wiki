@@ -777,20 +777,42 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, isRaining, antCo
                 let totalWeight = 0;
                 pheromonesRef.current.forEach(p => {
                   const dSq = p.pos.distanceToSquared(ant.position);
-                  if (dSq < 625.0 && dSq > 4.0) { // Range nhạy cảm (25 units)
-                    // Bỏ giới hạn góc nhìn để tránh hiệu ứng cắt viền (cắt góc) gây giao động mũi tên liên tục
-                    const w = p.strength / (1 + dSq * 0.01); // Gần + mạnh = ưu tiên
-                    avgDir.addScaledVector(p.toFoodDir, w);
+                  if (dSq < 144.0 && dSq > 1.0) { // Range 12 units
+                    const w = p.strength / (1 + dSq * 0.5); // Càng gần càng hút mạnh
+                    
+                    // Vector: 70% hướng tiến tới mùi, 30% hướng hút vào cục mùi (để kiến 'nhập làn')
+                    const toNode = new THREE.Vector3().subVectors(p.pos, ant.position).normalize();
+                    const combinedDir = p.toFoodDir.clone().multiplyScalar(0.7).add(toNode.multiplyScalar(0.3)).normalize();
+                    
+                    avgDir.addScaledVector(combinedDir, w);
                     totalWeight += w;
                   }
                 });
 
-                if (totalWeight > 0.01 && avgDir.lengthSq() > 0.01) {
+                if (totalWeight > 0.001 && avgDir.lengthSq() > 0.001) {
                   avgDir.normalize();
-                  ant.position.addScaledVector(avgDir, RUN_SPEED * 0.8 * delta);
-                  resolvePhysics(ant.position, avgDir);
-                  // LERP mượt mà theo hướng trung bình
-                  ant.targetDir.lerp(avgDir, Math.min(delta * 8, 1.0)).normalize();
+                  
+                  // Góc hiện tại và góc mục tiêu
+                  const currentAngle = Math.atan2(ant.targetDir.x, ant.targetDir.z); // Drei's forward is Z? Let's use x, z.
+                  const targetAngle = Math.atan2(avgDir.x, avgDir.z);
+                  
+                  let deltaAngle = targetAngle - currentAngle;
+                  while (deltaAngle > Math.PI) deltaAngle -= Math.PI * 2;
+                  while (deltaAngle < -Math.PI) deltaAngle += Math.PI * 2;
+                  
+                  // Giới hạn xoay ~170 độ/s (3 rad/s) để khử rung giật tuyệt đối
+                  const maxTurn = delta * 3.0; 
+                  if (Math.abs(deltaAngle) > maxTurn) {
+                      deltaAngle = Math.sign(deltaAngle) * maxTurn;
+                  }
+                  
+                  const newAngle = currentAngle + deltaAngle;
+                  ant.targetDir.set(Math.sin(newAngle), 0, Math.cos(newAngle));
+
+                  // MOVEMENT: Dùng targetDir đã xoay mượt để di chuyển
+                  ant.position.addScaledVector(ant.targetDir, RUN_SPEED * 0.8 * delta);
+                  resolvePhysics(ant.position, ant.targetDir);
+
                   ant.wanderDir.copy(ant.targetDir);
                   ant.state = 'following_trail';
                   ant.anim = 'Insect|walk_1';
