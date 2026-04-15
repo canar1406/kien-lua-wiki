@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkGithubAdmonitions from 'remark-github-blockquote-alert';
@@ -33,6 +33,13 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'canar1406', // Usually your GitHub org/user name.
   projectName: 'kien-lua-wiki', // Usually your repo name.
+
+  scripts: [
+    {
+      src: 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js',
+      type: 'module',
+    },
+  ],
 
   onBrokenLinks: 'throw',
 
@@ -75,6 +82,31 @@ const config = {
           postcssOptions.plugins.push(require("@tailwindcss/postcss"));
           postcssOptions.plugins.push(require("autoprefixer"));
           return postcssOptions;
+        },
+      };
+    },
+    function splitThreeJsPlugin() {
+      return {
+        name: 'split-threejs-chunks',
+        configureWebpack(config, isServer) {
+          if (isServer) {
+            return {};
+          }
+          return {
+            optimization: {
+              splitChunks: {
+                cacheGroups: {
+                  threejs: {
+                    test: /[\\/]node_modules[\\/](three|@react-three)[\\/]/,
+                    name: 'threejs-vendor',
+                    chunks: 'all',
+                    priority: 20,
+                    enforce: true,
+                  },
+                },
+              },
+            },
+          };
         },
       };
     },

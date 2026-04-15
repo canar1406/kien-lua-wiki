@@ -1,0 +1,45 @@
+
+> wiki@0.0.0 build
+> docusaurus build
+
+
+ ------------------------------------------------------------------------------                                                                                                         Update available 3.9.2 → 3.10.0                                                                                                                 To upgrade Docusaurus packages with the latest version, run the                                       following command:                                        `npm i @docusaurus/core@latest @docusaurus/preset-classic@latest                @docusaurus/module-type-aliases@latest @docusaurus/types@latest`                                                                                         ------------------------------------------------------------------------------ 
+
+[INFO] [vi] Creating an optimized production build...
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Client
+[90m[[90mwebpackbar[90m][39m [36mℹ[39m Compiling Server
+[ERROR] Error: Conflict: Multiple chunks emit assets to the same filename server.bundle.js (chunks 792 and 615)
+    at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Compilation.js:5156:12
+    at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:92:6
+    at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:46:10
+    at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\cache\IdleFileCachePlugin.js:79:9
+    at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:95:6
+    at eval (eval at create (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:30:1)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:472:9)
+
+[ERROR] Error: Unable to build website for locale vi.
+    at tryToBuildLocale (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\core\lib\commands\build\build.js:83:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:472:9)
+    at async C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\core\lib\commands\build\build.js:35:9
+    at async mapAsyncSequential (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\utils\lib\jsUtils.js:21:24)
+    at async Command.build (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\core\lib\commands\build\build.js:34:5)
+    at async Promise.all (index 0)
+    at async runCLI (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\@docusaurus\core\lib\commands\cli.js:56:5)
+    at async file:///C:/Users/Heavietnam/Desktop/D%E1%BB%B1%20%C3%A1n%20ki%E1%BA%BFn%20l%E1%BB%ADa/wiki/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Conflict: Multiple chunks emit assets to the same filename server.bundle.js (chunks 792 and 615)
+      at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Compilation.js:5156:12
+      at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:92:6
+      at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:46:10
+      at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\cache\IdleFileCachePlugin.js:79:9
+      at C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\webpack\lib\Cache.js:95:6
+      at eval (eval at create (C:\Users\Heavietnam\Desktop\Dự án kiến lửa\wiki\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:30:1)
+      at processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at runNextTicks (node:internal/process/task_queues:69:3)
+      at process.processImmediate (node:internal/timers:472:9)
+}
+[INFO] Docusaurus version: 3.9.2
+Node version: v24.14.1

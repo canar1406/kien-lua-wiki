@@ -164,9 +164,6 @@ export default function AntViewer() {
 
   return (
     <>
-      <Head>
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-      </Head>
       <div className="w-full flex flex-col lg:flex-row gap-4">
 
       {/* ── Model Viewer ── */}
