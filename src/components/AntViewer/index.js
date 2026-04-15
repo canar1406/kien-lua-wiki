@@ -89,6 +89,8 @@ export default function AntViewer() {
   const modelRef = useRef(null);
   const pointerDownPos = useRef(null);
   const modelSrc = useBaseUrl('/models/fire_ant/fire-ant.gltf');
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   const applyOrbit = (patch) => {
     const o = { ...orbitRef.current, ...patch };
@@ -243,7 +245,7 @@ export default function AntViewer() {
           </div>
         </div>
 
-        {ExecutionEnvironment.canUseDOM && (
+        {mounted && (
           <model-viewer
             ref={modelRef}
             src={modelSrc}
