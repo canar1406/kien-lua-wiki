@@ -150,7 +150,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Dự án Sinh Học. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Dự án Sinh Học. Built with <a href="https://home.heavietnam.com/" target="_blank" rel="noopener noreferrer">Heavietnam</a>.`,
       },
       prism: {
         theme: prismThemes.github,

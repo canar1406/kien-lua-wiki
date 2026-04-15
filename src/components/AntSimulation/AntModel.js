@@ -114,9 +114,10 @@ export function AntModel({ url, animationName = 'Insect|idle_A2', bioState = 'WA
     const action = actions && actions[animationName];
     if (action) {
       action.reset().fadeIn(0.5).play();
+      action.paused = bioState === 'DEAD';
       return () => action.fadeOut(0.5);
     }
-  }, [animationName, actions]);
+  }, [animationName, actions, bioState]);
 
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
@@ -218,6 +219,12 @@ export function AntModel({ url, animationName = 'Insect|idle_A2', bioState = 'WA
         antennaeRange = 0.3;
         headPitch = -0.6; // Cúi gập đầu xuống
         mandibleOpen = 0.2;
+        break;
+      case 'DEAD':
+        antennaeSpeed = 0;
+        antennaeRange = 0;
+        headPitch = 0;
+        mandibleOpen = 0;
         break;
     }
 

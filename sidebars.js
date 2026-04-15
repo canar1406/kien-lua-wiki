@@ -37,6 +37,11 @@ const sidebars = {
       label: 'Chủ đề 7: Quản lý Dịch hại (IPM)',
       items: ['kiem-soat-hoa-hoc', 'kiem-soat-sinh-hoc', 'phong-ngua-ho-gia-dinh'],
     },
+    {
+      type: 'category',
+      label: 'Chủ đề 8: Ứng Dụng Chuyên Sâu',
+      items: ['huong-dan-mo-phong'],
+    },
   ],
 };
 export default sidebars;

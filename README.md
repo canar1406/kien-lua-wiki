@@ -159,54 +159,38 @@ Mỗi con kiến hoạt động dựa trên FSM với các trạng thái sau:
 
 #### 🎮 Bảng Điều Khiển Sinh Học (6 nút)
 
-| Nút | Loại | Chức năng |
-|-----|------|-----------|
-| 🤚 **Kéo Cam** | Mode Toggle | Kéo camera di chuyển (pan) |
-| 🔄 **Xoay/Nghiêng** | Mode Toggle | Xoay và nghiêng camera (orbit) |
-| 🍬 **Thả Đường** | Mode Toggle | Click vào mặt đất để thả viên đường (tự đẩy ra ngoài nếu rớt trúng vật cản) |
-| ⚠️ **Báo Động** | Mode Toggle | Click vào mặt đất để phát tín hiệu pheromone khẩn cấp |
-| 🔄 **Ép Giao Tiếp** | Action Button | Ép 2 con kiến tìm nhau và giao tiếp ngay lập tức |
-| 💧 **Uống Nước** | Action Button | Ép 2 con kiến đi uống nước tại hồ |
+| Nút | Loại | Chức năng (Đã đồng bộ Dark Mode) |
+|-----|------|--------------------------------|
+| 🤚 **Kéo Cam** | Môi Trường | Kéo chuột để di chuyển (pan/strafe) bản đồ |
+| 🔄 **Xoay/Nghiêng** | Môi Trường | Kéo chuột để xoay và nghiêng camera quanh tâm tổ |
+| 🍬 **Thả Đường** | Tương tác | Sinh ra một khối đường năng lượng cao, rủ rê kiến bu lại thành cụm |
+| ⚠️ **Báo Động** | Tương tác | Kích hoạt hiệu ứng Pheromone tự vệ, kiến vươn bụng lao về phía kẻ thù |
+| 💧 **Uống Nước** | Hệ sinh thái | Cung cấp giọt nước lọc để giải quyết cơn khát (ngăn kiến chết khô) |
+| 🌧️ **Đổ Mưa** | Đại thảm họa | Màn hình tối đen, nước diệt toàn bộ Pheromone, kiến cuộn lại thành "bè nổi" chống ngập! |
 
-> **Ghi chú UX:** Các nút Mode Toggle chỉ sáng màu khi đang được chọn. Các nút Action Button chỉ sáng khi trạng thái AI đang thực thi hành động tương ứng. Khi không active, tất cả các nút đều có màu xám đồng nhất.
+> **Ghi chú UX:** Nút `📖 i` ở góc Bảng điều khiển dẫn thẳng đến [Sổ Tay Hướng Dẫn Tương Tác 3D](/docs/huong-dan-mo-phong) hoàn chỉnh để người dùng hiểu quy luật sinh tồn. Mọi bảng biểu đều tích hợp hiệu ứng Glassmorphism và **đồng độ mã màu hoàn toàn với giao diện Đen/Trắng của Docusaurus**. Bảng biểu tự động thu gọn dạng Accordion (Dropdown) trên Mobile.
 
-#### 🦿 Hệ Thống Vật Lý
+#### 🦿 Bảng Dữ Liệu & Theo Dõi (Dual Dashboard)
 
-| Cơ chế | Chi tiết |
-|--------|----------|
-| **Collision Detection** | Kiểm tra va chạm vòng tròn (Circle Collider) với 4 chướng ngại vật + biên giới bản đồ |
-| **Tangent Sliding** | Khi va chạm, kiến trượt theo tiếp tuyến thay vì dừng lại, tạo cảm giác tự nhiên |
-| **Dynamic Retargeting** | Liên tục tính lại mục tiêu gần nhất, cho phép kiến đổi hướng sang viên đường gần hơn |
-| **Food OOB Protection** | Đồ ăn thả vào vùng cấm (hồ/đá) tự động bị đẩy ra ngoài biên an toàn |
-| **Visual vs Physics Radius** | Hồ nước: visual r=20, physics r=18 → kiến dừng sát mép nước khi uống |
+Hệ thống UI được chia thành hai mảng lớn để phục vụ Macro (Đại cục) và Micro (Cá thể):
 
-#### 🎭 Hoạt Ảnh Procedural (AntModel)
+**1. Swarm Dashboard (Bảng Thống Kê Bầy Đàn)**
+*   Hiển thị theo thời gian thực tỷ lệ: _Kiến Tướng / Kiến Thợ / Kiến Đang Tuần Tra / Kiến Nhả Mùi / Kiến Chờ Hỗ Trợ / Kiến Đang Kéo Mồi_.
+*   Có thanh HP/Sinh tử: Theo dõi số lượng kiến gục ngã (Quy tiên) và cơ chế "An Táng Đồng Loại".
+*   Ghi nhận số lượng Trophallaxis (Viên đường) được vận chuyển về Tổ để kích hoạt quy trình sinh đẻ kiến thợ mới.
 
-Mô hình kiến sử dụng hệ thống animation hybrid: **skeleton animation + procedural override**.
+**2. Focus Panel (Dò Vi Sinh Khuê Đại)**
+*   **Kích hoạt:** Bằng cách nhấp trực tiếp vào 1 cá thể kiến lửa bất kỳ đang đi dạo trên màn hình 3D.
+*   **State Machine FSM Dump:** Hiển thị trực tiếp mã trạng thái thực thi hiện tại (Bù khoáng ngẫu nhiên, Nhả mùi, Cắn xé).
+*   **Deep Linking:** Cung cấp thông tin sinh học sơ cấp và nút "ĐỌC CHI TIẾT" liên kết Docusaurus Single-Page-App trỏ thẳng đến **Mục/Heading Neo (Anchor)** trong Bách khoa toàn thư giải thích lý do đằng sau hành động đó!
+*   **Tracking Mode:** Theo dõi góc nhìn thứ 3 gắn cứng theo sau đuôi chú kiến được chọn nhầm trải nghiệm cảm giác FPV.
 
-| Thành phần | Cơ chế |
-|------------|--------|
-| **Chân (6 chân)** | Skeleton animation từ file GLTF (đã lọc bỏ position/scale tracks, chỉ giữ quaternion) |
-| **Râu (12 đốt)** | Procedural: Sóng sin/cos với tốc độ & biên độ thay đổi theo bioState |
-| **Hàm (2 mảnh)** | Procedural: Xoay trục Y mở/đóng theo bioState |
-| **Đầu** | Procedural: Xoay trục X cúi/ngửa (cúi sâu khi uống nước, ngửa khi cảnh giác) |
-| **Auto Calibration** | Ma trận Basis Matrix tính từ 4 điểm chân → tự động căn phẳng mô hình trên mặt đất |
-| **Smooth Rotation** | Lerp góc xoay Y theo hướng di chuyển với damping factor, có xử lý wraparound ±π |
-
-#### 📋 Bảng Thông Tin Động (Info Panel)
-
-Panel bên phải tự động cập nhật nội dung theo trạng thái AI hiện tại:
-
-| Trạng thái | Tiêu đề Panel | Nội dung giáo dục |
-|------------|---------------|-------------------|
-| `wandering` | Khám Phá Lãnh Thổ | Quỹ đạo ngẫu nhiên, quét hóa chất bằng râu |
-| `communicating` | Giao Tiếp (Antennation) | Mã định danh hydrocarbon, nhận diện đồng loại |
-| `alarmed` | Pheromone Khẩn Cấp | Pyrazine bay hơi, bản năng tự vệ tập thể |
-| `food_trophallaxis` | Mớm Mồi (Trophallaxis) | Dạ dày xã hội, truyền đạt chất lượng mồi |
-| `food_carry` | Nhịp Nhàng (Cooperative Transport) | Kéo-đẩy đội hình, vận chuyển hợp tác |
-| `drink_water` | Bổ Sung Nước (Hydration) | Mất nước qua bề mặt, bù nước và làm mát tổ |
-
-> Mỗi mục kèm link **"XEM CHI TIẾT TÀI LIỆU →"** dẫn thẳng tới bài viết tương ứng trong Bách Khoa Toàn Thư.
+#### 🤔 Bí kíp & Thử Thách Kỹ Thuật (Nhật Ký Dev)
+Hơn **11 Bài Học Cốt Lõi** được ghi chép cẩn thận dưới dạng Nhật ký kinh nghiệm trong tệp `kinh_nghiem.md` đính kèm ở gốc dự án. Điển hình:
+*   Ma trận Basis Calibration tự động xoay lật Model WebGL 3D khi import.
+*   Giải quyết vòng lặp Vô Tận (Infinite render loop) giữa State của React và `useFrame` 60 FPS.
+*   Nghệ thuật Dynamic Retargeting: Gỡ lỗi "Kiến Lú Lẫn Mục Tiêu" trong AI.
+*   Giải quyết mâu thuẫn giữa Phóng to Model 1000 lần bằng Skeleton Utils so với Object3D thông thường.
 
 ---
 
@@ -326,4 +310,4 @@ wiki/
 
 ## 📄 Giấy phép
 
-Dự án phục vụ mục đích giáo dục. © 2025 Dự án Sinh Học. Built with [Docusaurus](https://docusaurus.io/).
+Dự án phục vụ mục đích giáo dục. © 2025 Dự án Sinh Học. Built with [Heavietnam](https://home.heavietnam.com/).
