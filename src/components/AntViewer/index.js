@@ -88,6 +88,7 @@ export default function AntViewer() {
   const [orbit, setOrbit] = useState(orbitRef.current);
   const modelRef = useRef(null);
   const pointerDownPos = useRef(null);
+  const modelSrc = useBaseUrl('/models/fire_ant/fire-ant.gltf');
 
   const applyOrbit = (patch) => {
     const o = { ...orbitRef.current, ...patch };
@@ -245,7 +246,7 @@ export default function AntViewer() {
         {ExecutionEnvironment.canUseDOM && (
           <model-viewer
             ref={modelRef}
-            src={useBaseUrl('/models/fire_ant/fire-ant.gltf')}
+            src={modelSrc}
             alt="Solenopsis Geminata Worker Ant"
             camera-controls
             touch-action="pan-y"
