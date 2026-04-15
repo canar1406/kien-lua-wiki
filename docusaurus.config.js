@@ -85,31 +85,6 @@ const config = {
         },
       };
     },
-    function splitThreeJsPlugin() {
-      return {
-        name: 'split-threejs-chunks',
-        configureWebpack(config, isServer) {
-          if (isServer) {
-            return {};
-          }
-          return {
-            optimization: {
-              splitChunks: {
-                cacheGroups: {
-                  threejs: {
-                    test: /[\\/]node_modules[\\/](three|@react-three)[\\/]/,
-                    name: 'threejs-vendor',
-                    chunks: 'all',
-                    priority: 20,
-                    enforce: true,
-                  },
-                },
-              },
-            },
-          };
-        },
-      };
-    },
   ],
 
   themeConfig:
