@@ -776,9 +776,13 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, isRaining, antCo
         let decayRate = ant.type === 'major' ? 1.5 : 1.0;
         if (ant.state === 'carrying' || ant.state === 'carry_corpse' || ant.state === 'attacking') decayRate *= 2.5; // Hao tốn gấp 2.5 khi vận động mạnh
 
+        // Hệ số khô hạn: waterRate=0 → khô cực độ (mất nước 5x), waterRate=10 → ẩm ướt (mất nước 0.5x)
+        // Công thức: droughtFactor = (11 - waterRate) / 5.5  → range [0.18, 2.0]
+        const droughtFactor = (11 - waterRate) / 5.5;
+
         // Xử lý Hydration (Sinh học thực tiễn: Khả năng nhịn khát cực tốt)
         if (ant.state !== 'drinking') {
-          ant.hydration -= 0.2 * decayRate * delta; // Khoảng 500s đi bộ liên tục mới khát khô (Hơn 8 phút)
+          ant.hydration -= 0.2 * decayRate * droughtFactor * delta; // waterRate=0: ~100s chết khát | waterRate=10: ~1400s
         } else {
           ant.hydration += 25.0 * delta; // Uống 4s là đầy
           if (ant.hydration > 100) ant.hydration = 100;
