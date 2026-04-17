@@ -1707,10 +1707,14 @@ export default function AntSimulation() {
                 <span className={ecoBadge.color}>{ecoBadge.text}</span>
                 <div className="text-neutral-600 dark:text-neutral-400 font-medium text-[10px] space-y-0.5">
                   <div className="flex items-center gap-1">
-                    <span>📊 Khung Vi Mô: {kValue} cá thể</span>
+                    <span>🐜 Hiện tại: <b className="text-neutral-800 dark:text-neutral-100">{totalAlive} cá thể</b></span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span>🌍 Thực Tế Ước Tính: {(kValueReal / 10000).toFixed(1)} vạn</span>
+                    <span>📊 K trung bình (60s): {kValue} cá thể</span>
+                    <span className="cursor-help" title="Trung bình động dân số trong 60 giây gần nhất — dùng để tính sức chứa K theo sinh thái học.">ⓘ</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span>🌍 Thực Tế Ước Tính: {(calculateRealCapacity(totalAlive) / 10000).toFixed(1)} vạn</span>
                     <span className="cursor-help" title="Dựa trên phép nội suy diện tích từ ô lấy mẫu vi mô ra lãnh thổ 50 mét vuông ngoài tự nhiên.">ⓘ</span>
                   </div>
                 </div>
