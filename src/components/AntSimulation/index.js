@@ -1711,11 +1711,11 @@ export default function AntSimulation() {
                   </div>
                   <div className="flex items-center gap-1">
                     <span>📊 K trung bình (60s): {kValue} cá thể</span>
-                    <span className="cursor-help" title="Trung bình động dân số trong 60 giây gần nhất — dùng để tính sức chứa K theo sinh thái học.">ⓘ</span>
+                    <span className="cursor-help inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-neutral-400 dark:bg-neutral-500 text-white text-[9px] font-bold leading-none flex-shrink-0" title="Trung bình động dân số trong 60 giây gần nhất — dùng để tính sức chứa K theo sinh thái học.">i</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <span>🌍 Thực Tế Ước Tính: {(calculateRealCapacity(totalAlive) / 10000).toFixed(1)} vạn</span>
-                    <span className="cursor-help" title="Dựa trên phép nội suy diện tích từ ô lấy mẫu vi mô ra lãnh thổ 50 mét vuông ngoài tự nhiên.">ⓘ</span>
+                    <span className="cursor-help inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-neutral-400 dark:bg-neutral-500 text-white text-[9px] font-bold leading-none flex-shrink-0" title="Dựa trên phép nội suy diện tích từ ô lấy mẫu vi mô ra lãnh thổ 50 mét vuông ngoài tự nhiên.">i</span>
                   </div>
                 </div>
               </div>
@@ -1737,7 +1737,7 @@ export default function AntSimulation() {
               <div className="mb-3 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-amber-700 dark:text-amber-300 font-bold text-xs uppercase tracking-wide">⚖️ Sức Chứa Lý Thuyết Tối Đa</span>
-                  <span className="cursor-help text-amber-600 dark:text-amber-400" title="Dựa trên Định luật Liebig (Law of the Minimum): Sức chứa = min(K_thức_ăn, K_nước, K_không_gian) × (1 - áp_lực_săn_mồi). Nếu vượt quá ngưỡng này, hệ sinh thái sẽ suy thoái do thiếu tài nguyên khan hiếm nhất.">ⓘ</span>
+                  <span className="cursor-help text-amber-600 dark:text-amber-400 inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-amber-400 dark:bg-amber-600 text-white text-[9px] font-bold leading-none flex-shrink-0" title="Dựa trên Định luật Liebig (Law of the Minimum): Sức chứa = min(K_thức_ăn, K_nước, K_không_gian) × (1 - áp_lực_săn_mồi). Nếu vượt quá ngưỡng này, hệ sinh thái sẽ suy thoái do thiếu tài nguyên khan hiếm nhất.">i</span>
                 </div>
                 <div className="space-y-1 text-xs text-amber-800 dark:text-amber-200">
                   <div className="flex justify-between items-center">
