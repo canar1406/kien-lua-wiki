@@ -310,4 +310,4 @@ wiki/
 
 ## 📄 Giấy phép
 
-Dự án phục vụ mục đích giáo dục. © 2025 Dự án Sinh Học. Built with [Heavietnam](https://home.heavietnam.com/).
+Dự án phục vụ mục đích giáo dục. © 2026 Dự án Sinh Học. Built with [Heavietnam](https://home.heavietnam.com/).
