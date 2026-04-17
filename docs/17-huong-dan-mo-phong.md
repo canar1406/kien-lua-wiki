@@ -110,12 +110,22 @@ Trong đó:
 
 ### 5.4 Cách Đọc Dashboard
 
-Trong **Swarm Dashboard** (góc phải trên), bạn sẽ thấy:
+Trong **Swarm Dashboard** (góc phải trên), bạn sẽ thấy 3 dòng thông tin:
 
 ```
-📊 Khung Vi Mô: 35 cá thể
-🌍 Thực Tế Ước Tính: 1.75 vạn  ⓘ
+🐜 Hiện tại: 35 cá thể
+📊 K trung bình (60s): 28 cá thể  ⓘ
+🌍 Thực Tế Ước Tính: 1.75 vạn    ⓘ
 ```
+
+| Dòng | Ý nghĩa | Lưu ý |
+|------|---------|-------|
+| 🐜 **Hiện tại** | Số kiến đang sống tại thời điểm này | Thay đổi liên tục theo thời gian thực |
+| 📊 **K trung bình (60s)** | Trung bình động dân số trong 60 giây gần nhất | Luôn **thấp hơn** số hiện tại khi đàn đang bùng nổ — đây là giá trị K dùng trong sinh thái học |
+| 🌍 **Thực Tế Ước Tính** | Ánh xạ số kiến hiện tại ra quy mô lãnh thổ 50 m² | Tính từ số hiện tại, không phải K trung bình |
+
+> **Tại sao K trung bình lại thấp hơn số hiện tại?**
+> Đây là thiết kế có chủ đích. Trong sinh thái học, **K (Carrying Capacity)** không phải là số đếm tức thời mà là giá trị ổn định dài hạn của quần thể. Khi đàn vừa bùng nổ (ví dụ từ 20 → 35 con), K trung bình vẫn còn phản ánh lịch sử 60 giây trước đó nên thấp hơn. Sau khoảng 1–2 phút ổn định, K trung bình sẽ dần tiệm cận số hiện tại.
 
 Và phần **Sức Chứa Lý Thuyết Tối Đa**:
 
