@@ -834,6 +834,7 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, isRaining, antCo
             if (ant.hp <= 0) ant.bioState = 'dead_killed';
             else if (ant.age > ant.maxAge) ant.bioState = 'dead_old_age';
             else ant.bioState = 'dead_starvation';
+            deathTollRef.current++; // Ghi vào sổ sinh tử
           }
         }
       }
@@ -881,6 +882,7 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, isRaining, antCo
               ant.anim = 'Insect|idle_A3';
               ant.bioState = 'dead_killed';
               if (ant.priority > 0) ant.priority = 0;
+              deathTollRef.current++; // Ghi vào sổ sinh tử
             }
           }
           ant.bioState = ant.state === 'dead' ? 'dead_killed' : 'ALARMED';
