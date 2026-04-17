@@ -55,4 +55,79 @@ Khung chứa này sẽ cho bạn:
 
 ---
 
+## 4. Bộ Điều Chỉnh Môi Trường (Sliders)
+
+Ba thanh trượt ở phần dưới bảng điều khiển cho phép bạn thay đổi điều kiện môi trường theo thời gian thực:
+
+- 🍬 **Tốc độ Mồi:** Tần suất thức ăn tự động rơi xuống bản đồ. Tăng cao → đàn kiến phát triển nhanh hơn.
+- 💧 **Độ Khô/Ẩm:** Mức độ khan hiếm nước trong môi trường. Giảm thấp → kiến dễ chết khát hơn.
+- 🕷️ **Sinh Kẻ Thù:** Tần suất nhện độc xuất hiện. Tăng cao → áp lực săn mồi lớn, đàn kiến suy giảm nhanh.
+
+---
+
+## 5. Hệ Thống Ánh Xạ Sức Chứa Tự Nhiên (Spatial Scaling)
+
+Đây là tính năng **khoa học sinh thái học** được tích hợp vào Swarm Dashboard, giúp bạn hiểu quy mô thực tế của một vương quốc kiến lửa ngoài tự nhiên dựa trên dữ liệu mô phỏng vi mô.
+
+### 5.1 Nguyên Lý Ô Lấy Mẫu (Quadrat Sampling)
+
+Bản đồ 3D không đại diện cho toàn bộ lãnh thổ của một tổ kiến, mà đóng vai trò là một **"Ô lấy mẫu vi mô" (Microcosm)** — một mảnh đất nhỏ được quan sát dưới kính hiển vi sinh thái. Từ dữ liệu vi mô này, hệ thống nội suy ra quy mô vĩ mô theo phương pháp **Quadrat Sampling** được sử dụng rộng rãi trong sinh thái học thực địa.
+
+| Thông số | Giá trị | Ý nghĩa |
+|----------|---------|---------|
+| `SIM_AREA_M2` | 0.1 m² | Diện tích mảng cỏ 3D đang mô phỏng |
+| `REAL_TERRITORY_M2` | 50 m² | Diện tích lãnh thổ kiếm ăn trung bình của 1 tổ *S. geminata* |
+| `SCALE_FACTOR` | 500× | Tỷ lệ phóng đại (50 ÷ 0.1) |
+
+> **Cơ sở khoa học:** Nghiên cứu thực địa ghi nhận *Solenopsis geminata* có mật độ 10–80 tổ/acre ở môi trường tự nhiên, tương đương lãnh thổ kiếm ăn ~50 m²/tổ. Các tổ *S. invicta* trưởng thành chứa 100,000–250,000 cá thể *(Tschinkel, 1988; Researchgate: Areawide Suppression of Fire Ants)*.
+
+### 5.2 Công Thức Ánh Xạ
+
+$$K_{real} = K_{sim} \times \text{SCALE\_FACTOR}$$
+
+Ví dụ: Nếu mô phỏng cho thấy sức chứa vi mô $K_{sim} = 35$ kiến → Sức chứa thực tế ước tính $K_{real} = 35 \times 500 = \mathbf{17{,}500}$ cá thể.
+
+### 5.3 Sức Chứa Lý Thuyết Tối Đa (Theoretical Carrying Capacity)
+
+Hệ thống tính toán ngưỡng sức chứa tối đa dựa trên **Định luật Liebig (Liebig's Law of the Minimum)** — một trong những nguyên lý nền tảng của sinh thái học hiện đại (Justus von Liebig, 1840):
+
+> *"Sự tăng trưởng của quần thể bị giới hạn bởi tài nguyên khan hiếm nhất, không phải tổng lượng tài nguyên."*
+
+Công thức áp dụng:
+
+$$K_{max} = \min(K_{food},\ K_{water},\ K_{space}) \times (1 - P_{predation})$$
+
+Trong đó:
+
+| Biến | Công thức | Ý nghĩa |
+|------|-----------|---------|
+| $K_{food}$ | `foodRate × 15` | Sức chứa theo thức ăn |
+| $K_{water}$ | `waterRate × 20` | Sức chứa theo nước |
+| $K_{space}$ | `60` | Giới hạn mật độ không gian vật lý |
+| $P_{predation}$ | `min(0.8, enemyRate × 0.08)` | Áp lực săn mồi (0–80%) |
+
+**Ý nghĩa thực tiễn:** Nếu số kiến hiện tại **vượt quá** $K_{max}$, hệ sinh thái sẽ bước vào giai đoạn suy thoái do thiếu tài nguyên — Dashboard sẽ hiển thị cảnh báo đỏ ⚠️.
+
+### 5.4 Cách Đọc Dashboard
+
+Trong **Swarm Dashboard** (góc phải trên), bạn sẽ thấy:
+
+```
+📊 Khung Vi Mô: 35 cá thể
+🌍 Thực Tế Ước Tính: 1.75 vạn  ⓘ
+```
+
+Và phần **Sức Chứa Lý Thuyết Tối Đa**:
+
+```
+⚖️ SỨC CHỨA LÝ THUYẾT TỐI ĐA
+   📊 Vi mô (Mô phỏng):  45 cá thể
+   🌍 Vĩ mô (Thực tế):   2.25 vạn cá thể
+   ✓ Hệ sinh thái còn dư địa phát triển.
+```
+
+Icon **ⓘ** khi hover sẽ giải thích phương pháp nội suy diện tích.
+
+---
+
 *Chúc các bạn có những giờ phút "Hóa thân thành Đấng Sáng Tạo Trí Tuệ Não Bộ Phức Tạp" tuyệt vời nhất trong module 3D này!*
