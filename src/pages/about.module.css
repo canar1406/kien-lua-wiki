@@ -1,0 +1,31 @@
+.teamCard {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible; /* Changed to visible for glow */
+  height: 400px; /* Fixed height like in the screenshot to make them uniform */
+  position: relative;
+  z-index: 1;
+}
+
+.teamCard:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(239, 68, 68, 0.6), /* Red/Orange "Fire Ant" glow */
+    0 0 20px rgba(59, 130, 246, 0.4); /* Soft blue edge */
+  z-index: 10;
+}
+
+:global([data-theme='dark']) .teamCard {
+  background-color: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+:global([data-theme='dark']) .teamCard:hover {
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.7), 
+    0 0 50px rgba(239, 68, 68, 0.7), 
+    0 0 30px rgba(59, 130, 246, 0.5);
+}

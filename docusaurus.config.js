@@ -115,6 +115,11 @@ const config = {
             label: 'Mô Phỏng 3D',
             position: 'left',
           },
+          {
+            to: '/about-us',
+            label: 'Về Chúng Tôi',
+            position: 'left',
+          },
         ],
       },
       footer: {
