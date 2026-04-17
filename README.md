@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="static/img/logo.png" alt="Kiến Lửa Wiki Logo" width="120" />
 </p>
 
@@ -185,18 +185,24 @@ Tính năng khoa học sinh thái học tích hợp trong Swarm Dashboard, áp d
 
 **Công thức ánh xạ:**
 
-$$K_{real} = K_{sim} \times \text{SCALE\_FACTOR} \quad (\text{SCALE\_FACTOR} = \frac{50\,m^2}{0.1\,m^2} = 500)$$
+```
+K_real = K_sim x SCALE_FACTOR
+       = K_sim x (50 m2 / 0.1 m2)
+       = K_sim x 500
+```
 
 **Sức chứa lý thuyết tối đa** dựa trên **Định luật Liebig (Liebig's Law of the Minimum, 1840)**:
 
-$$K_{max} = \min(K_{food},\ K_{water},\ K_{space}) \times (1 - P_{predation})$$
+```
+K_max = min(K_food, K_water, K_space) x (1 - P_predation)
+```
 
 | Biến | Công thức | Cơ sở |
 |------|-----------|-------|
-| $K_{food}$ | `foodRate × 15` | Tỷ lệ tiêu thụ thức ăn của kiến lửa |
-| $K_{water}$ | `waterRate × 20` | Khả năng nhịn khát cao hơn nhịn đói |
-| $K_{space}$ | `60` | Giới hạn mật độ không gian vật lý |
-| $P_{predation}$ | `min(0.8, enemyRate × 0.08)` | Áp lực săn mồi phi tuyến (0–80%) |
+| K_food | `foodRate × 15` | Tỷ lệ tiêu thụ thức ăn của kiến lửa |
+| K_water | `waterRate × 20` | Khả năng nhịn khát cao hơn nhịn đói |
+| K_space | `60` | Giới hạn mật độ không gian vật lý |
+| P_predation | `min(0.8, enemyRate × 0.08)` | Áp lực săn mồi phi tuyến (0–80%) |
 
 > **Cơ sở thực địa:** *S. geminata* có mật độ 10–80 tổ/acre ở môi trường tự nhiên, lãnh thổ kiếm ăn ~50 m²/tổ. Các tổ *S. invicta* trưởng thành chứa 100,000–250,000 cá thể *(Tschinkel, 1988)*.
 
