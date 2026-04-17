@@ -114,7 +114,7 @@ export function AntModel({ url, animationName = 'Insect|idle_A2', bioState = 'WA
     const action = actions && actions[animationName];
     if (action) {
       action.reset().fadeIn(0.5).play();
-      action.paused = bioState === 'DEAD';
+      action.paused = bioState === 'DEAD' || bioState.toLowerCase().includes('dead');
       return () => action.fadeOut(0.5);
     }
   }, [animationName, actions, bioState]);
