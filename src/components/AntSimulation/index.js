@@ -1726,7 +1726,7 @@ export default function AntSimulation() {
                 <li className="flex justify-between border-b border-neutral-100 dark:border-neutral-800 pb-1 text-purple-700 dark:text-purple-400"><span>⏳ Chờ đội hình:</span> <b>{stats.waiting} kiến</b></li>
                 <li className="flex justify-between border-b border-neutral-100 dark:border-neutral-800 pb-1 text-green-600 dark:text-green-400"><span>🏋️ Kéo mồi tập thể:</span> <b>{stats.carrying} kiến</b></li>
                 <li className="flex justify-between border-b border-neutral-100 dark:border-neutral-800 pb-1 text-red-600 dark:text-red-400"><span>⚠️ Chiến binh tự vệ:</span> <b>{stats.alarmed}/{stats.major + stats.minor}</b></li>
-                <li className="flex justify-between text-neutral-500 dark:text-neutral-400"><span>🪦 Quy Tiên:</span> <b>{stats.dead} kiến</b></li>
+                <li className="flex justify-between text-neutral-500 dark:text-neutral-400"><span>🪦 Quy Tiên:</span> <b>{stats.deathToll} kiến</b></li>
               </ul>
               
               {/* Sức chứa lý thuyết tối đa */}
