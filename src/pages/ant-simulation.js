@@ -18,7 +18,7 @@ export default function AntSimulationPage() {
             <Suspense fallback={
               <div className="flex flex-col items-center justify-center min-h-[75vh] gap-3 text-neutral-700 dark:text-neutral-300 font-semibold">
                 <span className="text-4xl animate-pulse">🐜</span>
-                <span>Đang nạp шейдер GPU & hình học WebGL...</span>
+                <span>Đang nạp shader GPU & hình học WebGL...</span>
               </div>
             }>
               <AntSimulation />

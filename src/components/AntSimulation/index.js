@@ -2494,6 +2494,7 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
         healedTotal: healedCountRef.current || 0,
         queenSuccessionProgress: Math.round(queenSuccessionRef.current || 0),
         queenSuccessions: queenSuccessionCountRef.current || 0,
+        bornTotal: Math.max(0, (totalBornRef.current || 20) - 20),
         deathToll: deathTollRef.current || 0,
       };
       antsDataRef.current.forEach(ant => {
@@ -2787,25 +2788,21 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
         const liveEnemiesNow = enemyDataRef.current.some(e => !e.killed);
         const unmilledFoodExists = foodDataRef.current.some(f => f.requiresMilling && f.millingProgress < 100 && !f.delivered);
         let currentMajors = 0;
+        let currentSoldiers = 0;
         let currentAlive = 0;
         for (let i = 0; i < ants.length; i++) {
           if (ants[i].state !== 'dead') {
             currentAlive++;
             if (ants[i].type === 'major') currentMajors++;
+            else if (ants[i].type === 'soldier') currentSoldiers++;
           }
         }
         const majorRatio = currentAlive > 0 ? currentMajors / currentAlive : 0;
+        const soldierRatio = currentAlive > 0 ? currentSoldiers / currentAlive : 0;
 
-        // Nếu có giặc, mồi cứng hoặc bão gió/ban đêm -> tăng tiết Juvenile Hormone để phân hóa Kiến Tướng & Kiến Lính
-        let majorProb = 0.15;
-        let soldierProb = 0.25;
-        if (liveEnemiesNow || unmilledFoodExists || isWindstorm || isTornado || timeOfDay === 'night') {
-          majorProb = 0.28;
-          soldierProb = 0.34;
-        } else if (majorRatio > 0.22) {
-          majorProb = 0.06;
-          soldierProb = 0.22;
-        }
+        // Điều hòa tỷ lệ giai cấp chuẩn sinh học (Tschinkel, 2006): Luôn giữ tối thiểu ~60-65% Kiến Thợ (Minor) để đảm bảo lực lượng khiêng mồi!
+        let majorProb = majorRatio >= 0.18 ? 0 : (liveEnemiesNow || unmilledFoodExists ? 0.20 : 0.12);
+        let soldierProb = soldierRatio >= 0.22 ? 0 : (liveEnemiesNow || isWindstorm || isTornado || timeOfDay === 'night' ? 0.22 : 0.16);
 
         const roll = Math.random();
         const spawnedType = roll < majorProb ? 'major' : (roll < majorProb + soldierProb ? 'soldier' : 'minor');
@@ -2814,17 +2811,21 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
         const spawnedPriority = spawnedType === 'major' ? 2 : (spawnedType === 'soldier' ? 1 : 0);
 
         const spawnOffset = new THREE.Vector3((Math.random() - 0.5) * 4, 0, (Math.random() - 0.5) * 4);
-        const angle = Math.random() * Math.PI * 2;
+        // Hướng xuất phát từ Tổ Chính (-45, -45) tỏa thẳng ra cánh đồng cỏ (+x, +z) để không bị ứ đọng ở góc tường sau tổ
+        const outwardAngle = -0.15 + Math.random() * 1.85;
+        const outwardDir = new THREE.Vector3(Math.cos(outwardAngle), 0, Math.sin(outwardAngle)).normalize();
 
-        if (ants.length < 50) {
+        // Nâng trần cá thể 3D trực tiếp trong ô mẫu Quadrat từ 50 lên 120 cá thể nhờ tối ưu GPU DataTexture Atlas
+        if (ants.length < 120) {
           const id = ants.length;
           groupRefs.current.push(React.createRef()); // Tự động extend Reference Array
           ants.push({
             id: id,
             position: new THREE.Vector3(NEST_POS.x, 0, NEST_POS.z).add(spawnOffset),
-            targetDir: new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle)),
-            wanderDir: randomWanderDir(),
-            timer: 1.5 + Math.random() * 1.0,
+            targetDir: outwardDir.clone(),
+            wanderDir: outwardDir.clone(),
+            timer: 2.5 + Math.random() * 2.0,
+            commCooldown: 4.5,
             pheroTimer: 0,
             state: 'emerging',
             bioState: 'WANDERING',
@@ -2846,13 +2847,15 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
           totalBornRef.current++;
           setForceRender(c => c + 1); // Cập nhật DOM rải đều
         } else {
-          // Tính năng nhặt xác tái chế (Không bao giờ ghi đè lên Kiến Chúa id=0)
-          const deadIndex = ants.findIndex(a => a.id !== 0 && a.state === 'dead' && !a.beingCarried);
+          // Tính năng nhặt xác tái chế (Không bao giờ ghi đè lên các slot Kiến Chúa #0, #9, #10)
+          const deadIndex = ants.findIndex(a => a.id !== 0 && a.id !== 9 && a.id !== 10 && a.state === 'dead' && !a.beingCarried);
           if (deadIndex !== -1) {
             const rAnt = ants[deadIndex];
             rAnt.position.copy(NEST_POS).add(spawnOffset);
-            rAnt.targetDir.set(Math.cos(angle), 0, Math.sin(angle));
-            rAnt.timer = 1.5 + Math.random() * 1.0;
+            rAnt.targetDir.copy(outwardDir);
+            rAnt.wanderDir.copy(outwardDir);
+            rAnt.timer = 2.5 + Math.random() * 2.0;
+            rAnt.commCooldown = 4.5;
             rAnt.state = 'emerging';
             rAnt.bioState = 'WANDERING';
             rAnt.priority = spawnedPriority;
@@ -3896,17 +3899,18 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
 
         // Tự động tìm mồi (Phân công "Cutters & Carriers" giữa Kiến Tướng và Kiến Thợ, điều biến thị giác theo Buổi Sáng/Trưa/Chiều/Tối)
         const visMultSq = circadian.visualRangeMult * circadian.visualRangeMult;
+        const hasAnyUnmilledFood = foodDataRef.current.some(uf => !uf.isCarried && uf.requiresMilling && uf.millingProgress < 100);
         if (!foundCorpse) {
           for (const f of foodDataRef.current) {
             if (!f.isCarried) {
               const fPos = _v2.set(f.x, 0, f.z);
 
-              // Kiến Lính (Soldier) phớt lờ các cục mồi nằm ngoài bán kính bảo vệ 24m quanh cửa tổ
-              if ((ant.type === 'soldier' || ant.role === 'guard') && fPos.distanceToSquared(NEST_POS) > 576.0) {
+              // Kiến Lính (Soldier) phớt lờ các cục mồi nằm ngoài bán kính bảo vệ 28m quanh cửa tổ
+              if ((ant.type === 'soldier' || ant.role === 'guard') && fPos.distanceToSquared(NEST_POS) > 784.0) {
                 continue;
               }
-              // Kiến Tướng (Major) ưu tiên tìm tới các tảng mồi to/cứng cần nghiền vỏ (requiresMilling)
-              if (ant.type === 'major' && !f.requiresMilling && f.reqAnts <= 2) {
+              // Kiến Tướng (Major) ưu tiên tìm tới các tảng mồi to/cứng cần nghiền vỏ (nhưng nếu trên sân đã nghiền xong hết thì phụ Kiến Thợ khiêng luôn!)
+              if (ant.type === 'major' && hasAnyUnmilledFood && !f.requiresMilling && f.reqAnts <= 2) {
                 continue;
               }
 
@@ -4373,6 +4377,11 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
           f.delivered = true;
           f.waiters.forEach(id => {
             if (!ants[id]) return;
+            const outAngle = -0.15 + Math.random() * 1.85;
+            ants[id].wanderDir.set(Math.cos(outAngle), 0, Math.sin(outAngle)).normalize();
+            ants[id].targetDir.copy(ants[id].wanderDir);
+            ants[id].timer = 2.5 + Math.random() * 2.0;
+            ants[id].commCooldown = 4.5;
             ants[id].state = 'patrolling';
             ants[id].priority = ants[id].type === 'major' ? 2 : (ants[id].type === 'soldier' ? 1 : 0);
             ants[id].targetFoodId = null;
@@ -5730,9 +5739,16 @@ export default function AntSimulation() {
             <input type="range" min="0" max="10" value={enemyRate} onChange={(e) => setEnemyRate(Number(e.target.value))} className="w-24 accent-red-500" />
           </div>
         </div>
-        {deliveryCount > 0 && <div className="mt-2 text-xs text-green-600 dark:text-green-400 border-t border-neutral-200 dark:border-neutral-700 pt-2 font-medium">
-          🏠 Lương thực dự trữ: {foodRemaining}/2 Nutrition {antsBorn > 0 && <span className="text-amber-600 dark:text-amber-400 ml-1">(🐣 đã sinh {antsBorn} kiến)</span>}
-        </div>}
+        {deliveryCount > 0 && (
+          <div className="mt-2 text-xs text-green-600 dark:text-green-400 border-t border-neutral-200 dark:border-neutral-700 pt-2 font-medium">
+            🏠 Kho lương thực: <b>{deliveryCount} Nutrition</b>
+            {(stats.bornTotal ?? 0) > 0 && (
+              <span className="text-amber-600 dark:text-amber-400 ml-1">
+                (🐣 đã nở {stats.bornTotal} kiến 3D{totalAlive >= 120 ? ' · Đạt trần 120 cá thể Quadrat' : ''})
+              </span>
+            )}
+          </div>
+        )}
           </>
         )}
       </div>

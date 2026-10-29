@@ -15,7 +15,7 @@ const STATIC_BOUNDING_BOX = new THREE.Box3(
   new THREE.Vector3(3.0, 3.0, 3.0)
 );
 
-// Cache toàn cục trên GPU cho toàn bộ текстуra xương, hình học đã lọc tam giác suy biến & vật liệu dùng chung
+// Cache toàn cục trên GPU cho toàn bộ texture xương, hình học đã lọc tam giác suy biến & vật liệu dùng chung
 let cachedAtlasSource = null;
 let cachedGPUAtlas = null;
 
