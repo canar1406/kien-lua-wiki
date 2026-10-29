@@ -65,6 +65,8 @@ Theo Phụ lục II của Thông tư này, tình trạng dị ứng do kiến c�
 > | **Độ III (Nguy Kịch)** | - **Đường thở:** Xuất hiện tiếng rít thanh quản đặc trưng, phù nề thanh quản chẹn đứng khí quản.<br/>- **Hô hấp:** Khó thở dữ dội, tím tái, chỉ số oxy máu (SpO2) lao dốc.<br/>- **Tuần hoàn:** Sốc, mạch đập nhanh và nhỏ đến mức không bắt được, tụt huyết áp kịch phát (huyết áp tâm thu < 90 mmHg).<br/>- **Thần kinh:** Nạn nhân vật vã, lú lẫn, rơi vào hôn mê. | Đây là trạng thái **Sốc Phản Vệ (Anaphylactic Shock)** thực sự, đe dọa sinh mạng từng giây, đòi hỏi hệ thống hồi sức tích cực (ICU) vào cuộc. |
 > | **Độ IV (Ngừng Tuần Hoàn)** | Nạn nhân mất hoàn toàn ý thức, hệ thống hô hấp ngừng hoạt động (ngừng thở), tim ngừng đập. | Tử vong lâm sàng, yêu cầu hồi sức tim phổi (CPR) kết hợp tiêm tĩnh mạch sâu cấp cứu. |
 
+<FirstAidAssistant />
+
 ---
 
 ## **4. Phác Đồ Can Thiệp Lâm Sàng Và Quản Trị Khẩn Cấp**

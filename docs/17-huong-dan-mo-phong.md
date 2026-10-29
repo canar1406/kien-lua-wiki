@@ -36,7 +36,7 @@ Bảng Thống Kê ở góc phải phía trên là **Mắt Thần Số Hóa** đ
 *   **Quy Tiên**: Rất tiếc, kiến cũng có thanh máu. Khi làm việc kiệt sức không bù nước, hoặc đánh nhau dính sát thương nọc độc từ kẻ thù, một số cá thể sẽ gục ngã biến thành xác (đổi màu thành đen xám). Lúc này **Cơ chế An Táng Đồng Loại (Necrophoresis)** tự động kích hoạt. Sẽ có những cô kiến thợ dọn dẹp nhặt xác đem quẳng ra nghĩa địa (Góc ngoài cùng bên phải, biểu tượng 🪦).
 
 > **💡 Cơ chế Bí mật: "Sinh Khôi Phục Quân Số"**
-> Khi khối đường được mang thành công về lỗ tổ (`-70, -70`), điểm "Lương thực dự trữ" ở bảng Điều khiển bên trái sẽ +1. Cứ mỗi 3 Lương thực, vương quốc sẽ **ấp nở ra 1 cá thể kiến thợ hoàn toàn mới**, tăng dân số tối đa cho tổ từ đàn 20 con ban đầu!
+> Khi khối đường được mang thành công về lỗ tổ (`-70, -70`), điểm "Lương thực dự trữ" (Nutrition) ở bảng Điều khiển bên trái sẽ tăng tương ứng với kích thước mồi (1–4 điểm, hoặc 20 điểm từ xác nhện). Cứ mỗi **2 điểm Nutrition**, vương quốc sẽ **ấp nở ra 1 cá thể kiến mới** (tối đa 50 thực thể trực tiếp trên mặt đất và tự động tái chế vòng đời khi có cá thể quy tiên)!
 
 ---
 
@@ -47,11 +47,11 @@ Bảng Thống Kê ở góc phải phía trên là **Mắt Thần Số Hóa** đ
 Ngay lập tức, **Focus Panel** (Chế độ khóa mục tiêu) sẽ bung ra.
 
 Khung chứa này sẽ cho bạn:
-1.  **Dữ Liệu Huyết Khí:** Nó là loại cấp bậc gì (Tướng/Thợ).
-2.  **Trạng thái Máy Trạng Thái Hữu Hạn (FSM):** Hiển thị bộ mã Não bộ hiện tại của nó (Ví dụ: `Bio State: EVALUATING`, `CARRYING`, `FLEEING_RAIN`...).
-3.  **Diễn giải Chuyên Sâu:** Biến đoạn code máy học vô tri thành đoạn hội thoại sinh thái học. Giải nghĩa hành động đó bằng khoa học bằng tiến Việt.
-4.  **📚 Liên kết sâu Bách Khoa (Readmore):** Quan trọng nhất! Sẽ có một đường link màu xanh hiện ra như: `ĐỌC CHI TIẾT TRONG BÁCH KHOA →`. Khi dọng nút bấm đó, bạn sẽ ngay lập tức được "Bắn" vào bộ Bách Khoa Toàn Thư kiến Lửa, dừng chính xác tại Dòng Giải Thích Toán Học, Vật Lý và Sinh học của hành động bạn đang soi! (Đỉnh móp!).
-5.  **🎥 Theo Dõi Camera (Tracking Mode):** Nút này ép Camera 3D vĩnh viễn khóa chặt và tự động bay lượn theo đuôi của cá thể Ant được chọn. Bạn sẽ trải nghiệm góc nhìn thứ nhất (FPS) của kiến như phim hành động!
+1.  **Dữ Liệu Huyết Khí & Sinh Năng Lượng:** Cấp bậc giai cấp (Tướng `2.83 MEU` / Thợ `1.00 MEU`).
+2.  **Trạng thái Máy Trạng Thái Hữu Hạn (FSM):** Hiển thị bộ mã Não bộ hiện tại của nó (Ví dụ: `Bio State: FOOD_RECRUITMENT`, `GREETING`, `ALARMED`, `HUNGRY`...).
+3.  **Diễn giải Chuyên Sâu:** Biến đoạn code máy học vô tri thành đoạn hội thoại sinh thái học, giải nghĩa hành động đó bằng ngôn ngữ khoa học tiếng Việt.
+4.  **📚 Liên kết sâu Bách Khoa (Readmore):** Quan trọng nhất! Sẽ có một đường link màu xanh hiện ra như: `ĐỌC CHI TIẾT TRONG BÁCH KHOA →`. Khi nhấn nút bấm đó, bạn sẽ ngay lập tức được chuyển vào bộ Bách Khoa Toàn Thư Kiến Lửa, dừng chính xác tại chương giải thích Toán học, Vật lý và Sinh học của hành động bạn đang quan sát.
+5.  **🎥 Theo Dõi Camera (Tracking Mode):** Nút này khóa tâm Camera 3D tự động trượt mượt (`lerp`) theo cá thể kiến được chọn.
 
 ---
 
@@ -59,85 +59,128 @@ Khung chứa này sẽ cho bạn:
 
 Ba thanh trượt ở phần dưới bảng điều khiển cho phép bạn thay đổi điều kiện môi trường theo thời gian thực:
 
-- 🍬 **Tốc độ Mồi:** Tần suất thức ăn tự động rơi xuống bản đồ. Tăng cao → đàn kiến phát triển nhanh hơn.
-- 💧 **Độ Khô/Ẩm:** Mức độ khan hiếm nước trong môi trường. Giảm thấp → kiến dễ chết khát hơn.
-- 🕷️ **Sinh Kẻ Thù:** Tần suất nhện độc xuất hiện. Tăng cao → áp lực săn mồi lớn, đàn kiến suy giảm nhanh.
+- 🍬 **Tốc độ Mồi ($F \in [0, 10]$):** Tần suất thức ăn tự động rơi xuống bản đồ. Quyết định trực tiếp sức chứa dinh dưỡng $K_{\text{trophic}}$.
+- 💧 **Độ Khô/Ẩm ($W \in [0, 10]$):** Điều chỉnh độ thiếu hụt áp suất hơi nước (**VPD — Vapor Pressure Deficit**). Giảm thấp làm tăng tốc độ mất nước qua lớp biểu bì (cuticle) và giảm sức chứa thủy văn $K_{\text{hydro}}$.
+- 🕷️ **Sinh Kẻ Thù ($E \in [0, 10]$):** Tần suất thiên địch (nhện độc) xâm nhập lãnh thổ, gây hao hụt quần thể theo hàm đáp ứng chức năng **Holling Type II**.
 
 ---
 
-## 5. Hệ Thống Ánh Xạ Sức Chứa Tự Nhiên (Spatial Scaling)
+## 5. Nhịp Sinh Học 4 Buổi (Sáng · Trưa · Chiều · Tối) & Quyền Năng Thượng Đế (6 Thảm Họa Thời Tiết)
 
-Đây là tính năng **khoa học sinh thái học** được tích hợp vào Swarm Dashboard, giúp bạn hiểu quy mô thực tế của một vương quốc kiến lửa ngoài tự nhiên dựa trên dữ liệu mô phỏng vi mô.
+Trong tự nhiên, loài kiến lửa nhiệt đới *Solenopsis geminata* là sinh vật biến nhiệt (*ectotherm*) có hành vi kiếm ăn lưỡng cực (*bimodal foraging activity*) phụ thuộc chặt chẽ vào bức xạ mặt trời, nhiệt độ mặt đất $T_{\text{soil}}$ và độ thiếu hụt áp suất hơi nước VPD (Porter & Tschinkel, 1987 [2]; Cokendolpher & Francke, 1985 [14]). Người dùng đóng vai trò là **Đấng Sáng Thế (Omnipotent God Mode)**: bạn có thể để chu kỳ ngày–đêm tự động vận hành (`🔄 Tự chuyển 24h`) hoặc **cưỡng chế khóa cứng bất kỳ buổi nào / kích hoạt bất kỳ thảm họa thời tiết nào** ngay lập tức.
 
-### 5.1 Nguyên Lý Ô Lấy Mẫu (Quadrat Sampling)
+### 5.1 Cơ Chế Sinh Lý & Hành Vi Qua 4 Buổi Trong Ngày
 
-Bản đồ 3D không đại diện cho toàn bộ lãnh thổ của một tổ kiến, mà đóng vai trò là một **"Ô lấy mẫu vi mô" (Microcosm)** — một mảnh đất nhỏ được quan sát dưới kính hiển vi sinh thái. Từ dữ liệu vi mô này, hệ thống nội suy ra quy mô vĩ mô theo phương pháp **Quadrat Sampling** được sử dụng rộng rãi trong sinh thái học thực địa.
+| Buổi Sinh Học | Nhiệt Độ Đất $T_{\text{soil}}$ | Cơ Chế Sinh Học & Thích Nghi Của Bầy Kiến (*Solenopsis geminata*) |
+| :--- | :---: | :--- |
+| **🌅 Buổi Sáng (`morning`)** | $\approx 28^\circ\text{C}$ | **Đỉnh kiếm ăn thứ nhất & Phơi nắng sưởi ấm (`basking`):** Ánh nắng xiên góc ấm áp và sương sớm giúp giảm mất nước biểu bì (`0.65×`), Pheromone bền mùi (`0.75×` tốc độ bay hơi), tốc độ chạy tăng `+15%`. Một nhóm Kiến Thợ tập trung quanh vành gò tổ đón nắng để hấp thụ bức xạ hồng ngoại vào dịch huyết tương (*haemolymph*) rồi truyền nhiệt ấm xuống buồng ấp. |
+| **☀️ Buổi Trưa (`noon`)** | $\approx 39^\circ\text{C}$ | **Tránh nắng gắt & Tìm bóng râm (`shade_seeking`):** Mặt trời đứng bóng làm mặt đất nóng sát ngưỡng nhiệt cực đại sinh lý ($CT_{\max} \approx 43.5^\circ\text{C}$). Mất nước tăng vọt `2.3×` và Pheromone bay hơi nhanh `1.8×`. Khoảng $45\%$ Kiến Thợ Nhỏ (`Minor`, $1.0\text{ mg}$) tự động rút lui vào **7 vùng vi khí hậu bóng râm dưới tán bụi cây và hốc đá** (hiển thị vòng tròn mát xanh lá) để tránh sốc nhiệt, trong khi nhóm ngoài nắng chạy nước rút (`+18%` tốc độ) giữa các điểm bóng râm. |
+| **🌇 Buổi Chiều (`afternoon`)** | $\approx 31^\circ\text{C}$ | **Đỉnh kiếm ăn thứ hai & Tăng tốc tích trữ:** Nắng dịu dần, kiến từ các hốc bóng râm đồng loạt ùa ra. **Kiến Tướng (`Major`) tăng `+35%` công suất nghiền hạt cứng (`milling`)**, các đội **khiêng mồi hợp tác chạy nhanh thêm `+18%`**, và bán kính phát hiện xác đồng đội để dọn nghĩa địa (**Necrophoresis**) mở rộng thêm `+45%` trước khi trời tối. |
+| **🌙 Buổi Tối (`night`)** | $\approx 21^\circ\text{C}$ | **Hạ thân nhiệt đêm, Đom đóm & Cụm giữ nhiệt bảo vệ tổ (`nocturnal_guard`):** Bầu trời đêm xuất hiện Mặt Trăng và 45 đom đóm phát sáng sinh học. Thân nhiệt kiến giảm làm tốc độ di chuyển còn `0.74×`, nhưng tiết kiệm `-40%` năng lượng và `-65%` nước. Tầm nhìn quang học của mắt kép giảm còn `0.55×`, bù lại **độ nhạy khứu giác râu với Pheromone tăng `+45%`**. Kiến Lính và Kiến Thợ co cụm quanh cửa tổ và Kiến Chúa để giữ nhiệt $28\text{–}30^\circ\text{C}$, trong khi thiên địch nhện săn đêm tăng `+30%` tốc độ và sát thương. |
 
-| Thông số | Giá trị | Ý nghĩa |
-|----------|---------|---------|
-| `SIM_AREA_M2` | 0.1 m² | Diện tích mảng cỏ 3D đang mô phỏng |
-| `REAL_TERRITORY_M2` | 50 m² | Diện tích lãnh thổ kiếm ăn trung bình của 1 tổ *S. geminata* |
-| `SCALE_FACTOR` | 500× | Tỷ lệ phóng đại (50 ÷ 0.1) |
+### 5.2 Quyền Năng Thượng Đế: 6 Chế Độ Thời Tiết & Thảm Họa Tự Nhiên
 
-> **Cơ sở khoa học:** Nghiên cứu thực địa ghi nhận *Solenopsis geminata* có mật độ 10–80 tổ/acre ở môi trường tự nhiên, tương đương lãnh thổ kiếm ăn ~50 m²/tổ. Các tổ *S. invicta* trưởng thành chứa 100,000–250,000 cá thể *(Tschinkel, 1988; Researchgate: Areawide Suppression of Fire Ants)*.
-
-### 5.2 Công Thức Ánh Xạ
-
-$$K_{real} = K_{sim} \times \text{SCALE\_FACTOR}$$
-
-Ví dụ: Nếu mô phỏng cho thấy sức chứa vi mô $K_{sim} = 35$ kiến → Sức chứa thực tế ước tính $K_{real} = 35 \times 500 = \mathbf{17{,}500}$ cá thể.
-
-### 5.3 Sức Chứa Lý Thuyết Tối Đa (Theoretical Carrying Capacity)
-
-Hệ thống tính toán ngưỡng sức chứa tối đa dựa trên **Định luật Liebig (Liebig's Law of the Minimum)** — một trong những nguyên lý nền tảng của sinh thái học hiện đại (Justus von Liebig, 1840):
-
-> *"Sự tăng trưởng của quần thể bị giới hạn bởi tài nguyên khan hiếm nhất, không phải tổng lượng tài nguyên."*
-
-Công thức áp dụng:
-
-$$K_{max} = \min(K_{food},\ K_{water},\ K_{space}) \times (1 - P_{predation})$$
-
-Trong đó:
-
-| Biến | Công thức | Ý nghĩa |
-|------|-----------|---------|
-| $K_{food}$ | `foodRate × 15` | Sức chứa theo thức ăn |
-| $K_{water}$ | `waterRate × 20` | Sức chứa theo nước |
-| $K_{space}$ | `60` | Giới hạn mật độ không gian vật lý |
-| $P_{predation}$ | `min(0.8, enemyRate × 0.08)` | Áp lực săn mồi (0–80%) |
-
-**Ý nghĩa thực tiễn:** Nếu số kiến hiện tại **vượt quá** $K_{max}$, hệ sinh thái sẽ bước vào giai đoạn suy thoái do thiếu tài nguyên — Dashboard sẽ hiển thị cảnh báo đỏ ⚠️.
-
-### 5.4 Cách Đọc Dashboard
-
-Trong **Swarm Dashboard** (góc phải trên), bạn sẽ thấy 3 dòng thông tin:
-
-```
-🐜 Hiện tại: 35 cá thể
-📊 K trung bình (60s): 28 cá thể  ⓘ
-🌍 Thực Tế Ước Tính: 1.75 vạn    ⓘ
-```
-
-| Dòng | Ý nghĩa | Lưu ý |
-|------|---------|-------|
-| 🐜 **Hiện tại** | Số kiến đang sống tại thời điểm này | Thay đổi liên tục theo thời gian thực |
-| 📊 **K trung bình (60s)** | Trung bình động dân số trong 60 giây gần nhất | Luôn **thấp hơn** số hiện tại khi đàn đang bùng nổ — đây là giá trị K dùng trong sinh thái học |
-| 🌍 **Thực Tế Ước Tính** | Ánh xạ số kiến hiện tại ra quy mô lãnh thổ 50 m² | Tính từ số hiện tại, không phải K trung bình |
-
-> **Tại sao K trung bình lại thấp hơn số hiện tại?**
-> Đây là thiết kế có chủ đích. Trong sinh thái học, **K (Carrying Capacity)** không phải là số đếm tức thời mà là giá trị ổn định dài hạn của quần thể. Khi đàn vừa bùng nổ (ví dụ từ 20 → 35 con), K trung bình vẫn còn phản ánh lịch sử 60 giây trước đó nên thấp hơn. Sau khoảng 1–2 phút ổn định, K trung bình sẽ dần tiệm cận số hiện tại.
-
-Và phần **Sức Chứa Lý Thuyết Tối Đa**:
-
-```
-⚖️ SỨC CHỨA LÝ THUYẾT TỐI ĐA
-   📊 Vi mô (Mô phỏng):  45 cá thể
-   🌍 Vĩ mô (Thực tế):   2.25 vạn cá thể
-   ✓ Hệ sinh thái còn dư địa phát triển.
-```
-
-Icon **ⓘ** khi hover sẽ giải thích phương pháp nội suy diện tích.
+1. **🌤️ Quang Đãng (`clear`):** Điều kiện khí quyển tiêu chuẩn theo đúng nhịp sinh học 4 buổi.
+2. **🌧️ Mưa Rào (`rain`):** Mưa lớn (600 hạt mưa GPU) rửa trôi hoàn toàn các vệt Pheromone trên mặt đất (`18.5×` tốc độ suy giảm). Kiến lập tức dừng kiếm ăn, chạy về lỗ tổ (`-70, -70`) để trú ẩn dưới lòng đất (`hiding` / `hidden_inside`).
+3. **🌬️ Gió Bão (`windstorm`):** Luồng gió giật và bão cát (160 vệt bụi GPU + cỏ cây nghiêng ngả) thổi trôi lệch tọa độ các phân tử Pheromone theo chiều gió. Đặc biệt, kích hoạt **Phản xạ hướng gió cắn cỏ neo trụ (`wind_anchoring` — Anemotactic Mandibular Anchoring)**: Kiến Thợ Nhỏ ($1.0\text{ mg}$) lập tức hạ thấp trọng tâm và dùng hàm dưới cắn chặt vào gốc cỏ/mặt đất để không bị thổi bay, trong khi Kiến Tướng ($4.0\text{ mg}$) nặng gấp 4 lần vẫn lầm lũi bước đi làm tường chắn gió.
+4. **🌪️ Lốc Xoáy (`tornado`):** Siêu vòi rồng 3D đa tầng kèm 85 mảnh vỡ xoáy trôn ốc trên GPU.
+   - **Tương tác Thượng Đế:** Khi đang bật `🌪️ Lốc Xoáy`, bạn có thể **nhấp chuột trực tiếp lên bất kỳ vị trí nào trên mặt đất 3D** để chỉ huy tâm vòi rồng di chuyển tới càn quét vị trí đó!
+   - **Cơ chế vật lý & sinh học (`airborne_vortex`):** Kiến và thức ăn nằm trong bán kính mắt bão ($r < 15\text{ m}$) bị lực khí động học nhấc bổng lên không trung (tới độ cao $y = 16\text{ m}$) và cuốn xoay tròn 3 chiều theo quỹ đạo xoắn ốc. Nhờ tỷ lệ diện tích bề mặt trên khối lượng lớn và vận tốc rơi giới hạn nhỏ (*low insect terminal velocity* $\approx 1.8\text{ m/s}$), đa số kiến sống sót sau khi văng ra khỏi phễu lốc và đáp xuống đất, dù bị choáng và mất một phần máu va đập!
+5. **🔥 Nắng Hạn (`heatwave`):** Sóng nhiệt cực đoan làm nhiệt độ mặt đất tăng thêm $+7^\circ\text{C}$, tốc độ mất nước qua biểu bì tăng `3.8×` và Pheromone bay hơi nhanh `2.6×`. Đàn kiến buộc phải rút vào bóng râm dưới 7 bụi cây hoặc cử đội hình chạy khẩn cấp ra hồ nước ngọt (`60, 40`) uống nước cứu tổ.
+6. **🌊 Đại Hồng Thủy (`flood`):** Nước lũ dâng cao nhấn chìm toàn bộ lãnh thổ. Toàn bộ vương quốc kích hoạt cơ chế **Kết bè sống kỵ nước (`rafting` — Cassie–Baxter State)** (Mlot et al., 2011 [15]): dùng móng vuốt *tarsal claws* khóa chặt vào nhau quanh Kiến Chúa để tạo thành chiếc bè nổi không thấm nước.
 
 ---
 
-*Chúc các bạn có những giờ phút "Hóa thân thành Đấng Sáng Tạo Trí Tuệ Não Bộ Phức Tạp" tuyệt vời nhất trong module 3D này!*
+## 6. Mô Hình Ngoại Suy Sinh Thái & Dị Tốc 5 Tầng (5-Layer Biophysical & Allometric Extrapolation Engine)
+
+Thay vì nhân tuyến tính bằng một hằng số cố định (vốn mắc 4 sai lầm sinh thái học nghiêm trọng: nhân cả Kiến Chúa theo diện tích, bỏ qua biến thiên nhiệt–ẩm của tỷ lệ xuất quân bề mặt, đánh đồng tỷ lệ phân tầng của các giai cấp, và cộng tuyến tính trao đổi chất), hệ thống mô phỏng tích hợp **Phòng Lab Ngoại Suy Sinh Thái & Dị Tốc 5 Tầng (`📐 Phòng Lab Ánh Xạ & Ngoại Suy Thực Địa`)** dựa trên các công trình thực nghiệm kinh điển [1]–[12].
+
+### 5.1 Tầng 1: Tích Phân Cực 2D Độ Dốc Suy Giảm Mật Độ Tâm–Biên (2D Polar Radial Integration)
+
+Trên lãnh thổ kiếm ăn hình tròn tương đương có diện tích $A_{\text{terr}} \in [15, 120]\text{ m}^2$ (bán kính $R_{\text{terr}} = \sqrt{A_{\text{terr}}/\pi}$), mật độ kiến thợ kiếm ăn bề mặt giảm theo hàm mũ từ gò tổ ra biên giới lãnh thổ theo lý thuyết **Central-Place Foraging** (Orians & Pearson, 1979 [3]; Adams & Tschinkel, 2001 [4]):
+
+$$D(r) = D_0 \cdot e^{-\lambda r}$$
+
+Hệ số suy giảm $\lambda$ ($\text{m}^{-1}$) biến thiên động theo cấu trúc xã hội (**Monogyne** $\lambda_0 = 0.41\text{ m}^{-1}$ so với **Polygyne** $\lambda_0 = 0.29\text{ m}^{-1}$ do mạng lưới gò tổ đa chúa phân tán [10]) và cường độ đường mòn Pheromone đang hoạt động ($N_{\text{trail}}$):
+
+$$\lambda(F, N_{\text{trail}}) = \max\!\Big(0.18,\ \lambda_0 - 0.007 F - 0.0035 \min(25, N_{\text{trail}})\Big)$$
+
+Tích phân chính xác trong hệ tọa độ cực 2D trên toàn bộ đĩa lãnh thổ $r \in [0, R_{\text{terr}}]$ (được chuẩn hóa tại vị trí đặt khung Quadrat cận tổ $r_{\text{quad}} = 0.72\text{ m}$) cho hệ số hiệu chỉnh không gian giải tích:
+
+$$\eta_{\text{spatial}}(\lambda, R_{\text{terr}}) = \frac{1}{\pi R_{\text{terr}}^2} \int_0^{2\pi}\!\!\int_0^{R_{\text{terr}}} e^{-\lambda(r - r_{\text{quad}})}\,r\,dr\,d\theta = \frac{2}{(\lambda R_{\text{terr}})^2}\Big[1 - (1 + \lambda R_{\text{terr}})e^{-\lambda R_{\text{terr}}}\Big] e^{\lambda r_{\text{quad}}}$$
+
+> [!IMPORTANT]
+> **Loại trừ Kiến Chúa khỏi phép nhân không gian:** Chỉ các phân lớp vô sinh kiếm ăn trên bề mặt (`Minor`, `Soldier`, `Major`) mới được nhân với hệ số diện tích hiệu dụng $M_{\text{surface}} = (A_{\text{terr}} / A_{\text{sim}}) \cdot \eta_{\text{spatial}}$. **Kiến Chúa (`Queen`, ID `#0`)** là trung tâm sinh sản tại tâm tổ nên tuyệt đối không nhân theo diện tích mặt đất mà được xác định bởi cấu trúc xã hội (**Đơn chúa Monogyne** = $1$ Chúa; **Đa chúa Polygyne** = $6$ Chúa [10]).
+
+---
+
+### 5.2 Tầng 2: Ma Trận Nghịch Đảo Horvitz–Thompson Phân Tầng Theo Giai Cấp & Vi Khí Hậu
+
+Các nghiên cứu đào tổ toàn phần của Porter & Tschinkel (1987) [2] và Tschinkel (2006) [11] chỉ ra hai quy luật cốt lõi:
+1. **Phụ thuộc Nhiệt – Ẩm (Thermal–Hydric Modulation):** Tỷ lệ kiến xuất quân lên mặt đất tuân theo đường cong sinh lý nhiệt Gaussian đạt cực đại quanh $T_{\text{opt}} = 30.0^\circ\text{C}$ ($\sigma_T = 7.5^\circ\text{C}$) kết hợp với độ ẩm chống mất nước biểu bì $W$:
+   $$\phi(T_{\text{soil}}, W) = \exp\!\left(-\frac{(T_{\text{soil}} - 30.0)^2}{2 \times 7.5^2}\right) \cdot \left(0.62 + 0.38 \cdot \frac{W}{10}\right)$$
+2. **Bất đối xứng Phân tầng theo Giai cấp (Differential Caste Stratification):** Các giai cấp không xuất hiện trên mặt đất với tỷ lệ giống nhau:
+   - **Kiến Thợ (`Minor`):** $f_{\text{minor}}(T,W) = 0.19 \cdot \phi(T,W)$ ($\sim 81\%$ ở dưới hầm ngầm chăm sóc ấu trùng và đào đất).
+   - **Kiến Lính (`Soldier / Media`):** $f_{\text{soldier}}(T,W) = 0.27 \cdot \phi(T,W)$ (tập trung tuần tra dày đặc ở vành đai cửa tổ và đường mòn).
+   - **Kiến Tướng (`Major`):** $f_{\text{major}}(T,W) = 0.14 \cdot \phi(T,W)$ ($\sim 86\%$ ở sâu trong các kho hạt ngầm để nghiền hạt và làm *repletes* dự trữ lipid).
+
+Do đó, quân số thực tế của từng giai cấp trong toàn tổ (Bề mặt + Ngầm) được khôi phục qua phép nghịch đảo xác suất quan sát Horvitz–Thompson:
+
+$$N_{\text{colony},c} = \frac{N_{\text{surface},c}}{f_c(T_{\text{soil}}, W)}, \quad c \in \{\text{minor}, \text{soldier}, \text{major}\}$$
+
+Đồng thời, hệ thống ước lượng **Quần thể Ấu trùng & Nhộng ngầm (Subterranean Brood: Trứng, Ấu trùng tuổi I–IV, Nhộng)** theo tỷ lệ sinh khối ấu trùng của Markin et al. (1973) [1].
+
+---
+
+### 5.3 Tầng 3: Sinh Năng Lượng Học Dị Tốc 2 Cấp Kleiber–Hou ($M^{0.81}$) & Động Học Arrhenius
+
+Hệ thống phân biệt rõ **2 cấp độ dị tốc trao đổi chất**:
+1. **Cấp cá thể trên ô mẫu vi mô (Kleiber, 1932 [5]):** $B_i \propto m_i^{0.75}$, quy đổi ra **Đơn vị Trao đổi chất Tương đương (MEU)**:
+   - `Minor` ($1.0\text{ mg}$) = $\mathbf{1.00\text{ MEU}}$
+   - `Soldier` ($2.2\text{ mg}$) = $(2.2/1.0)^{0.75} \approx \mathbf{1.81\text{ MEU}}$
+   - `Major` ($4.0\text{ mg}$) = $(4.0/1.0)^{0.75} \approx \mathbf{2.83\text{ MEU}}$
+   - `Queen` ($14.2\text{ mg}$) = $(14.2/1.0)^{0.75} \approx \mathbf{7.32\text{ MEU}}$
+2. **Cấp siêu sinh vật toàn vương quốc (Hou et al., 2010 *PNAS* [6]; Gillooly et al., 2001 *Science* [12]):**
+   Tổng công suất trao đổi chất của toàn bộ tập đoàn kiến không tăng tuyến tính với tổng khối lượng mà tuân theo **định luật lũy thừa siêu sinh vật bậc $\beta = 0.81$** nhân với thừa số hoạt hóa nhiệt động học Boltzmann–Arrhenius ($E_a = 0.65\text{ eV}$):
+   $$P_{\text{colony}}\text{ (mW)} = B_0 \cdot \left(M_{\text{fresh,total}}\right)^{0.81} \cdot \exp\!\left(-\frac{E_a}{k_B}\left(\frac{1}{T_K} - \frac{1}{298.15}\right)\right)$$
+   Từ đó suy ra tổng ngân sách năng lượng tiêu thụ mỗi ngày ($\text{kJ/ngày}$) và khối lượng con mồi/carbohydrate tương đương mà vương quốc phải thu thập mỗi ngày ($\text{g/ngày}$).
+
+---
+
+### 5.4 Tầng 4: Định Luật Lũy Thừa Taylor & Khoảng Tin Cậy Thống Kê $95\%$ ($\pm\text{CI}_{95\%}$)
+
+Trong sinh thái học định lượng, các cá thể kiến di chuyển theo đường mòn Pheromone tạo ra phân bố quần tụ không gian (*aggregated spatial distribution*) tuân theo **Định luật Lũy thừa Taylor** (Taylor, 1961 [13]):
+
+$$\sigma^2 = a \cdot \mu^b \quad (a = 0.62,\ b = 1.44 > 1)$$
+
+Hệ thống tính trực tiếp **Sai số chuẩn tương đối ($\text{RSE}$)** có hiệu chỉnh quần thể hữu hạn $\text{FPC} = 1 - A_{\text{sim}}/A_{\text{terr}}$ và xuất ra **Khoảng tin cậy $95\%$ ($\text{CI}_{95\%}$)**:
+
+$$N_{\text{colony}} \pm 1.96 \cdot \text{RSE} \cdot N_{\text{colony}}$$
+
+---
+
+### 5.5 Tầng 5: Sức Chứa Cực Đại Liebig – Holling Type II (Resource-Bounded Carrying Capacity)
+
+Hệ thống xác định ngưỡng sức chứa cực đại dựa trên sự kết hợp giữa **Định luật Tối thiểu Liebig (Liebig's Law of the Minimum)**, **Áp lực Khô hạn VPD** [7] và **Hàm Đáp ứng Chức năng Săn mồi Holling Type II** (Holling, 1959) [8]:
+
+$$K_{\max}^{\text{MEU}} = \min\!\Big(K_{\text{trophic}}(F),\ K_{\text{hydro}}(W),\ K_{\text{space}}\Big) \times \left(1 - \frac{P_{\max} \cdot E}{E_{1/2} + E}\right)$$
+
+---
+
+## 7. Tài Liệu Tham Khảo Khoa Học (References)
+
+1. **[1]** G. P. Markin, J. O'Neal, and J. Dillier, "Foraging tunnels of the red imported fire ant, *Solenopsis invicta*," *Journal of the Kansas Entomological Society*, vol. 48, no. 1, pp. 83–89, 1975.
+2. **[2]** S. D. Porter and W. R. Tschinkel, "Foraging in *Solenopsis invicta* (Hymenoptera: Formicidae): effects of weather and season," *Environmental Entomology*, vol. 16, no. 3, pp. 802–808, 1987.
+3. **[3]** G. H. Orians and N. E. Pearson, "On the theory of central place foraging," in *Analysis of Ecological Systems*, Columbus, OH: Ohio State Univ. Press, 1979, pp. 155–177.
+4. **[4]** E. S. Adams and W. R. Tschinkel, "Spatial density dependence in colonies of the fire ant *Solenopsis invicta*," *Journal of Animal Ecology*, vol. 70, no. 3, pp. 355–369, 2001.
+5. **[5]** M. Kleiber, "Body size and metabolism," *Hilgardia*, vol. 6, no. 11, pp. 315–353, 1932.
+6. **[6]** C. Hou, M. Kaspari, H. B. Vander Zanden, and J. F. Gillooly, "Energetic basis of colonial living in social insects," *Proceedings of the National Academy of Sciences (PNAS)*, vol. 107, no. 8, pp. 3634–3638, 2010.
+7. **[7]** W. G. Hood and W. R. Tschinkel, "Desiccation resistance in arboreal and terrestrial ants," *Physiological Entomology*, vol. 15, no. 1, pp. 23–35, 1990.
+8. **[8]** C. S. Holling, "Some characteristics of simple types of predation and parasitism," *The Canadian Entomologist*, vol. 91, no. 7, pp. 385–398, 1959.
+9. **[9]** M. Burd, D. Archer, N. Aranwela, and D. J. Stradling, "Traffic dynamics of the leaf-cutting ant, *Atta cephalotes*," *The American Naturalist*, vol. 159, no. 3, pp. 283–293, 2002.
+10. **[10]** E. L. Vargo and D. J. C. Fletcher, "On the relationship between queen number and fecundity in polygyne colonies of the fire ant *Solenopsis invicta*," *Physiological Entomology*, vol. 14, no. 2, pp. 223–232, 1989.
+11. **[11]** W. R. Tschinkel, *The Fire Ants*. Cambridge, MA: Belknap Press of Harvard University Press, 2006.
+12. **[12]** J. F. Gillooly, J. H. Brown, G. B. West, V. M. Savage, and E. L. Charnov, "Effects of size and temperature on metabolic rate," *Science*, vol. 293, no. 5538, pp. 2248–2251, 2001.
+13. **[13]** L. R. Taylor, "Aggregation, variance and the mean," *Nature*, vol. 189, pp. 732–735, 1961.
+14. **[14]** J. C. Cokendolpher and O. F. Francke, "Temperature preferences of four species of fire ants (Hymenoptera: Formicidae: *Solenopsis*)," *Psyche*, vol. 92, pp. 91–101, 1985.
+15. **[15]** N. J. Mlot, C. A. Tovey, and D. L. Hu, "Fire ants self-assemble into waterproof rafts to survive floods," *Proceedings of the National Academy of Sciences (PNAS)*, vol. 108, no. 19, pp. 7669–7674, 2011.

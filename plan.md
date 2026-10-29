@@ -1,31 +1,33 @@
-# KẾ HOẠCH BỔ SUNG: ÁNH XẠ SỨC CHỨA TỰ NHIÊN (SPATIAL SCALING)
+# MÔ HÌNH TOÁN SINH THÁI HỌC 3 TẦNG & SINH NĂNG LƯỢNG DỊ TỐC (MULTI-TIER ECOLOGICAL & ALLOMETRIC SCALING)
 
-## 🎯 1. Nguyên Lý Toán Học (Quadrat Sampling Method)
-* Mô phỏng 3D hiện tại không đại diện cho toàn bộ tổ kiến, mà đóng vai trò là một **"Ô lấy mẫu vi mô" (Microcosm)**.
-* Giữ nguyên tỷ lệ hành vi 1:1 (1 kiến 3D = 1 kiến thật).
-* Dùng công thức nội suy diện tích để phóng đại Sức chứa vi mô ($K_{sim}$) thành Sức chứa vĩ mô ngoài tự nhiên ($K_{real}$).
+## 🎯 1. Nền Tảng Khoa Học Thực Nghiệm
+Thay vì phép nhân diện tích tuyến tính ngây thơ ($50\text{ m}^2 / 0.1\text{ m}^2 = 500\times$ — vốn giả định sai lệch rằng kiến phân bố đồng đều trên toàn lãnh thổ và $100\%$ quân số đều nằm trên mặt đất), mô hình ánh xạ bầy đàn sang quy mô tự nhiên của *Solenopsis geminata* được xây dựng chặt chẽ trên 4 trụ cột sinh thái học và sinh năng lượng học:
 
-## ⚙️ 2. Biến Số Bổ Sung (Variables)
-Cần định nghĩa 2 hằng số (Constants) về không gian trong file cấu hình:
-* `SIM_AREA_M2`: Diện tích mảng cỏ 3D đang mô phỏng (Ví dụ: `0.1` - tức là $0.1 m^2$).
-* `REAL_TERRITORY_M2`: Diện tích lãnh thổ trung bình của một vương quốc kiến lửa ngoài tự nhiên (Ví dụ: `50.0` - tức là $50 m^2$).
-* `SCALE_FACTOR`: Tỷ lệ phóng đại = `REAL_TERRITORY_M2 / SIM_AREA_M2` (Ví dụ: $50 / 0.1 = 500$).
+1. **Lý thuyết Kiếm ăn Trung tâm (Central-Place Foraging Theory — Orians & Pearson, 1979; Adams & Tschinkel, 2001):**
+   - Mật độ kiến kiếm ăn trên mặt đất suy giảm theo hàm mũ từ tâm tổ ra biên giới lãnh thổ ($A_{\text{terr}} = 50\text{ m}^2$): $D(r) = D_0 \cdot e^{-\lambda r}$.
+   - Ô lấy mẫu chuẩn Quadrat ($A_{\text{sim}} = 0.25\text{ m}^2$, kích thước $50\text{ cm} \times 50\text{ cm}$ vùng cận tổ) khi tích phân ra toàn lãnh thổ $50\text{ m}^2$ có hệ số hiệu chỉnh phân bố không gian $\eta_{\text{spatial}} = 0.45$.
+   - Hệ số quy đổi quần thể kiếm ăn bề mặt:
+     $$M_{\text{surface}} = \frac{A_{\text{terr}}}{A_{\text{sim}}} \times \eta_{\text{spatial}} = \frac{50}{0.25} \times 0.45 = 90\times$$
 
-## 🧮 3. Thuật Toán Ánh Xạ (Scaling Algorithm)
-* Bước 1: Hệ thống vẫn chạy Moving Average ngầm để tính ra **Sức chứa vi mô ($K_{sim}$)** của bàn cờ 3D (như kế hoạch trước). Ví dụ: Tính ra được mảng cỏ này nuôi được tối đa 35 con.
-* Bước 2: Chạy hàm nội suy: 
-  `K_real = K_sim * SCALE_FACTOR`
-  *(Ví dụ: 35 x 500 = 17,500 con kiến).*
+2. **Tỷ lệ Phân tầng Tổ ngầm – Bề mặt (Subterranean vs. Surface Stratification — Markin et al., 1975; Porter & Tschinkel, 1987; Tschinkel, 2006):**
+   - Thực nghiệm đào tổ định lượng chứng minh chỉ có $f_{\text{forage}} = 18\%$ (dao động $15\%\text{–}22\%$) tổng dân số kiến lửa hoạt động trên bề mặt đất tại một thời điểm; $82\%$ còn lại nằm trong hệ thống buồng ngầm chăm sóc ấu trùng, kiến chúa và dự trữ lương thực (*repletes*).
+   - Hệ số quy đổi toàn bộ vương quốc (Bề mặt + Tổ ngầm):
+     $$M_{\text{colony}} = \frac{M_{\text{surface}}}{f_{\text{forage}}} = \frac{90}{0.18} = 500\times$$
 
-## 🖥️ 4. Hiển Thị Giao Diện (Dashboard UI Update)
-Cập nhật lại dòng thông báo Sức chứa trên **Swarm Dashboard** để hiển thị cả 2 thông số, giúp người dùng hiểu rõ quy mô:
+3. **Định luật Dị tốc Trao đổi chất Kleiber (Kleiber's $3/4$ Allometric Scaling Law — Kleiber, 1932; Hou et al., 2010 PNAS):**
+   - Kiến thợ nhỏ (Minor Worker, $\text{HW} < 0.924\text{ mm}$) có khối lượng tươi trung bình $m_{\text{minor}} \approx 1.0\text{ mg}$; Kiến tướng (Major Worker, $\text{HW} \ge 0.924\text{ mm}$) có khối lượng tươi $m_{\text{major}} \approx 4.0\text{ mg}$.
+   - Tốc độ trao đổi chất cơ bản tỷ lệ với $m^{0.75}$, do đó 1 cá thể Major tiêu thụ năng lượng tương đương:
+     $$\alpha_{\text{major}} = \left(\frac{4.0}{1.0}\right)^{0.75} \approx 2.83\text{ MEU (Metabolic Equivalent Units)}$$
+   - Tải trọng trao đổi chất của quần thể vi mô:
+     $$N_{\text{eq}}\text{ (MEU)} = N_{\text{minor}} + 2.83 \cdot N_{\text{major}}$$
 
-* **Thay đổi Text hiển thị thành:**
-  * `[Khung Vi Mô]: Sức chứa ~ [K_sim] cá thể`
-  * `[Thực Tế Ước Tính]: Sức chứa vương quốc ~ [K_real] vạn cá thể`
-* Thêm một dấu `(?)` nhỏ (Tooltip) cạnh chữ "Thực Tế Ước Tính". Khi người dùng hover chuột vào, hiện giải thích: *"Dựa trên phép nội suy diện tích từ ô lấy mẫu vi mô ra lãnh thổ 50 mét vuông ngoài tự nhiên."*
-
-## 🚀 5. Lộ Trình Triển Khai Nhanh (Fast-track)
-1. Thêm 3 biến `SIM_AREA_M2`, `REAL_TERRITORY_M2`, `SCALE_FACTOR` vào đầu file quản lý mô phỏng.
-2. Viết hàm `calculateRealCapacity(k_sim) { return Math.round(k_sim * SCALE_FACTOR); }`.
-3. Cập nhật thẻ HTML/React hiển thị trên UI Bảng điều khiển.
+4. **Sức chứa Cực đại theo Định luật Liebig & Đáp ứng Chức năng Holling Type II (Liebig, 1840; Holling, 1959; Hood & Tschinkel, 1990; Burd et al., 2002):**
+   - Sức chứa cực đại theo đơn vị trao đổi chất ($\text{MEU}$):
+     $$K_{\max}^{\text{MEU}} = \min\!\Big(K_{\text{trophic}}(F),\ K_{\text{hydro}}(W),\ K_{\text{space}}\Big) \times \left(1 - \frac{P_{\max} \cdot E}{E_{1/2} + E}\right)$$
+   - Trong đó:
+     - $K_{\text{trophic}}(F) = \lfloor 6 + 14.5 \cdot F^{0.95} \rfloor\text{ MEU}$
+     - $K_{\text{hydro}}(W) = \lfloor 8 + 18.0 \cdot W^{0.90} \rfloor\text{ MEU}$
+     - $K_{\text{space}} = 65\text{ MEU}$
+     - $P(E) = \frac{0.85 \cdot E}{6.0 + E}$ ($P_{\max} = 0.85, E_{1/2} = 6.0$)
+   - Quy đổi ra số lượng cá thể vật lý theo cấu trúc giai cấp hiện tại ($\bar{\alpha} = N_{\text{eq}} / N_{\text{sim}}$):
+     $$K_{\max} = \left\lfloor \frac{K_{\max}^{\text{MEU}}}{\bar{\alpha}} \right\rfloor$$

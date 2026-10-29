@@ -259,7 +259,7 @@ export default function Home() {
     <Layout
       title="Bách Khoa Toàn Thư"
       description="Trang bách khoa toàn thư vi phẫu về hệ sinh thái loài Kiến lửa.">
-      <main className="w-full font-sans overflow-x-hidden antialiased bg-white dark:bg-black text-neutral-900">
+      <main className="w-full font-sans overflow-x-hidden antialiased bg-white dark:bg-black text-neutral-900 dark:text-white">
         <HeroSection />
         <AnatomySection />
         <AntViewerSection />

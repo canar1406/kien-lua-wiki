@@ -84,7 +84,7 @@ Túi khí Plastron bơm thêm một thể tích khí khổng lồ vào bên tron
 Lực nổi Archimedes sinh ra từ đệm khí này đủ sức gánh vác toàn bộ tải trọng của bộ sậu hoàng gia phía trên: Kiến chúa, nhộng và đặc biệt là hàng vạn ấu trùng. (Ấu trùng của *Solenopsis* sở hữu một lớp lông kỵ nước cực dày, giúp khuếch đại thể tích bẫy khí Plastron, biến chúng thành những chiếc "phao sinh học" xuất sắc nhất, thường được kiến thợ xếp ở vị trí móng của bè để tăng lực nổi).
 
 ### **4.2. Hô Hấp Dưới Nước Nhờ "Mang Vật Lý" (Physical Gill)**
-Chức năng vĩ đại thứ hai của Plastron là giải quyết bài toán hô hấp cho những con kiến ở lớp đáy đang bị dìm sâu dưới mặt nước. Chúng hoàn toàn không cần phải ngoi lên mặt nước để thở. http://googleusercontent.com/image_content/396
+Chức năng vĩ đại thứ hai của Plastron là giải quyết bài toán hô hấp cho những con kiến ở lớp đáy đang bị dìm sâu dưới mặt nước. Chúng hoàn toàn không cần phải ngoi lên mặt nước để thở.
 
 
 

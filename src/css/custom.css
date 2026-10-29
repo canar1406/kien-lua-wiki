@@ -591,27 +591,37 @@ html {
 }
 
 
-/* --- Mapping Phycat Abyss to Docusaurus Docs --- */
-[data-theme='dark'] {
-  --ifm-background-color: var(--bg-color);
-  --ifm-font-color-base: var(--text-color);
-  --ifm-color-primary: var(--primary-color);
-  --ifm-code-background: var(--code-block-bg);
+/* --- Mapping Phycat Themes & Unified Wiki Palette to Docusaurus Docs --- */
+html[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #fffbfc;
+  --ifm-font-color-base: #1e293b;
+  --ifm-font-color-secondary: #475569;
+  --ifm-color-primary: #dc2626;
+  --ifm-code-background: #fff1f2;
+  --ifm-toc-border-color: rgba(225, 29, 72, 0.14);
+  --ifm-hr-border-color: rgba(225, 29, 72, 0.15);
+  background-color: #ffffff;
+  color: #1e293b;
 }
 
-/* Make markdown tables scrollable on mobile instead of being clipped */
+html[data-theme='dark'] {
+  --ifm-background-color: #0d0d10;
+  --ifm-background-surface-color: #141418;
+  --ifm-font-color-base: #f4f4f5;
+  --ifm-font-color-secondary: #a1a1aa;
+  --ifm-color-primary: #ef4444;
+  --ifm-code-background: #27272a;
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.08);
+  --ifm-hr-border-color: rgba(255, 255, 255, 0.08);
+  background-color: #0d0d10;
+  color: #f4f4f5;
+}
+
+/* Make markdown container well-proportioned */
 .markdown {
   max-width: var(--max-width) !important;
   margin: 0 auto;
-}
-
-/* Responsive table: phải dùng cùng specificity với rule bên dưới để override */
-html[data-theme='dark'] .markdown table,
-html[data-theme='light'] .markdown table,
-.markdown table {
-  display: block !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch;
 }
 
 .markdown h1 {
@@ -961,96 +971,6 @@ html .theme-code-block button {
   margin-top: -5px !important;
   background: transparent !important;
   border: none !important;
-}
-
-/* === TYPORA CODE BLOCK MAPPING FOR DOCUSAURUS (FIXED) ====== */
-html .theme-code-block,
-html .theme-code-block>div,
-html .theme-code-block [class*='codeBlockContent_'],
-html .theme-code-block [class*='codeBlockContainer_'],
-html .theme-code-block .prism-code {
-  --prism-background-color: transparent !important;
-  background-color: transparent !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-html .theme-code-block [class*='codeBlockContent_'] {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-html[data-theme='dark'] .theme-code-block {
-  position: relative !important;
-  margin: 20px 0 !important;
-  border-radius: 8px !important;
-  background-color: #282a36 !important;
-  border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 80%) !important;
-}
-
-html[data-theme='dark'] .theme-code-block::before {
-  content: '' !important;
-  display: block !important;
-  height: 32px !important;
-  width: 100% !important;
-  border-radius: 8px 8px 0 0 !important;
-  background-color: color-mix(in srgb, var(--secondary-color), transparent 95%) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--secondary-color), transparent 90%) !important;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
-  background-repeat: no-repeat !important;
-  background-size: 40px !important;
-  background-position: 12px 11px !important;
-}
-
-html[data-theme='dark'] .theme-code-block .prism-code {
-  padding: 10px 12px 12px 20px !important;
-  color: #f8f8f2 !important;
-  font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important;
-  border-radius: 8px !important;
-  line-height: 1.6rem !important;
-  font-size: .95rem !important;
-  margin: 0 !important;
-}
-
-html[data-theme='light'] .theme-code-block {
-  position: relative !important;
-  margin: 20px 0 !important;
-  border-radius: 5px !important;
-  border: none !important;
-  background-color: #f8f8f8 !important;
-}
-
-html[data-theme='light'] .theme-code-block::before {
-  content: '' !important;
-  display: block !important;
-  height: 32px !important;
-  width: 100% !important;
-  border-radius: 5px 5px 0 0 !important;
-  background-color: #f8f8f8 !important;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
-  background-repeat: no-repeat !important;
-  background-size: 40px !important;
-  background-position: 6px 11px !important;
-  margin-bottom: 0 !important;
-}
-
-html[data-theme='light'] .theme-code-block .prism-code {
-  border-radius: 0 0 5px 5px !important;
-  padding: 5px 12px 12px 20px !important;
-  color: #4f5467 !important;
-  font-family: CascadiaCode, 'Lucida Console', Consolas, Courier, monospace !important;
-  line-height: 1.8rem !important;
-  margin: 0 !important;
-  font-size: .95rem !important;
-}
-
-html .theme-code-block button {
-  z-index: 10 !important;
-  padding: 4px !important;
-  margin-top: -5px !important;
-  background: transparent !important;
-  border: none !important;
   box-shadow: none !important;
 }
 
@@ -1377,209 +1297,9 @@ html[data-theme] .markdown h6::before {
   font-weight: 500 !important;
 }
 
-html body h6:after,
-html body h1::before,
-html body h2::before,
-html body h3::before,
-html body h4::before,
-html body h5::before,
-html body h6::before {
-  display: none !important;
-  content: none !important;
-}
-
-/* Kích hoạt lại cho đúng phạm vi bài viết Markdown (có tính đặc tả cao hơn nên sẽ thắng) */
-html[data-theme] .markdown h1:after,
-html[data-theme] .markdown h2:after,
-html[data-theme] .markdown h3:after,
-html[data-theme] .markdown h4:after,
-html[data-theme] .markdown h5:after,
-html[data-theme] .markdown h6:after {
-  display: inline-block !important;
-  content: '' !important;
-}
-
-html[data-theme] .markdown h1::before,
-html[data-theme] .markdown h2::before,
-html[data-theme] .markdown h3::before,
-html[data-theme] .markdown h4::before,
-html[data-theme] .markdown h5::before,
-html[data-theme] .markdown h6::before {
-  display: inline-block !important;
-  /* content: ""; sẽ được gán lại bởi Typora CSS phía dưới */
-}
-
-html[data-theme] .markdown h1::before,
-html[data-theme] .markdown h2::before,
-html[data-theme] .markdown h3::before,
-html[data-theme] .markdown h4::before,
-html[data-theme] .markdown h5::before,
-html[data-theme] .markdown h6::before {
-  content: '' !important;
-}
-
-html[data-theme] .markdown h1::before,
-html[data-theme] .markdown h2::before,
-html[data-theme] .markdown h3::before,
-html[data-theme] .markdown h4::before,
-html[data-theme] .markdown h5::before,
-html[data-theme] .markdown h6::before {
-  content: '' !important;
-}
-
-
-/* =========================================================================
-   GORGEOUS NAVBAR & FOOTER STYLES
-   ========================================================================= */
-
-/* --- NAVBAR ENHANCEMENTS --- */
-.navbar {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(225, 29, 72, 0.1) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
-}
-
-[data-theme='dark'] .navbar {
-  background-color: rgba(10, 10, 10, 0.8) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Navbar Title */
-.navbar__title {
-  font-weight: 900 !important;
-  background: linear-gradient(to right, #dc2626, #f43f5e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
-}
-
-[data-theme='dark'] .navbar__title {
-  background: linear-gradient(to right, #ef4444, #fb7185);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Navbar Links Hover */
-.navbar__item {
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-.navbar__link:hover {
-  color: #dc2626 !important;
-}
-
-[data-theme='dark'] .navbar__link:hover {
-  color: #ef4444 !important;
-}
-
-/* Active Navbar Link */
-.navbar__link--active {
-  color: #dc2626 !important;
-}
-
-[data-theme='dark'] .navbar__link--active {
-  color: #ef4444 !important;
-}
-
-/* Beautiful Pill Hover Effect for Links */
-.navbar__link::after {
-  display: none !important;
-}
-
-.navbar__link:hover,
-.navbar__link--active {
-  background-color: rgba(225, 29, 72, 0.08) !important;
-}
-
-[data-theme='dark'] .navbar__link:hover,
-[data-theme='dark'] .navbar__link--active {
-  background-color: rgba(239, 68, 68, 0.1) !important;
-}
-
-/* --- FOOTER ENHANCEMENTS --- */
-.footer {
-  background: linear-gradient(to bottom, #fff, #fff1f2) !important;
-  border-top: 1px solid rgba(225, 29, 72, 0.1) !important;
-  padding: 4rem 0 !important;
-  color: #404040 !important;
-}
-
-[data-theme='dark'] .footer {
-  background: linear-gradient(to bottom, #0a0a0a, #000) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-  color: #a3a3a3 !important;
-}
-
-/* Footer Titles */
-.footer__title {
-  font-weight: 800 !important;
-  font-size: 1.1rem !important;
-  color: #171717 !important;
-  margin-bottom: 1.5rem !important;
-  position: relative;
-  display: inline-block;
-}
-
-.footer__title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 24px;
-  height: 3px;
-  background-color: #dc2626;
-  border-radius: 2px;
-}
-
-[data-theme='dark'] .footer__title {
-  color: #fff !important;
-}
-
-[data-theme='dark'] .footer__title::after {
-  background-color: #ef4444;
-}
-
-/* Footer Links */
-.footer__link-item {
-  color: #525252 !important;
-  font-weight: 500 !important;
-  padding: 6px 0 !important;
-  display: inline-block;
-  transition: all 0.3s ease !important;
-}
-
-.footer__link-item:hover {
-  color: #dc2626 !important;
-  transform: translateX(6px) !important;
-}
-
-[data-theme='dark'] .footer__link-item {
-  color: #a3a3a3 !important;
-}
-
-[data-theme='dark'] .footer__link-item:hover {
-  color: #ef4444 !important;
-}
-
-/* Footer Copyright */
-.footer__copyright {
-  margin-top: 3rem !important;
-  padding-top: 1.5rem !important;
-  border-top: 1px solid rgba(225, 29, 72, 0.1) !important;
-  font-size: 0.95rem !important;
-  color: #737373 !important;
-  font-weight: 500 !important;
-}
-
 [data-theme='dark'] .footer__copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-  color: #525252 !important;
+  color: #737373 !important;
 }
 
 /* =============================================================== */
@@ -1594,4 +1314,242 @@ html[data-theme='light'] .markdown h2 * {
 
 html[data-theme='light'] .markdown h2 {
   background: var(--head-title-h2-background) !important;
+}
+
+html[data-theme='light'] .markdown h2 code {
+  background-color: rgba(0, 0, 0, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* =========================================================================
+   UNIFIED WIKI / DOCS LAYOUT (SIDEBAR, TOC, BREADCRUMBS, PAGINATION, MOBILE)
+   ========================================================================= */
+
+/* 1. Left Doc Sidebar */
+html[data-theme='light'] .theme-doc-sidebar-container {
+  background-color: #fffbfc !important;
+  border-right: 1px solid rgba(225, 29, 72, 0.12) !important;
+}
+
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #0d0d10 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+.theme-doc-sidebar-menu.menu__list {
+  padding: 0.5rem 0.4rem !important;
+}
+
+html[data-theme='light'] .menu__link {
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+}
+
+html[data-theme='dark'] .menu__link {
+  color: #d4d4d8;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+}
+
+html[data-theme='light'] .menu__link:hover {
+  background-color: rgba(225, 29, 72, 0.08) !important;
+  color: #dc2626 !important;
+}
+
+html[data-theme='dark'] .menu__link:hover {
+  background-color: rgba(239, 68, 68, 0.12) !important;
+  color: #f87171 !important;
+}
+
+html[data-theme='light'] .menu__link--active:not(.menu__link--sublist) {
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.12), rgba(244, 63, 94, 0.04)) !important;
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+  border-left: 3px solid #dc2626;
+}
+
+html[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.18), rgba(239, 68, 68, 0.03)) !important;
+  color: #f87171 !important;
+  font-weight: 700 !important;
+  border-left: 3px solid #ef4444;
+}
+
+/* Category Headers in Sidebar */
+html[data-theme='light'] .menu__link--sublist {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme='dark'] .menu__link--sublist {
+  color: #f4f4f5 !important;
+  font-weight: 700 !important;
+}
+
+/* 2. Right Table of Contents (TOC) */
+.table-of-contents {
+  font-size: 0.85rem;
+  padding-left: 0.75rem;
+}
+
+html[data-theme='light'] .table-of-contents__left-border {
+  border-left: 1px solid rgba(225, 29, 72, 0.15) !important;
+}
+
+html[data-theme='dark'] .table-of-contents__left-border {
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme='light'] .table-of-contents__link {
+  color: #64748b;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: block;
+}
+
+html[data-theme='dark'] .table-of-contents__link {
+  color: #a1a1aa;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: block;
+}
+
+html[data-theme='light'] .table-of-contents__link:hover,
+html[data-theme='light'] .table-of-contents__link--active {
+  color: #dc2626 !important;
+  font-weight: 600;
+}
+
+html[data-theme='dark'] .table-of-contents__link:hover,
+html[data-theme='dark'] .table-of-contents__link--active {
+  color: #f87171 !important;
+  font-weight: 600;
+}
+
+/* 3. Breadcrumbs */
+html[data-theme='light'] .breadcrumbs__item--active .breadcrumbs__link {
+  background-color: #fff1f2 !important;
+  color: #dc2626 !important;
+  font-weight: 600;
+  border: 1px solid rgba(225, 29, 72, 0.18);
+}
+
+html[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  font-weight: 600;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* 4. Pagination Cards (Next / Previous Chapter) */
+html[data-theme='light'] .pagination-nav__link {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(225, 29, 72, 0.18) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.04) !important;
+  transition: all 0.25s ease !important;
+}
+
+html[data-theme='light'] .pagination-nav__link:hover {
+  border-color: #dc2626 !important;
+  background-color: #fff1f2 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.1) !important;
+}
+
+html[data-theme='dark'] .pagination-nav__link {
+  background-color: #141418 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+html[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15) !important;
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* 5. Mobile Navbar Sidebar Dark/Light Consistency & Scrollability */
+html[data-theme='light'] .navbar-sidebar {
+  background-color: #ffffff !important;
+}
+
+html[data-theme='dark'] .navbar-sidebar {
+  background-color: #0d0d10 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-sidebar__items {
+  overflow-y: auto !important;
+}
+
+/* 6. Custom Scrollbars Scoped per Theme */
+html[data-theme='light'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html[data-theme='light'] ::-webkit-scrollbar-track {
+  background: #fff1f2;
+}
+
+html[data-theme='light'] ::-webkit-scrollbar-thumb {
+  background: #fda4af;
+  border-radius: 4px;
+}
+
+html[data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0d0d10;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* 7. Ant Simulation 3D HTML Tag Stacking Isolation (Prevent @react-three/drei Html z-index: 16777271 from overlapping UI panels & Lab modal) */
+.ant-sim-canvas-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1 !important;
+  isolation: isolate !important;
+}
+
+.ant-sim-canvas-stage > div > div[style*="translate3d"] {
+  z-index: 5 !important;
+  pointer-events: none !important;
+}
+
+.ant-sim-lab-open .ant-sim-canvas-stage > div > div[style*="translate3d"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }

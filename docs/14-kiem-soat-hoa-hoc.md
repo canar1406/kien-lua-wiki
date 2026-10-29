@@ -36,7 +36,7 @@ Hydramethylnon là một dẫn xuất thuộc nhóm *trifluoromethyl aminohydraz
 ### **2.2. Nhóm Điều Hòa Kênh Ion Thần Kinh (Điển hình: Indoxacarb)**
 Thuộc nhóm hóa học *oxadiazine*, Indoxacarb là một hoạt chất thông minh, xâm nhập qua đường tiêu hóa hoặc tiếp xúc trực tiếp.
 
-*   **Cơ chế đích:** Nó đóng vai trò như một **chất chẹn kênh ion natri phụ thuộc điện thế**. http://googleusercontent.com/image_content/278
+*   **Cơ chế đích:** Nó đóng vai trò như một **chất chẹn kênh ion natri phụ thuộc điện thế**.
 
 
 *   **Hệ quả sinh lý:** Hệ thần kinh của côn trùng truyền tín hiệu thông qua việc mở và đóng các kênh natri để tạo ra điện thế hoạt động (action potential). Indoxacarb gắn vào và khóa chặt kênh này, làm ngừng hoàn toàn dòng xung điện. Hậu quả là côn trùng mất khả năng điều phối cơ bắp, tê liệt, ngưng ăn và chết do mất nước/đói. 

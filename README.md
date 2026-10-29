@@ -1,19 +1,19 @@
-﻿<p align="center">
+<p align="center">
   <img src="static/img/logo.png" alt="Kiến Lửa Wiki Logo" width="120" />
 </p>
 
-<h1 align="center">🔥 Kiến Lửa Wiki — Bách Khoa Toàn Thư Vi Phẫu</h1>
+<h1 align="center">🔥 Kiến Lửa Wiki — Bách Khoa Toàn Thư Vi Phẫu & Mô Phỏng Siêu Sinh Vật 3D</h1>
 
 <p align="center">
-  <em>Trang bách khoa toàn thư chuyên sâu về hệ sinh thái loài Kiến lửa đỏ (<i>Solenopsis geminata</i>)</em>
+  <em>Bách khoa toàn thư chuyên sâu kết hợp Phòng thí nghiệm Mô phỏng 3D Đa Giai Cấp & Ngoại suy Toán Sinh thái 5 Tầng về loài Kiến lửa nhiệt đới (<i>Solenopsis geminata</i>)</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Docusaurus-3.9.2-green?style=flat-square&logo=docusaurus" alt="Docusaurus" />
   <img src="https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react" alt="React" />
   <img src="https://img.shields.io/badge/Three.js-r170-black?style=flat-square&logo=threedotjs" alt="Three.js" />
+  <img src="https://img.shields.io/badge/GPU_Skinning-DataTexture_Atlas-10b981?style=flat-square" alt="GPU Bone Atlas" />
   <img src="https://img.shields.io/badge/TailwindCSS-4-38bdf8?style=flat-square&logo=tailwindcss" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/3D_Viewer-model--viewer-orange?style=flat-square" alt="Model Viewer" />
   <img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=flat-square&logo=githubactions" alt="CI/CD" />
   <img src="https://img.shields.io/badge/License-Educational-yellow?style=flat-square" alt="License" />
 </p>
@@ -22,319 +22,194 @@
 
 ## 📖 Giới thiệu
 
-**Kiến Lửa Wiki** là dự án Sinh học dưới hình thức website bách khoa toàn thư, cung cấp kiến thức toàn diện về loài kiến lửa đỏ (*Solenopsis geminata*) — một loài côn trùng xâm lấn nguy hiểm tại Việt Nam và trên toàn cầu. Dự án kết hợp nội dung nghiên cứu chuyên sâu với công nghệ hiển thị 3D tương tác và mô phỏng AI hành vi đàn kiến theo thời gian thực.
+**Kiến Lửa Wiki** là dự án Sinh học – Khoa học Máy tính dưới hình thức website bách khoa toàn thư tương tác, cung cấp kiến thức toàn diện về loài kiến lửa nhiệt đới (*Solenopsis geminata*) — một loài côn trùng xã hội xâm lấn nguy hiểm tại Việt Nam và trên toàn cầu. Dự án kết hợp **17 tài liệu bách khoa chuyên sâu** với **Phòng thí nghiệm Mô phỏng 3D thời gian thực (60 FPS GPU Hardware-Skinned)** và **Phòng Lab Ánh xạ & Ngoại suy Toán Sinh thái 5 Tầng**.
 
 ### ✨ Điểm nổi bật
 
-- 🐜 **Mô hình 3D tương tác** — Xoay, phóng to, khám phá giải phẫu kiến lửa với hotspot thông tin cho từng bộ phận
-- 🤖 **Mô phỏng AI đàn kiến** — Phòng thí nghiệm WebGL với 2 cá thể kiến được điều khiển bởi State Machine, có khả năng tự tuần tra, gọi bầy, giao tiếp hóa học, uống nước, né vật cản
-- 📚 **16 chương nội dung chuyên sâu** — Từ phân loại học, hình thái, vòng đời đến nọc độc và phòng ngừa
-- 🎨 **Giao diện hiện đại** — Dark/Light mode, hiệu ứng glassmorphism, micro-animation, responsive mobile-first
-- 📊 **Biểu đồ tương tác** — Chart.js hiển thị dữ liệu sinh sản và phát triển đàn kiến
-- 🧮 **Hỗ trợ KaTeX** — Hiển thị công thức toán/hóa học trong nội dung
+- 🐜 **Mô hình Giải phẫu 3D Tương tác (`AntViewer`)** — Xoay 360°, phóng to, khám phá 13 hotspot giải phẫu vi phẫu kèm hoạt ảnh chuyển đổi mượt mà.
+- 👑 **Mô phỏng Xã hội Đa Giai Cấp 4 Tầng (`AntSimulation`)** — Mô phỏng đồng thời **Kiến Chúa (`Queen`, 14.2 mg)**, **Kiến Tướng (`Major`, 4.0 mg)**, **Kiến Lính (`Soldier`, 2.2 mg)** và **Kiến Thợ (`Minor`, 1.0 mg)** với đầy đủ cơ chế sinh học:
+  - **Nội tiết Hoàng gia QMP & Kế vị Kiến Chúa (Queen Succession — Fletcher & Blum, 1983)**: Kiến Chúa tiết pheromone QMP (`9-ODA`) ức chế buồng trứng kiến thợ và tăng tốc +22% cho toàn đàn. Khi Kiến Chúa tử vong (do Lốc xoáy hoặc Thiên địch), sự mất đi của QMP kích hoạt ngay quy trình **Ấp Tân Chúa Kế Vị Khẩn Cấp (`Emergency Queen Rearing`)** từ ấu trùng lưỡng bội trong buồng ấp ngầm để tái lập vương quốc!
+  - **Đơn Chúa (`Monogyne`) ↔ Đa Chúa (`Polygyne`)**: Chuyển đổi trực tiếp giữa cấu trúc 1 Kiến Chúa độc tôn và 3 Kiến Chúa đồng trị vì (kèm 6 Kiến Lính chia đều 2 Vệ binh hộ giá mỗi Chúa).
+  - **Dây chuyền Cắt hạt "Cutters & Carriers" (Wilson, 1978)**: Kiến Tướng dùng cặp hàm cối xay *Edentate* nghiền vỡ hạt cứng/vỏ Kitin trước khi Kiến Thợ hợp tác khiêng về tổ.
+  - **Tác chiến 3 Vòng Đồng tâm & Y tá Chiến trường (`Allogrooming`)**: Kiến Tướng làm lá chắn giảm 60% sát thương AoE, Kiến Lính cắn khóa khớp làm chậm Nhện Độc tới 75%, Kiến Thợ chích nọc *Solenopsin* và liếm vết thương cứu chữa đồng đội.
+- ⏳ **Nhịp Sinh học 4 Buổi (`Sáng · Trưa · Chiều · Tối`) & 6 Chế độ Thời tiết / Thảm họa Thượng Đế**:
+  - **4 Buổi Sinh học (24h)**: Phơi nắng làm ấm cơ ngực buổi sáng (`Basking`), rút xuống bóng râm tránh sốc nhiệt $CT_{\max}$ buổi trưa (`Shade-Seeking`), cao điểm vận chuyển buổi chiều, và cụm cảnh giới chống Nhện Độc săn đêm (`Nocturnal Guard`).
+  - **6 Thời tiết & Thảm họa Chuyển pha Thực tế**: `☀️ Quang Đãng`, `🌧️ Mưa Rào` (kiến chạy về miệng tổ và bò tụt xuống 3 buồng hầm ngầm dưới lòng đất), `🌬️ Gió Bão` (cắn cỏ neo trụ *Anemotactic Mandibular Anchoring*), `🌪️ Lốc Xoáy` (vòi rồng 3D có thể điều hướng bằng chuột trên mặt đất, cuốn bổng kiến và mồi lên độ cao 16m), `🔥 Nắng Hạn`, và `🌊 Đại Hồng Thủy` (mưa lớn liên tục → nước lũ dâng dần → kiến chạy về đỉnh Gò Tổ kết **Bè Kiến Sống Cassie–Baxter** nâng Kiến Chúa ở tâm bè, các cá thể ở xa vùng vẫy và có thể chết đuối nếu không bơi kịp về rìa bè).
+- 📐 **Phòng Lab Ánh Xạ & Ngoại Suy Thực Địa 5 Tầng**: Bảng điều khiển khoa học cho phép kéo thanh trượt thay đổi trực tiếp thế giới 3D bên ngoài (Cấu trúc Đơn/Đa Chúa, Bán kính Lãnh thổ Kiếm ăn $A_{\text{terr}} \in [15, 120]\text{ m}^2$ lấy Tổ Chính làm tâm, Nhiệt độ Đất $T_{\text{soil}} \in [15, 40]^\circ\text{C}$ theo động học Arrhenius).
+- ⚡ **Tối ưu hóa Đồ họa 100% GPU (`Pre-baked Bone DataTexture Atlas`)**: Nướng sẵn 8 trạng thái hoạt ảnh xương vào `FloatType DataTexture` trên GPU, giảm từ `7.200+` phép nhân ma trận xương CPU/frame và `150` nguồn sáng ẩn xuống **0 phép tính ma trận CPU**, chạy mượt 60 FPS trên Apple Silicon (M1/M2/M3).
 
 ---
 
 ## 🛠️ Công nghệ sử dụng
 
-### Nền Tảng & Framework
-
-| Stack | Chi tiết | Vai trò |
-|-------|----------|---------|
-| **Framework** | [Docusaurus 3.9.2](https://docusaurus.io/) | SSG Framework, quản lý nội dung MDX, routing, sidebar |
-| **Frontend** | React 19, MDX | Component-based UI, nội dung Markdown mở rộng |
-| **Styling** | Tailwind CSS 4 | Utility-first CSS, responsive design, dark mode |
-| **Custom CSS** | Phycat Abyss / Sky themes | 2 bộ giao diện tuỳ chỉnh (tối/sáng) với CSS variables |
-| **Deploy** | GitHub Pages + GitHub Actions CI/CD | Tự động build & deploy khi push lên `main` |
-
-### Hệ Thống 3D
-
-| Stack | Chi tiết | Vai trò |
-|-------|----------|---------|
-| **Three.js** | [three](https://threejs.org/) | Lõi rendering WebGL, xử lý vector, quaternion, matrix |
-| **React Three Fiber** | [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber) | React renderer cho Three.js, hooks (`useFrame`, `useLoader`) |
-| **Drei** | [@react-three/drei](https://github.com/pmndrs/drei) | Helpers: `OrbitControls`, `ContactShadows`, `Html`, `Sparkles` |
-| **three-stdlib** | `SkeletonUtils` | Deep clone skeleton để tạo nhiều instance kiến độc lập |
-| **Model Viewer** | [@google/model-viewer](https://modelviewer.dev/) | Hiển thị mô hình 3D tĩnh với hotspot tương tác (Ant Viewer) |
-
-### Dữ Liệu & Trực Quan Hoá
-
-| Stack | Chi tiết | Vai trò |
-|-------|----------|---------|
-| **Chart.js** | chart.js + react-chartjs-2 | Biểu đồ tăng trưởng đàn kiến tương tác |
-| **KaTeX** | remark-math + rehype-katex | Hiển thị công thức toán/hóa học inline |
+| Tầng | Công nghệ | Vai trò trong dự án |
+|------|-----------|---------------------|
+| **SSG & Docs** | [Docusaurus 3.9.2](https://docusaurus.io/) + MDX | Quản lý 17 chương bách khoa, định tuyến SPA, tìm kiếm, biên dịch công thức toán KaTeX |
+| **UI & Styling** | React 19 + Tailwind CSS 4 | Giao diện Glassmorphism, bảng điều khiển có nút `Thu gọn ▲ / Mở ▼`, hỗ trợ Dark/Light mode (`Phycat Abyss` / `Phycat Sky`) |
+| **Đồ họa 3D** | [Three.js r170](https://threejs.org/) + `@react-three/fiber` + `@react-three/drei` | Dựng cảnh 3D thời gian thực, Spatial Hash Grid $O(1)$, `InstancedMesh` Pheromone, X-Ray Tổ Ngầm 3 tầng, Bản đồ nhiệt Microclimate |
+| **GPU Animation** | Custom `DataTexture` Bone Matrix Atlas (`AntModel.js`) | Nướng hoạt ảnh bộ xương 6 chân (`Tripod Gait`) lên VRAM GPU, khử hoàn toàn hiện tượng trượt chân và nghẽn cổ chai CPU |
+| **3D Anatomy** | `@google/model-viewer` | Khám phá giải phẫu 3D tĩnh với 13 điểm Hotspot tương tác tại Trang Chủ |
 
 ---
 
-## 🌐 Tổng Quan Trang Web
+## 📐 Mô Hình Ngoại Suy Bầy Đàn 5 Tầng & Sinh Năng Lượng Dị Tốc
 
-Website gồm 3 khu vực chính:
+Hệ thống tích hợp mô hình toán sinh thái 5 tầng trong [`src/components/AntSimulation/index.js`](src/components/AntSimulation/index.js), khắc phục hoàn toàn sai số nhân tuyến tính cổ điển khi quy đổi từ ô quan sát vi mô ($A_{\text{quad}} = 0.25\text{ m}^2$) sang toàn vương quốc ngoài tự nhiên:
 
-### 🏠 Trang Chủ (`/`)
-Giao diện landing page hiện đại với 5 section:
+### Tầng 1 — Tích phân Cực 2D Suy giảm Mật độ Kiếm ăn (*Central-Place Foraging*)
+Mật độ kiến kiếm ăn suy giảm theo hàm mũ từ tâm Gò Tổ (`NEST_POS`) ra biên giới lãnh thổ $R_{\text{terr}} = \sqrt{A_{\text{terr}}/\pi}$ theo quy luật $D(r) = D_0 e^{-\lambda r}$ (Orians & Pearson, 1979; Porter & Tschinkel, 1987):
 
-| Section | Mô tả |
-|---------|-------|
-| **Hero Section** | Banner gradient với hình ảnh kiến lửa, CTA buttons, hiệu ứng parallax blur |
-| **Giải Phẫu Thể Cấu Trúc** | 4 thẻ thông tin (Đầu, Mạng Phân Tán, Túi Lọc, Vỏ Kitin) — click dẫn tới bài viết tương ứng |
-| **Mô Hình 3D Tương Tác** | Embedded `AntViewer` component + nút chuyển sang Mô phỏng 3D |
-| **Các Trang Cốt Lõi** | 4 bài viết nổi bật với link trực tiếp, hover animation |
-| **Biểu Đồ Sinh Sản** | Chart.js Line chart hiển thị tốc độ tăng trưởng đàn kiến (250,000+ cá thể/năm) |
+$$\eta_{\text{spatial}}(\lambda, R_{\text{terr}}) = \frac{2}{(\lambda R_{\text{terr}})^2}\Big[1 - (1 + \lambda R_{\text{terr}})e^{-\lambda R_{\text{terr}}}\Big] e^{\lambda r_{\text{quad}}}, \quad N_{\text{surface}, c} = n_{\text{sim}, c} \cdot \frac{A_{\text{terr}}}{A_{\text{quad}}} \cdot \eta_{\text{spatial}}$$
 
-### 📚 Bách Khoa Toàn Thư (`/docs/...`)
-16 chương nội dung MDX chuyên sâu:
+> **Quy tắc Sinh học Kiến Chúa:** Kiến Chúa (`Queen`) được **loại trừ hoàn toàn khỏi phép nhân diện tích** và chỉ định lượng theo cấu trúc xã hội (*Monogyne* = 1 Chúa, *Polygyne* = 3–6 Chúa đồng trị — Vargo & Fletcher, 1989).
 
-| # | Chương | Chủ đề |
-|---|--------|--------|
-| 01 | Nguồn gốc & Lịch sử | Lịch sử phát hiện, hành trình lan rộng toàn cầu |
-| 02 | Hệ thống phân loại | Phân loại học, danh pháp, taxonomy |
-| 03 | Đặc điểm hình thái | Giải phẫu chi tiết, cấu tạo cơ thể |
-| 04 | Vòng đời & Tuổi thọ | Các giai đoạn phát triển từ trứng đến trưởng thành |
-| 05 | Giai cấp xã hội | Kiến chúa, kiến thợ, kiến đực — phân công lao động |
-| 06 | Mô hình tổ chức | Cấu trúc xã hội, giao tiếp pheromone |
-| 07 | Kiến trúc tổ ngầm | Cấu trúc tổ dưới lòng đất |
-| 08 | Vật lý kết bè | Hiện tượng kết bè nổi trên nước |
-| 09 | Cạnh tranh sinh thái VN | Tương tác với các loài bản địa |
-| 10 | Phân bố toàn cầu | Bản đồ phân bố, vùng xâm lấn |
-| 11 | Tác động kinh tế–môi trường | Thiệt hại nông nghiệp, hệ sinh thái |
-| 12 | Nọc độc & Triệu chứng | Solenopsin, cơ chế gây đau |
-| 13 | Sốc phản vệ & Sơ cứu | Xử lý y tế khi bị chích |
-| 14 | Kiểm soát hóa học | Thuốc diệt, mồi độc |
-| 15 | Kiểm soát sinh học | Thiên địch, nấm ký sinh |
-| 16 | Phòng ngừa hộ gia đình | Biện pháp phòng tránh thực tế |
+### Tầng 2 — Ma trận Nghịch đảo Horvitz–Thompson theo Giai cấp & Động học Nhiệt Arrhenius
+Tỷ lệ xuất quân lên bề mặt $f_c(T_{\text{soil}}, W)$ khác biệt rõ rệt giữa các giai cấp (Tschinkel, 2006): Kiến Tướng (`Major`) có tới ~86% quân số ở dưới kho hạt ngầm, Kiến Lính (`Soldier`) canh gác cửa tổ (~27%), và Kiến Thợ (`Minor`) có ~81% quân số chăm sóc ấu trùng ngầm:
 
-### 🧪 Phòng Mô Phỏng 3D (`/ant-simulation`)
-Trang mô phỏng AI đàn kiến toàn màn hình (xem chi tiết bên dưới).
+$$N_{\text{col}, c} = \frac{N_{\text{surface}, c}}{f_c(T_{\text{soil}}, W)}, \quad N_{\text{brood}} = \alpha_{\text{brood}}(F, W) \cdot \sum_{c} N_{\text{col}, c}$$
+
+### Tầng 3 — Định luật Dị tốc Siêu sinh vật Kleiber–Hou (*Superorganism Allometry*)
+- **Đơn vị Trao đổi chất Tương đương (`MEU` — Kleiber, 1932, $B \propto M^{0.75}$)**:
+  - Kiến Thợ (`Minor`, $1.0\text{ mg}$) = $\mathbf{1.00\text{ MEU}}$
+  - Kiến Lính (`Soldier`, $2.2\text{ mg}$) = $\mathbf{1.81\text{ MEU}}$
+  - Kiến Tướng (`Major`, $4.0\text{ mg}$) = $\mathbf{2.83\text{ MEU}}$
+  - Kiến Chúa (`Queen`, $14.2\text{ mg}$) = $\mathbf{7.32\text{ MEU}}$
+- **Công suất Trao đổi chất Toàn Tổ (Hou et al., 2010 *PNAS*, $B_{\text{col}} \propto M_{\text{col}}^{0.81}$)**:
+
+$$B_{\text{col}}\text{ (kJ/ngày)} = B_0 \cdot \left(\frac{M_{\text{fresh}}}{\text{g}}\right)^{0.81} \cdot \phi_{\text{Arrhenius}}(T_{\text{soil}})$$
+
+### Tầng 4 — Sức chứa Cực đại theo Định luật Tối thiểu Liebig & Đáp ứng Săn mồi Holling Type II
+
+$$K_{\max}^{\text{MEU}} = \min\!\Big(K_{\text{trophic}}(F),\ K_{\text{hydro}}(W),\ K_{\text{space}}(A_{\text{terr}}, \text{Social})\Big) \times \left(1 - \frac{P_{\max} \cdot E}{E_{1/2} + E}\right)$$
+
+### Tầng 5 — Phương sai Không gian Taylor & Khoảng Tin Cậy 95% ($\text{CI}_{95\%}$)
+Do kiến phân bố cụm theo vết mùi Pheromone ($\sigma^2 = a\mu^b$ với hệ số kết cụm Taylor $b = 1.44$), kết quả ngoại suy toàn tổ luôn đi kèm biên độ sai số chuẩn tương đối ($\text{RSE}$) và khoảng tin cậy $95\%$ ($N_{\text{col}} \pm 1.96 \cdot \text{SE}$).
 
 ---
 
-## 🐜 Hệ Thống 3D Đa Trải Nghiệm
+## 🎮 Hệ Thống Điều Khiển & Quyền Năng Thượng Đế (`/ant-simulation`)
 
-Dự án cung cấp **2 chế độ hiển thị 3D** tương tác tiên tiến, mỗi chế độ phục vụ mục đích giáo dục khác nhau:
+Hai bảng điều khiển hai bên đều tích hợp nút **`Thu gọn ▲` / `Mở ▼`** giúp mở rộng tối đa không gian quan sát 3D:
 
-### 1. 🔬 Mô Hình 3D Tương Tác — Ant Viewer (Trang Chủ)
-
-Component `AntViewer` sử dụng `@google/model-viewer` để hiển thị mô hình kiến lửa GLTF đơn lẻ với khả năng tương tác phong phú:
-
-| Tính năng | Chi tiết |
-|-----------|----------|
-| **Hotspot đa điểm** | 6 nhóm bộ phận × 13 điểm tương tác: Đầu, Mắt kép, Râu (Antennae), Ngực (Mesosoma), 6 Chân, Bụng (Gaster) |
-| **Hoạt ảnh** | 4 chế độ chuyển đổi mượt: Đứng yên (freeze), Đứng nghỉ (idle), Đi bộ (walk), Cảnh giác (alert) |
-| **Điều khiển camera** | D-pad xoay 4 hướng (Lên/Xuống/Trái/Phải) + nút Reset về góc nhìn mặc định |
-| **Panel thông tin** | Mô tả chi tiết từng bộ phận khi click hotspot, kèm liên kết đọc thêm trong docs |
-| **Responsive** | Tự co giãn theo kích thước màn hình, tối ưu cho cả desktop và mobile |
-
-### 2. 🤖 Mô Phỏng Đàn Kiến AI — Ant Simulation (Trang riêng)
-
-Môi trường giả lập WebGL toàn màn hình với **20 cá thể kiến AI** được điều khiển bởi **Finite State Machine (FSM)**, chạy trên React Three Fiber ở tốc độ 60 FPS.
-
-#### 🗺️ Thế Giới Mô Phỏng
-
-| Thành phần | Mô tả |
-|------------|-------|
-| **Mặt đất** | Bãi cỏ 200×200 đơn vị với texture lặp, bao quanh bởi biên giới ±85 |
-| **Tổ kiến** | Đĩa đỏ phát sáng tại góc (-70, -70), điểm giao hàng thức ăn |
-| **Hồ nước** | Hình cầu xanh cyan tại (60, 40) bán kính 20, nơi kiến đến uống nước |
-| **Tảng đá** | 3 khối đá xám đặt rải rác, tạo chướng ngại vật vật lý cho kiến |
-| **Cây cối** | Nhiều cây trang trí với tán lá hình cầu xanh lá |
-| **Khúc gỗ** | Khối gỗ nâu trang trí |
-| **Hiệu ứng** | ContactShadows, Sparkles (đom đóm), ánh sáng đa nguồn |
-
-#### 🧠 Cỗ Máy Trạng Thái AI (State Machine)
-
-Mỗi con kiến hoạt động dựa trên FSM với các trạng thái sau:
-
-| Trạng thái | Hành vi | Điều kiện chuyển |
-|-----------|---------|-----------------|
-| `wandering` | Đi tuần tra ngẫu nhiên, đổi hướng mỗi 2-4 giây | Phát hiện đồ ăn / Nhận lệnh giao tiếp / Hẹn giờ uống nước |
-| `seek_peer` | Kiến A tìm kiến B để bắt đầu giao tiếp | Khi 2 con đủ gần (< 4 đơn vị) |
-| `communicating` | Hai con chạm râu (antennation), kiểm tra mã hydrocarbon | Hết thời gian 5 giây |
-| `food_finder_approach` | Kiến phát hiện đường → tiến đến gần | Đến nơi → gọi bầy |
-| `food_trophallaxis` | Mớm mồi (trophallaxis) — truyền thông tin chất lượng | Hoàn tất → tuyển dụng |
-| `food_recruit_return` | Kiến tuyển dụng quay về tìm đồng đội | Gặp đồng đội |
-| `food_both_approach` | Cả 2 con cùng tiến đến viên đường | Nhặt được đường |
-| `food_carry` | Kéo đường về tổ theo đội hình (kéo trước - đẩy sau) | Đến tổ → giao hàng |
-| `alarmed` | Chạy hoảng loạn theo mọi hướng với tốc độ 1.5x | Hết 5 giây |
-| `drink_water` | Di chuyển tới hồ nước → cúi đầu uống 5 giây | Tự động mỗi 2.5 phút hoặc ép thủ công |
-
-#### 🎮 Bảng Điều Khiển Sinh Học (6 nút)
-
-| Nút | Loại | Chức năng (Đã đồng bộ Dark Mode) |
-|-----|------|--------------------------------|
-| 🤚 **Kéo Cam** | Môi Trường | Kéo chuột để di chuyển (pan/strafe) bản đồ |
-| 🔄 **Xoay/Nghiêng** | Môi Trường | Kéo chuột để xoay và nghiêng camera quanh tâm tổ |
-| 🍬 **Thả Đường** | Tương tác | Sinh ra một khối đường năng lượng cao, rủ rê kiến bu lại thành cụm |
-| ⚠️ **Báo Động** | Tương tác | Kích hoạt hiệu ứng Pheromone tự vệ, kiến vươn bụng lao về phía kẻ thù |
-| 💧 **Uống Nước** | Hệ sinh thái | Cung cấp giọt nước lọc để giải quyết cơn khát (ngăn kiến chết khô) |
-| 🌧️ **Đổ Mưa** | Đại thảm họa | Màn hình tối đen, nước diệt toàn bộ Pheromone, kiến cuộn lại thành "bè nổi" chống ngập! |
-
-> **Ghi chú UX:** Nút `📖 i` ở góc Bảng điều khiển dẫn thẳng đến [Sổ Tay Hướng Dẫn Tương Tác 3D](/docs/huong-dan-mo-phong) hoàn chỉnh để người dùng hiểu quy luật sinh tồn. Mọi bảng biểu đều tích hợp hiệu ứng Glassmorphism và **đồng độ mã màu hoàn toàn với giao diện Đen/Trắng của Docusaurus**. Bảng biểu tự động thu gọn dạng Accordion (Dropdown) trên Mobile.
-
-#### 🦿 Bảng Dữ Liệu & Theo Dõi (Dual Dashboard)
-
-Hệ thống UI được chia thành hai mảng lớn để phục vụ Macro (Đại cục) và Micro (Cá thể):
-
-**1. Swarm Dashboard (Bảng Thống Kê Bầy Đàn)**
-*   Hiển thị theo thời gian thực tỷ lệ: _Kiến Tướng / Kiến Thợ / Kiến Đang Tuần Tra / Kiến Nhả Mùi / Kiến Chờ Hỗ Trợ / Kiến Đang Kéo Mồi_.
-*   Có thanh HP/Sinh tử: Theo dõi số lượng kiến gục ngã (Quy tiên) và cơ chế "An Táng Đồng Loại".
-*   Ghi nhận số lượng Trophallaxis (Viên đường) được vận chuyển về Tổ để kích hoạt quy trình sinh đẻ kiến thợ mới.
-
-#### 📐 Hệ Thống Ánh Xạ Sức Chứa Tự Nhiên (Spatial Scaling)
-
-Tính năng khoa học sinh thái học tích hợp trong Swarm Dashboard, áp dụng phương pháp **Quadrat Sampling** để nội suy từ dữ liệu vi mô (mô phỏng 3D) ra quy mô vĩ mô (lãnh thổ thực tế).
-
-**Công thức ánh xạ:**
-
-```
-K_real = K_sim x SCALE_FACTOR
-       = K_sim x (50 m2 / 0.1 m2)
-       = K_sim x 500
-```
-
-**Sức chứa lý thuyết tối đa** dựa trên **Định luật Liebig (Liebig's Law of the Minimum, 1840)**:
-
-```
-K_max = min(K_food, K_water, K_space) x (1 - P_predation)
-```
-
-| Biến | Công thức | Cơ sở |
-|------|-----------|-------|
-| K_food | `foodRate × 15` | Tỷ lệ tiêu thụ thức ăn của kiến lửa |
-| K_water | `waterRate × 20` | Khả năng nhịn khát cao hơn nhịn đói |
-| K_space | `60` | Giới hạn mật độ không gian vật lý |
-| P_predation | `min(0.8, enemyRate × 0.08)` | Áp lực săn mồi phi tuyến (0–80%) |
-
-> **Cơ sở thực địa:** *S. geminata* có mật độ 10–80 tổ/acre ở môi trường tự nhiên, lãnh thổ kiếm ăn ~50 m²/tổ. Các tổ *S. invicta* trưởng thành chứa 100,000–250,000 cá thể *(Tschinkel, 1988)*.
-
-**2. Focus Panel (Dò Vi Sinh Khuê Đại)**
-*   **Kích hoạt:** Bằng cách nhấp trực tiếp vào 1 cá thể kiến lửa bất kỳ đang đi dạo trên màn hình 3D.
-*   **State Machine FSM Dump:** Hiển thị trực tiếp mã trạng thái thực thi hiện tại (Bù khoáng ngẫu nhiên, Nhả mùi, Cắn xé).
-*   **Deep Linking:** Cung cấp thông tin sinh học sơ cấp và nút "ĐỌC CHI TIẾT" liên kết Docusaurus Single-Page-App trỏ thẳng đến **Mục/Heading Neo (Anchor)** trong Bách khoa toàn thư giải thích lý do đằng sau hành động đó!
-*   **Tracking Mode:** Theo dõi góc nhìn thứ 3 gắn cứng theo sau đuôi chú kiến được chọn nhầm trải nghiệm cảm giác FPV.
-
-#### 🤔 Bí kíp & Thử Thách Kỹ Thuật (Nhật Ký Dev)
-Hơn **11 Bài Học Cốt Lõi** được ghi chép cẩn thận dưới dạng Nhật ký kinh nghiệm trong tệp `kinh_nghiem.md` đính kèm ở gốc dự án. Điển hình:
-*   Ma trận Basis Calibration tự động xoay lật Model WebGL 3D khi import.
-*   Giải quyết vòng lặp Vô Tận (Infinite render loop) giữa State của React và `useFrame` 60 FPS.
-*   Nghệ thuật Dynamic Retargeting: Gỡ lỗi "Kiến Lú Lẫn Mục Tiêu" trong AI.
-*   Giải quyết mâu thuẫn giữa Phóng to Model 1000 lần bằng Skeleton Utils so với Object3D thông thường.
+| Nhóm Quyền Năng | Các Nút / Thanh Trượt | Cơ Chế Tác Động Trực Tiếp Trong Thế Giới 3D |
+|-----------------|-----------------------|---------------------------------------------|
+| **⏳ Chu Kỳ 4 Buổi (24h)** | `🌅 Sáng` · `☀️ Trưa` · `🌇 Chiều` · `🌙 Tối` + `🔄 Tự chuyển 24h` | Điều biến ánh sáng mặt trời, nhiệt độ đất $T_{\text{soil}}$, tốc độ chạy Arrhenius, tầm nhìn quang học Ommatidia, độ nhạy râu khứu giác và hành vi phơi nắng / trú râm / cụm đêm |
+| **🌪️ Thời Tiết & Thảm Họa** | `☀️ Quang Đãng` · `🌧️ Mưa Rào` · `🌬️ Gió Bão` · `🌪️ Lốc Xoáy` · `🔥 Nắng Hạn` · `🌊 Đại Hồng Thủy` | Chuyển pha thời tiết đa giai đoạn: Mưa rào rút xuống hầm ngầm; Đại hồng thủy mưa lớn dâng nước dần, kết bè tại đỉnh Gò Tổ; Lốc xoáy 3D điều hướng bằng chuột cuốn bay kiến & làm vỡ bụng trứng nếu Kiến Chúa rơi va đập |
+| **🔬 Chế Độ Quan Sát & Tương Tác** | `🤚 Kéo Cam` · `🔄 Xoay` · `🍬 Thả Đường` · `⚠️ Báo Động` · `🔍 Tổ Ngầm X-Ray` · `🌡️ Bản Đồ Nhiệt` · `👑 Chúa Tuần Du` | Cắt lớp X-Ray xuyên đất soi 3 buồng tổ ngầm (`-6.5m` đến `-14.5m`); hiển thị trường nhiệt độ vi khí hậu; lệnh cho các Kiến Chúa cùng đội hình Kiến Lính hộ giá diễu hành trên mặt đất |
+| **📐 Phòng Lab 5 Tầng** | `Đơn Chúa / Đa Chúa` · `Lãnh thổ A_terr (15–120m²)` · `Nhiệt độ đất T_soil (15–40°C)` + `👁️ Thu Gọn Xem 3D` | Thay đổi trực tiếp số lượng Kiến Chúa trị vì (`1` hoặc `3` Chúa), co giãn vành đai biên giới kiếm ăn quanh Tổ Chính và điều chỉnh động học nhiệt của đàn kiến ngay khi đang kéo thanh trượt |
 
 ---
 
-## 🚀 Bắt đầu
+## 📚 Bách Khoa Toàn Thư (17 Chương Chuyên Sâu)
+
+| # | Chương | Chủ đề cốt lõi |
+|---|--------|----------------|
+| 00 | Hướng dẫn Mô phỏng 3D | Sổ tay vận hành chi tiết toàn bộ cơ chế AI, giai cấp, thời tiết và toán sinh thái |
+| 01 | Nguồn gốc & Lịch sử | Lịch sử tiến hóa tại Nam Mỹ và hành trình xâm lấn toàn cầu |
+| 02 | Hệ thống phân loại | Phân loại học, danh pháp khoa học chi *Solenopsis* |
+| 03 | Đặc điểm hình thái | Giải phẫu vi phẫu đầu, ngực, bụng, ngòi chích và tuyến ngoại tiết |
+| 04 | Vòng đời & Tuổi thọ | Biến thái hoàn toàn: Trứng → Ấu trùng (4 tuổi) → Nhộng → Trưởng thành |
+| 05 | Giai cấp xã hội | Đa hình dị tốc giữa Kiến Chúa, Kiến Tướng, Kiến Lính và Kiến Thợ |
+| 06 | Mô hình tổ chức | Tự tổ chức phi tập trung, giao tiếp Pheromone và Trophallaxis |
+| 07 | Kiến trúc tổ ngầm | Hệ thống giếng thông khí, buồng ấp điều nhiệt và buồng ngự cung sâu dưới đất |
+| 08 | Vật lý kết bè | Định luật Cassie–Baxter và sức căng bề mặt khi kết bè sống chống lũ |
+| 09 | Cạnh tranh sinh thái VN | Tương tác và áp đảo các loài kiến bản địa tại Việt Nam |
+| 10 | Phân bố toàn cầu | Bản đồ phân bố và dự báo mở rộng vùng xâm lấn theo biến đổi khí hậu |
+| 11 | Tác động kinh tế–môi trường | Thiệt hại nông nghiệp, hạ tầng điện và đa dạng sinh học |
+| 12 | Nọc độc & Triệu chứng | Alkaloid *Solenopsin* ($C_{17}H_{35}N$), cơ chế hoại tử vô trùng và mụn mủ |
+| 13 | Sốc phản vệ & Sơ cứu | Phác đồ xử trí y tế khi bị kiến lửa đốt và cấp cứu phản vệ |
+| 14 | Kiểm soát hóa học | Cơ chế mồi độc tác động chậm (IGR, Hydramethylnon, Indoxacarb) |
+| 15 | Kiểm soát sinh học | Thiên địch tự nhiên: Ruồi ký sinh *Pseudacteon*, nấm *Beauveria bassiana*, virus SINV |
+| 16 | Phòng ngừa hộ gia đình | Các biện pháp bảo vệ không gian sống và trẻ nhỏ an toàn, bền vững |
+
+---
+
+## 🚀 Cài đặt & Khởi chạy
 
 ### Yêu cầu hệ thống
-
 - **Node.js** ≥ 20.0
 - **npm** (đi kèm Node.js)
 
-### Cài đặt
+### Chạy môi trường phát triển (Local Development)
 
 ```bash
-# Clone repository
+# 1. Clone repository
 git clone https://github.com/canar1406/kien-lua-wiki.git
 cd kien-lua-wiki
 
-# Cài đặt dependencies
+# 2. Cài đặt dependencies
 npm install --legacy-peer-deps
-```
 
-### Phát triển
-
-```bash
-# Khởi chạy server phát triển (hot-reload)
+# 3. Khởi chạy dev server (Hot-Reload tại http://localhost:3000/kien-lua-wiki/)
 npm run start
 ```
 
-Server sẽ chạy tại `http://localhost:3000/kien-lua-wiki/`
-
-### Build production
+### Build Production & Kiểm thử
 
 ```bash
-# Tạo bản build tĩnh
+# Tạo bản build tĩnh tối ưu hóa
 npm run build
 
-# Xem trước bản build
+# Xem trước bản build production
 npm run serve
 ```
 
-### Deploy lên GitHub Pages
-
-Dự án sử dụng GitHub Actions CI/CD. Mỗi lần push lên nhánh `main`, workflow tự động:
-1. Checkout mã nguồn
-2. Cài đặt dependencies (`npm ci --legacy-peer-deps`)
-3. Build website (`npm run build`)
-4. Deploy lên GitHub Pages
-
 ---
 
-## 📁 Cấu trúc dự án
+## 📁 Cấu trúc thư mục
 
-```
-wiki/
-├── docs/                              # Nội dung bách khoa (16 chương)
+```text
+kien-lua-wiki/
+├── docs/                              # 17 chương Bách khoa toàn thư (.md)
+│   ├── 00-huong-dan-mo-phong.md       # Sổ tay hướng dẫn mô phỏng 3D toàn diện
 │   ├── 01-nguon-goc-va-lich-su.md
-│   ├── ...
-│   └── 16-phong-ngua-ho-gia-dinh.md
+│   └── ... (02 -> 16)
 ├── src/
 │   ├── components/
-│   │   ├── AntViewer/                 # 3D Viewer tĩnh (model-viewer + hotspots)
-│   │   ├── AntSimulation/            # 🆕 Mô phỏng AI đàn kiến
-│   │   │   ├── index.js              #   State Machine, vật lý, UI controls
-│   │   │   └── AntModel.js           #   Skeleton clone, procedural animation, auto-calibration
-│   │   └── HomepageFeatures/         # Component trang chủ
+│   │   ├── AntViewer/                 # Mô hình giải phẫu 3D tĩnh + 13 Hotspots
+│   │   ├── AntSimulation/             # Phòng thí nghiệm Mô phỏng Siêu sinh vật 3D
+│   │   │   ├── index.js               #   FSM 4 giai cấp, Thời tiết chuyển pha, Kế vị Chúa, Lab 5 Tầng
+│   │   │   └── AntModel.js            #   GPU Pre-baked Bone DataTexture Atlas (60 FPS Apple Silicon)
+│   │   └── HomepageFeatures/          # Các phân khu tương tác trên Trang chủ
 │   ├── css/
-│   │   ├── custom.css                # CSS chính + responsive
-│   │   ├── phycat-abyss.css          # Theme tối
-│   │   └── phycat-sky.css            # Theme sáng
+│   │   ├── custom.css                 # Hệ thống Z-index 3D Canvas, Glassmorphism & Responsive
+│   │   ├── phycat-abyss.css           # Giao diện tối (Dark Mode)
+│   │   └── phycat-sky.css             # Giao diện sáng (Light Mode)
 │   ├── pages/
-│   │   ├── index.js                  # Trang chủ (Hero, Anatomy, 3D Viewer, Stats)
-│   │   └── ant-simulation.js         # 🆕 Trang mô phỏng đàn kiến AI
+│   │   ├── index.js                   # Trang chủ
+│   │   ├── ant-simulation.js          # Trang Mô phỏng 3D toàn màn hình (/ant-simulation)
+│   │   └── about.js                   # Trang Giới thiệu đội ngũ (/about)
 │   └── theme/
-│       └── MDXComponents.js          # Custom MDX (bảng responsive cuộn ngang)
+│       └── MDXComponents.js           # Tùy biến bảng biểu & thành phần MDX
 ├── static/
-│   ├── img/                          # Hình ảnh, logo, hero banner
-│   └── models/fire_ant/              # File 3D GLTF + textures mô hình kiến lửa
-├── .github/workflows/deploy.yml      # CI/CD GitHub Actions
-├── docusaurus.config.js              # Cấu hình Docusaurus
-├── sidebars.js                       # Cấu trúc sidebar
-├── kinh_nghiem.md                    # 🆕 Nhật ký kinh nghiệm phát triển (11 bài học)
+│   ├── img/                           # Hình ảnh, biểu đồ, logo
+│   └── models/fire_ant/               # Mô hình 3D GLTF + PBR Textures của Solenopsis geminata
+├── .github/workflows/deploy.yml       # Pipeline CI/CD tự động build & deploy GitHub Pages
+├── docusaurus.config.js               # Cấu hình Docusaurus 3.9.2 & KaTeX
+├── sidebars.js                        # Cấu trúc cây mục lục Bách khoa toàn thư
+├── kinh_nghiem.md                     # Nhật ký kỹ thuật 3D WebGL & Tối ưu hóa hiệu năng
 └── package.json
 ```
 
 ---
 
-## 🎨 Thiết Kế Giao Diện
-
-| Đặc điểm | Chi tiết |
-|-----------|----------|
-| **Dual Theme** | Phycat Abyss (tối) / Phycat Sky (sáng) — chuyển đổi qua nút trên navbar |
-| **Glassmorphism** | Backdrop blur + semi-transparent panels trên Hero Section và Control Panel |
-| **Micro-animations** | Hover scale, translate-y, rotate, pulse, ping trên mọi thẻ tương tác |
-| **Gradient Text** | Tiêu đề Hero dùng `bg-clip-text` gradient từ orange → rose |
-| **Responsive** | Mobile-first: bảng điều khiển 3D chuyển xuống dưới, Info Panel thu gọn, bảng tự cuộn ngang |
-| **Custom Selection** | Highlight text dùng màu hồng đặc trưng trên cả 2 theme |
-| **SEO** | Meta tags, Open Graph image, semantic HTML, heading hierarchy |
-
----
-
-## 👥 Đội ngũ dự án
+## 👥 Đội ngũ thực hiện
 
 | Thành viên | Vai trò |
 |------------|---------|
-| Nguyễn Quốc Gia Huy | Leader, Thuyết trình |
-| Trương Minh Khoa | Nghiên cứu thực địa |
-| Đặng Quang Minh | Soạn nội dung |
-| Đặng Trần Diễm Phúc | Soạn nội dung |
-| Võ Nguyễn Hoàng Long | Nghiên cứu thực địa, Developer |
-| Thanh Ngọc | Xây dựng môi trường nuôi |
-| Phan Lê Ánh Ngọc | Chăm sóc mẫu vật |
-| Nguyễn Trọng Nhân | Chăm sóc mẫu vật |
-| Uyên Phạm | Chăm sóc mẫu vật |
-| Lê Viết Triết | Thuyết trình |
+| **Nguyễn Quốc Gia Huy** | Leader, Thuyết trình |
+| **Võ Nguyễn Hoàng Long** | Nghiên cứu thực địa, Lead Developer |
+| **Trương Minh Khoa** | Nghiên cứu thực địa |
+| **Đặng Quang Minh** | Biên soạn nội dung học thuật |
+| **Đặng Trần Diễm Phúc** | Biên soạn nội dung học thuật |
+| **Thanh Ngọc** | Xây dựng môi trường nuôi thực nghiệm |
+| **Phan Lê Ánh Ngọc** | Chăm sóc & quan sát mẫu vật |
+| **Nguyễn Trọng Nhân** | Chăm sóc & quan sát mẫu vật |
+| **Uyên Phạm** | Chăm sóc & quan sát mẫu vật |
+| **Lê Viết Triết** | Thuyết trình |
 
 ---
 
 ## 📄 Giấy phép
 
-Dự án phục vụ mục đích giáo dục. © 2026 Dự án Sinh Học. Built with [Heavietnam](https://home.heavietnam.com/).
+Dự án phục vụ mục đích nghiên cứu và giáo dục Sinh học. © 2026 Dự án Sinh Học — Built with [Heavietnam](https://home.heavietnam.com/).

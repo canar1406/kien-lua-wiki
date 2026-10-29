@@ -65,9 +65,9 @@ const config = {
         blog: false,
         theme: {
           customCss: [
-            './src/css/custom.css',
             './src/css/phycat-abyss.css',
-            './src/css/phycat-sky.css'
+            './src/css/phycat-sky.css',
+            './src/css/custom.css',
           ],
         },
       }),
@@ -132,26 +132,34 @@ const config = {
                 label: 'Bách Khoa Toàn Thư',
                 to: '/docs/nguon-goc-va-lich-su',
               },
+              {
+                label: 'Mô Phỏng Đàn Kiến 3D',
+                to: '/ant-simulation',
+              },
+              {
+                label: 'Về Đội Ngũ Dự Án',
+                to: '/about-us',
+              },
             ],
           },
           {
             title: 'Thành viên dự án',
             items: [
-              { label: 'Nguyễn Quốc Gia Huy (Leader, Thuyết trình)', to: '#' },
-              { label: 'Trương Minh Khoa (Người đi bắt kiến)', to: '#' },
-              { label: 'Đặng Quang Minh (Soạn nội dung)', to: '#' },
-              { label: 'Đặng Trần Diễm Phúc (Soạn nội dung)', to: '#' },
-              { label: 'Võ Nguyễn Hoàng Long (Người đi bắt kiến, Dev)', to: '#' },
+              { label: 'Nguyễn Quốc Gia Huy (Leader, Thuyết trình)', to: '/about-us' },
+              { label: 'Trương Minh Khoa (Nghiên cứu thực địa)', to: '/about-us' },
+              { label: 'Đặng Quang Minh (Soạn nội dung)', to: '/about-us' },
+              { label: 'Đặng Trần Diễm Phúc (Soạn nội dung)', to: '/about-us' },
+              { label: 'Võ Nguyễn Hoàng Long (Nghiên cứu thực địa, Dev)', to: '/about-us' },
             ],
           },
           {
             title: 'Thành viên dự án (Tiếp)',
             items: [
-              { label: 'Thanh Ngọc (Xây nơi ở cho kiến)', to: '#' },
-              { label: 'Phan Lê Ánh Ngọc (Cho kiến ăn)', to: '#' },
-              { label: 'Nguyễn Trọng Nhân (Cho kiến ăn)', to: '#' },
-              { label: 'Uyên Phạm (Cho kiến ăn)', to: '#' },
-              { label: 'Lê Viết Triết (Thuyết trình)', to: '#' },
+              { label: 'Thanh Ngọc (Xây dựng môi trường nuôi)', to: '/about-us' },
+              { label: 'Phan Lê Ánh Ngọc (Chăm sóc mẫu vật)', to: '/about-us' },
+              { label: 'Nguyễn Trọng Nhân (Chăm sóc mẫu vật)', to: '/about-us' },
+              { label: 'Uyên Phạm (Chăm sóc mẫu vật)', to: '/about-us' },
+              { label: 'Lê Viết Triết (Thuyết trình)', to: '/about-us' },
             ],
           },
         ],

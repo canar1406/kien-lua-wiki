@@ -117,4 +117,36 @@ Trong các buồng ngầm chật chội, nồng độ CO2 tăng cao do hô hấp
 1.  **Cứu hộ sập hầm:** Khi một đoạn hầm bị sập, nồng độ CO2 tại đó tăng đột biến. Sự ngột ngạt này kích hoạt bản năng đào bới điên cuồng của kiến thợ, ra lệnh cho chúng tổ chức các cuộc giải cứu đồng loại ngay lập tức.
 2.  **Thiết kế thông gió:** Mức CO2 cục bộ cao chỉ thị cho lực lượng lao động biết khu vực nào đang bị quá tải. Chúng sẽ tự động đào mở rộng không gian tại đó, vươn các ống rỗng lên phía trên bề mặt để tạo ra hệ thống **thông gió thụ động (passive ventilation)**, đảm bảo siêu đô thị ngầm không bao giờ bị rơi vào trạng thái thiếu oxy.
 
-Sự kết hợp hoàn mỹ giữa thuật toán không gian cơ học, thông tin hữu cơ (pheromone, alkaloid) và tín hiệu môi trường vô cơ (CO2) đã tạo ra một hệ thống điều khiển học phi tập trung, biến *Solenopsis geminata* thành một cỗ máy sinh thái học bất khả chiến bại.
+---
+
+## **6. Ma Trận Tương Tác Liên Giai Cấp (Kiến Chúa – Kiến Tướng – Kiến Lính – Kiến Thợ)**
+
+Trên nền tảng định luật trao đổi chất dị tốc Kleiber ($B \propto M^{0.75}$) và sinh lý học thần kinh côn trùng, xã hội *Solenopsis geminata* vận hành thông qua **6 cơ chế tương tác hiệp đồng liên giai cấp** giữa 4 phân lớp hình thái:
+
+| Giai cấp sinh học | Khối lượng ($M$) | Tải trao đổi chất ($B \propto M^{0.75}$) | Đặc trưng giải phẫu & Vai trò hạt nhân |
+| :--- | :--- | :--- | :--- |
+| **👑 Kiến Chúa (`Queen`)** | $\sim 14.2\text{ mg}$ | **$7.32\text{ MEU}$** | Trung tâm sinh sản & nội tiết; phát xung *Queen Mandibular Pheromone (QMP)* điều hòa toàn tổ. |
+| **⚔️ Kiến Tướng (`Major`)** | $\sim 4.0\text{ mg}$ | **$2.83\text{ MEU}$** | Hộp sọ vuông vức ($HW \ge 0.924\text{ mm}$), cơ khép hàm khổng lồ, hàm dưới không răng (*edentate*) chuyên nghiền hạt & làm lá chắn. |
+| **🛡️ Kiến Lính (`Soldier / Media`)** | $\sim 2.2\text{ mg}$ | **$1.81\text{ MEU}$** | Tầng lớp trung gian cơ động; tuần tra vành đai $24\text{ m}$, lập đội hình Phalanx hộ giá Chúa và cắn khóa khớp chân thiên địch. |
+| **👷 Kiến Thợ (`Minor`)** | $\sim 1.0\text{ mg}$ | **$1.00\text{ MEU}$** | Nhỏ gọn ($HW < 0.924\text{ mm}$); trinh sát vòng lặp đồng tâm, vận chuyển cao tốc, hầu hạ Kiến Chúa và làm Y tá chiến trường. |
+
+### **6.1. Sáu Cơ Chế Phối Hợp Liên Giai Cấp Trong Mô Phỏng 3D**
+
+1. **Dây chuyền "Kẻ Cắt Xé – Người Vận Chuyển" (*Cutters & Carriers Milling Chain*):**
+   - Khi **Kiến Thợ (`Minor`)** phát hiện nguồn thức ăn có vỏ hạt hoặc giáp Kitin cứng (`reqAnts >= 4`), hàm răng nhọn nhỏ của chúng không thể cắn vỡ. Thay vì cố khiêng trong vô vọng, Kiến Thợ lập tức quay về tổ rải đường mòn *Z,E-α-farnesene* cường độ cao để **triệu tập Kiến Tướng (`Major`)**.
+   - **Kiến Tướng** tiến tới mục tiêu, dùng hàm cối xay *edentate* nghiền vỡ lớp vỏ cứng (`millingProgress: 0% → 100%`). Ngay khi sơ chế xong, Kiến Tướng rút lui để bảo toàn năng lượng ($2.83\text{ MEU}$), nhường các mảnh mồi đã cắt nhỏ cho đội **Kiến Thợ** khiêng về tổ với tốc độ tăng $+20\%$.
+2. **Đoàn Tùy Tùng Hoàng Gia & Sóng Nội Tiết QMP (*Royal Retinue Trophallaxis & QMP Pulse*):**
+   - **Kiến Chúa (`Queen`)** không tự đi kiếm ăn mà được các **Kiến Thợ (`Minor`)** no bụng tiếp cận và mớm chất dinh dưỡng lỏng qua miệng (*Royal Trophallaxis*).
+   - Mỗi lần được mớm no, Kiến Chúa phát ra một vòng sóng vàng **Queen Mandibular Pheromone (QMP)** lan tỏa bán kính $38\text{ m}$, kích hoạt trạng thái hưng phấn thần kinh giúp toàn bộ kiến đồng minh trong vùng tăng **$+22\%$ tốc độ hành quân** và giảm **$-30\%$ tiêu hao năng lượng**.
+3. **Đội Hình Vệ Binh Hộ Giá Hoàng Gia (*Royal Phalanx Escort*):**
+   - Khi bật chế độ **👑 Chúa Tuần Du** hoặc khi thiên địch xâm nhập bán kính nguy hiểm quanh Kiến Chúa, 4 **Kiến Lính (`Soldier`)** lập tức tách khỏi đội tuần tra để kết thành **vòng tròn Phalanx hộ giá** xoay quanh Kiến Chúa, sẵn sàng lao ra cảm tử nếu kẻ thù áp sát.
+4. **Học Thuyết Tác Chiến 3 Vòng Đồng Tâm (*Tiered Combat Doctrine*):**
+   - **Vòng Trong ($r = 2.4\text{ m}$ — Lá Chắn Kitin của Kiến Tướng):** **Kiến Tướng (`Major`)** áp sát trực diện thiên địch, gây sát thương nghiền $16.0\text{ DPS}$ và thu hút hỏa lực, giúp giảm **$60\%$ sát thương độc lan (AoE)** cho toàn bộ Kiến Lính và Kiến Thợ cùng tham chiến.
+   - **Vòng Giữa ($r = 3.2\text{ m}$ — Khóa Khớp Chân của Kiến Lính):** Mỗi **Kiến Lính (`Soldier`)** cắn khóa khớp chân làm giảm **$35\%$ tốc độ di chuyển của Nhện** (tối đa làm chậm $75\%$) và giảm sát thương cắn đơn mục tiêu của Nhện từ $20\text{ DPS}$ xuống $12\text{ DPS}$.
+   - **Vòng Ngoài ($r = 4.0\text{ m}$ — Bão Nọc Solenopsin của Kiến Thợ):** **Kiến Thợ (`Minor`)** bao vây vòng ngoài, phun *Pyrazine* báo động và liên tục cong bụng đốt nọc *Solenopsin*.
+5. **Y Tá Chiến Trường & Khử Độc Kháng Khuẩn (*Battlefield Medic Allogrooming*):**
+   - Sau giao tranh, khi một **Kiến Thợ (`Minor`)** khỏe mạnh bắt gặp **Kiến Tướng** hoặc **Kiến Lính** bị thương ($HP < 85\%$), chúng thực hiện hành vi **Allogrooming** (liếm vết thương và bôi dịch nọc alkaloid kháng khuẩn), giúp chiến binh hồi phục ngay **$+18\text{ HP}$** và **$+12\text{ Energy}$**.
+6. **Điều Hòa Phân Hóa Giai Cấp Tự Động (*Adaptive Caste Morphogenesis*):**
+   - Tỷ lệ nở giữa `Major : Soldier : Minor` tự động thích nghi theo áp lực sinh thái (Wheeler, 1991): khi xuất hiện thiên địch hoặc nhiều hạt vỏ cứng chưa nghiền, bầy tăng tiết *Juvenile Hormone* đẩy tỷ lệ nở `Major` lên $28\%$ và `Soldier` lên $34\%$; ngược lại trong thời bình khi `Major` đã vượt $22\%$ quân số, Pheromone ức chế của `Major` tự động kìm hãm đẻ thêm tướng để ưu tiên sinh `Minor` ($72\%$).
+
+Sự kết hợp hoàn mỹ giữa thuật toán không gian cơ học, thông tin hữu cơ (pheromone, alkaloid), tín hiệu môi trường vô cơ (CO2) và ma trận tương tác liên giai cấp đã biến *Solenopsis geminata* thành một siêu sinh vật (superorganism) thực thụ.

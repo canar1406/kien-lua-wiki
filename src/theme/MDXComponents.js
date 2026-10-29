@@ -1,5 +1,6 @@
 import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
+import FirstAidAssistant from '@site/src/components/FirstAidAssistant';
 
 // Bọc mọi bảng markdown trong div scroll ngang
 // đây là cách chính thức của Docusaurus để làm bảng responsive
@@ -9,7 +10,8 @@ function ResponsiveTable({ children, ...props }) {
       overflowX: 'auto',
       WebkitOverflowScrolling: 'touch',
       width: '100%',
-      marginBottom: '1rem',
+      marginBottom: '1.25rem',
+      borderRadius: '8px',
     }}>
       <table {...props}>{children}</table>
     </div>
@@ -19,4 +21,5 @@ function ResponsiveTable({ children, ...props }) {
 export default {
   ...MDXComponents,
   table: ResponsiveTable,
+  FirstAidAssistant,
 };
