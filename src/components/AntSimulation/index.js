@@ -2815,8 +2815,8 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
         const outwardAngle = -0.15 + Math.random() * 1.85;
         const outwardDir = new THREE.Vector3(Math.cos(outwardAngle), 0, Math.sin(outwardAngle)).normalize();
 
-        // Nâng trần cá thể 3D trực tiếp trong ô mẫu Quadrat từ 50 lên 120 cá thể nhờ tối ưu GPU DataTexture Atlas
-        if (ants.length < 120) {
+        // Nâng trần cá thể 3D trực tiếp lên 500 cá thể nhờ tối ưu GPU DataTexture Atlas & Spatial Hash Grid O(N)
+        if (ants.length < 500) {
           const id = ants.length;
           groupRefs.current.push(React.createRef()); // Tự động extend Reference Array
           ants.push({
@@ -3220,6 +3220,16 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
     const windGustStrength = isWindstorm
       ? Math.sin(state.clock.elapsedTime * 2.1) + 0.4 * Math.cos(state.clock.elapsedTime * 4.7)
       : 0;
+
+    // Tiền xử lý O(N) 1 lần/frame cho danh sách xác chết & mồi cứng để hỗ trợ quy mô 500 kiến 3D ở 60 FPS
+    const availableCorpses = [];
+    for (let ci = 0; ci < ants.length; ci++) {
+      const ca = ants[ci];
+      if (ca.state === 'dead' && !ca.beingCarried && ca.position.distanceToSquared(GRAVEYARD_POS) > 400.0) {
+        availableCorpses.push(ca);
+      }
+    }
+    const hasAnyUnmilledFood = foodDataRef.current.some(uf => !uf.isCarried && uf.requiresMilling && uf.millingProgress < 100);
 
     // 3. Update Vòng lặp các Thực thể Kiến (Trí tuệ nhân tạo FSM Đa Giai Cấp + Nhịp Sinh Học 4 Buổi & Ứng Phó Thảm Họa)
     ants.forEach(ant => {
@@ -3873,11 +3883,12 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
 
         let foundFood = false; let foodToApproach = null; let foundCorpse = false;
 
-        // Quét tìm xác đồng đội (Necrophoresis - do Kiến Thợ đảm nhận) - Buổi Chiều tăng +45% tầm phát hiện axit oleic từ xác chết
+        // Quét tìm xác đồng đội (Necrophoresis - do Kiến Thợ đảm nhận) - Duyệt trên danh sách availableCorpses đã lọc sẵn O(1)
         const corpseDetectSq = timeOfDay === 'afternoon' ? 470.0 : 225.0;
-        if (ant.state === 'patrolling' && ant.type === 'minor') {
-          for (const other of antsDataRef.current) {
-            if (other.id !== ant.id && other.state === 'dead' && !other.beingCarried && other.position.distanceToSquared(GRAVEYARD_POS) > 400.0) {
+        if (ant.state === 'patrolling' && ant.type === 'minor' && availableCorpses.length > 0) {
+          for (let ci = 0; ci < availableCorpses.length; ci++) {
+            const other = availableCorpses[ci];
+            if (other.id !== ant.id && !other.beingCarried) {
               const dSq = ant.position.distanceToSquared(other.position);
               if (dSq < 16.0) { // Chạm xác
                 ant.state = 'carry_corpse';
@@ -3899,7 +3910,6 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
 
         // Tự động tìm mồi (Phân công "Cutters & Carriers" giữa Kiến Tướng và Kiến Thợ, điều biến thị giác theo Buổi Sáng/Trưa/Chiều/Tối)
         const visMultSq = circadian.visualRangeMult * circadian.visualRangeMult;
-        const hasAnyUnmilledFood = foodDataRef.current.some(uf => !uf.isCarried && uf.requiresMilling && uf.millingProgress < 100);
         if (!foundCorpse) {
           for (const f of foodDataRef.current) {
             if (!f.isCarried) {
@@ -4436,13 +4446,15 @@ function Simulation({ modelUrl, enemyList, foodList, clickMode, timeOfDay = 'mor
       const minGZ = cz > 0 ? cz - 1 : 0;
       const maxGZ = cz < GRID_DIM - 1 ? cz + 1 : GRID_DIM - 1;
 
-      for (let gz = minGZ; gz <= maxGZ; gz++) {
+      let neighborChecks = 0;
+      for (let gz = minGZ; gz <= maxGZ && neighborChecks < 10; gz++) {
         const rowOffset = gz * GRID_DIM;
-        for (let gx = minGX; gx <= maxGX; gx++) {
+        for (let gx = minGX; gx <= maxGX && neighborChecks < 10; gx++) {
           const cell = _antGrid[rowOffset + gx];
-          for (let k = 0, cLen = cell.length; k < cLen; k++) {
+          for (let k = 0, cLen = cell.length; k < cLen && neighborChecks < 10; k++) {
             const a2 = cell[k];
             if (a2.id <= a1.id) continue;
+            neighborChecks++;
 
             if (a1.state === 'waiting_to_carry' && a2.state === 'waiting_to_carry') continue;
             if (a1.state === 'waiting_to_carry' && a2.state === 'carrying') continue;
@@ -5744,7 +5756,7 @@ export default function AntSimulation() {
             🏠 Kho lương thực: <b>{deliveryCount} Nutrition</b>
             {(stats.bornTotal ?? 0) > 0 && (
               <span className="text-amber-600 dark:text-amber-400 ml-1">
-                (🐣 đã nở {stats.bornTotal} kiến 3D{totalAlive >= 120 ? ' · Đạt trần 120 cá thể Quadrat' : ''})
+                (🐣 đã nở {stats.bornTotal} kiến 3D{totalAlive >= 500 ? ' · Đạt trần 500 cá thể' : ''})
               </span>
             )}
           </div>
