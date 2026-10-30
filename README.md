@@ -27,7 +27,7 @@
 ### ✨ Điểm nổi bật
 
 - 🐜 **Mô hình Giải phẫu 3D Tương tác (`AntViewer`)** — Xoay 360°, phóng to, khám phá 13 hotspot giải phẫu vi phẫu kèm hoạt ảnh chuyển đổi mượt mà.
-- 👑 **Mô phỏng Xã hội Đa Giai Cấp 4 Tầng (`AntSimulation`)** — Mô phỏng đồng thời **Kiến Chúa (`Queen`, 14.2 mg)**, **Kiến Tướng (`Major`, 4.0 mg)**, **Kiến Lính (`Soldier`, 2.2 mg)** và **Kiến Thợ (`Minor`, 1.0 mg)** với đầy đủ cơ chế sinh học:
+- 👑 **Mô phỏng Xã hội Đa Giai Cấp 4 Tầng (`AntSimulation` — Lên tới 500 Cá thể 3D)**: Mô phỏng đồng thời tối đa **500 cá thể 3D** gồm **Kiến Chúa (`Queen`, 14.2 mg)**, **Kiến Tướng (`Major`, 4.0 mg)**, **Kiến Lính (`Soldier`, 2.2 mg)** và **Kiến Thợ (`Minor`, 1.0 mg)** với đầy đủ cơ chế sinh học:
   - **Nội tiết Hoàng gia QMP & Kế vị Kiến Chúa (Queen Succession — Fletcher & Blum, 1983)**: Kiến Chúa tiết pheromone QMP (`9-ODA`) ức chế buồng trứng kiến thợ và tăng tốc +22% cho toàn đàn. Khi Kiến Chúa tử vong (do Lốc xoáy hoặc Thiên địch), sự mất đi của QMP kích hoạt ngay quy trình **Ấp Tân Chúa Kế Vị Khẩn Cấp (`Emergency Queen Rearing`)** từ ấu trùng lưỡng bội trong buồng ấp ngầm để tái lập vương quốc!
   - **Đơn Chúa (`Monogyne`) ↔ Đa Chúa (`Polygyne`)**: Chuyển đổi trực tiếp giữa cấu trúc 1 Kiến Chúa độc tôn và 3 Kiến Chúa đồng trị vì (kèm 6 Kiến Lính chia đều 2 Vệ binh hộ giá mỗi Chúa).
   - **Dây chuyền Cắt hạt "Cutters & Carriers" (Wilson, 1978)**: Kiến Tướng dùng cặp hàm cối xay *Edentate* nghiền vỡ hạt cứng/vỏ Kitin trước khi Kiến Thợ hợp tác khiêng về tổ.
@@ -80,10 +80,10 @@ $$B_{\text{col}}\text{ (kJ/ngày)} = B_0 \cdot \left(\frac{M_{\text{fresh}}}{\te
 
 ### Tầng 4 — Sức chứa Cực đại theo Định luật Tối thiểu Liebig & Đáp ứng Săn mồi Holling Type II
 
-$$K_{\max}^{\text{MEU}} = \min\!\Big(K_{\text{trophic}}(F),\ K_{\text{hydro}}(W),\ K_{\text{space}}(A_{\text{terr}}, \text{Social})\Big) \times \left(1 - \frac{P_{\max} \cdot E}{E_{1/2} + E}\right)$$
+$$K_{\max}^{\text{MEU}} = \min\Big(K_{\text{trophic}}(F), K_{\text{hydro}}(W), K_{\text{space}}(A_{\text{terr}}, \text{Social})\Big) \times \left(1 - \frac{P_{\max} \cdot E}{E_{1/2} + E}\right)$$
 
-### Tầng 5 — Phương sai Không gian Taylor & Khoảng Tin Cậy 95% ($\text{CI}_{95\%}$)
-Do kiến phân bố cụm theo vết mùi Pheromone ($\sigma^2 = a\mu^b$ với hệ số kết cụm Taylor $b = 1.44$), kết quả ngoại suy toàn tổ luôn đi kèm biên độ sai số chuẩn tương đối ($\text{RSE}$) và khoảng tin cậy $95\%$ ($N_{\text{col}} \pm 1.96 \cdot \text{SE}$).
+### Tầng 5 — Phương sai Không gian Taylor & Khoảng Tin Cậy 95% ($\text{CI}_{0.95}$)
+Do kiến phân bố cụm theo vết mùi Pheromone ($\sigma^2 = a\mu^b$ với hệ số kết cụm Taylor $b = 1.44$), kết quả ngoại suy toàn tổ luôn đi kèm biên độ sai số chuẩn tương đối ($\text{RSE}$) và khoảng tin cậy 95% ($N_{\text{col}} \pm 1.96 \cdot \text{SE}$).
 
 ---
 
